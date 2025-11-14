@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Sparkles, Music, Newspaper, Cloud, Contact, Heart, Lock, Smartphone } from "lucide-react";
 
 const Projects = () => {
@@ -57,112 +58,98 @@ const Projects = () => {
   return (
     <section id="projects" className="py-32 px-4 relative">
       {/* Background gradient mesh */}
-      <div className="absolute inset-0 opacity-50" style={{ background: 'var(--gradient-mesh)' }}></div>
+      <div className="absolute inset-0 opacity-30" style={{ background: 'var(--gradient-mesh)' }}></div>
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-24">
-          <div className="inline-flex items-center gap-2 mb-6 framer-badge">
-            <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-primary font-semibold">Portfolio</span>
+        <div className="text-center mb-24 animate-fade-in">
+          <div className="inline-flex items-center gap-3 gradient-badge mb-8">
+            <Sparkles className="h-5 w-5" />
+            <span className="font-bold">Portfolio ✨</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-[1.1] tracking-tight">
-            <span className="framer-text-gradient">Featured Projects</span>
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.05] tracking-tight">
+            <span className="gradient-text">Selected Work</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed">
-            Innovative mobile applications built with modern technologies and best practices
+          <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-3xl mx-auto leading-relaxed">
+            Innovative mobile applications built with modern technologies and best practices 🚀
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => {
             const IconComponent = project.icon;
             return (
-              <Card 
-                key={index} 
-                className="framer-card cursor-pointer group"
+              <div 
+                key={index}
+                className="animate-fade-in"
                 style={{ 
-                  animationDelay: `${index * 0.1}s`,
-                  animationName: 'fade-in',
-                  animationDuration: '0.6s',
-                  animationFillMode: 'both'
+                  animationDelay: `${index * 0.15}s`
                 }}
               >
-                {/* Hover gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none`} />
-                
-                <CardHeader className="pb-6 relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    {/* Icon with glassmorphism */}
-                    <div className={`p-4 rounded-2xl glass glass-hover bg-gradient-to-br ${project.gradient} group-hover:scale-110 transition-all duration-300`}>
-                      <IconComponent className="h-7 w-7 text-primary" />
+                <Card className="h-full cursor-pointer group relative">
+                  {/* Gradient Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                  
+                  <CardHeader className="relative z-10">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-all duration-300 group-hover:scale-110">
+                        <IconComponent className="h-7 w-7 text-primary" />
+                      </div>
                     </div>
+                    <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors duration-300">
+                      {project.title}
+                    </CardTitle>
+                    <Badge className="gradient-badge mb-4 w-fit">
+                      {project.highlight}
+                    </Badge>
+                  </CardHeader>
+                  
+                  <CardContent className="relative z-10">
+                    <CardDescription className="text-base mb-6 leading-relaxed">
+                      {project.description}
+                    </CardDescription>
                     
-                    {/* Action buttons */}
-                    <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <button className="p-2.5 rounded-xl glass glass-hover">
-                        <ExternalLink className="h-4 w-4 text-primary" />
-                      </button>
-                      <button className="p-2.5 rounded-xl glass glass-hover">
-                        <Github className="h-4 w-4 text-primary" />
-                      </button>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <Badge 
+                          key={techIndex}
+                          variant="secondary"
+                          className="px-3 py-1.5 text-xs font-medium bg-muted/50 hover:bg-muted transition-colors"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
                     </div>
-                  </div>
-                  
-                  <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </CardTitle>
-                  
-                  <div className="inline-flex items-center gap-1.5 framer-badge text-xs">
-                    <Sparkles className="h-3 w-3 text-primary" />
-                    <span className="text-primary">{project.highlight}</span>
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="relative z-10 space-y-6">
-                  <p className="text-muted-foreground/90 leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <Badge 
-                        key={techIndex} 
-                        variant="secondary" 
-                        className="framer-badge text-xs px-3 py-1 hover:border-primary/40 transition-colors"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </div>
             );
           })}
         </div>
-        
-        <div className="text-center mt-20">
-          <p className="text-muted-foreground/80 mb-8 text-lg">
-            Want to see more or discuss your project?
+
+        {/* GitHub & Fiverr Links */}
+        <div className="mt-20 text-center animate-scale-in">
+          <p className="text-lg text-muted-foreground/80 mb-8">
+            Want to see more? Check out my profiles 👇
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a 
-              href="https://github.com/arunbide" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="framer-button inline-flex items-center gap-2 text-white font-semibold"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              variant="outline"
+              size="lg"
+              className="h-14 px-8"
+              onClick={() => window.open('https://github.com/ArunBisht/Kotlin-Multiplatform-Apps-portfolio', '_blank')}
             >
-              <Github className="h-5 w-5" />
-              View GitHub
-            </a>
-            <a 
-              href="https://fiverr.com/arunbide" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-medium glass glass-hover text-primary border-primary/40"
+              <Github className="h-5 w-5 mr-2" />
+              View on GitHub
+            </Button>
+            <Button 
+              variant="outline"
+              size="lg"
+              className="h-14 px-8"
+              onClick={() => window.open('https://www.fiverr.com/arunbisht1804', '_blank')}
             >
-              <ExternalLink className="h-5 w-5" />
-              Hire Me on Fiverr
-            </a>
+              <ExternalLink className="h-5 w-5 mr-2" />
+              Hire on Fiverr
+            </Button>
           </div>
         </div>
       </div>
