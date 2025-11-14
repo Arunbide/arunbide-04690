@@ -24,15 +24,15 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? "bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-lg" 
+        ? "bg-background/95 backdrop-blur-md border-b border-border" 
         : "bg-transparent"
     }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <div className="font-bold text-2xl">
-            <span className="framer-text-gradient">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="flex items-center justify-between h-20">
+          <div className="font-semibold text-xl tracking-tight">
+            <span className="text-foreground">
               Arun Bide
             </span>
           </div>
@@ -49,10 +49,9 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium text-sm relative link-underline"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </div>
@@ -63,17 +62,17 @@ const Navigation = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="rounded-full hover:bg-white/10 transition-colors"
+              className="rounded-lg"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-white/10 rounded-b-2xl">
-            <div className="px-4 py-6 space-y-4">
+          <div className="md:hidden bg-background border-t border-border">
+            <div className="px-4 py-6 space-y-2">
               {[
                 { id: "hero", label: "Home" },
                 { id: "skills", label: "Skills" },
@@ -84,7 +83,7 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-4 py-3 text-muted-foreground hover:text-primary hover:bg-white/5 rounded-xl transition-all duration-300 font-medium"
+                  className="block w-full text-left px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-all duration-200 font-medium"
                 >
                   {item.label}
                 </button>
