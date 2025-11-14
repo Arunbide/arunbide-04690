@@ -100,120 +100,102 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="py-32 px-4 relative">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background"></div>
+      <div className="absolute inset-0 opacity-20" style={{ background: 'var(--gradient-mesh)' }}></div>
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 mb-6 framer-badge">
-            <Quote className="h-4 w-4 text-primary" />
-            <span className="text-primary font-semibold">Testimonials</span>
+        <div className="text-center mb-24 animate-fade-in">
+          <div className="inline-flex items-center gap-3 gradient-badge mb-8">
+            <Quote className="h-5 w-5" />
+            <span className="font-bold">Testimonials 💬</span>
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1] tracking-tight">
-            What Clients Say About<br />
-            <span className="framer-text-gradient">Working With Me</span>
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.05] tracking-tight">
+            What Clients Say<br />
+            <span className="gradient-text">About Working With Me</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground/80 max-w-2xl mx-auto">
-            Real feedback from clients I've had the pleasure to work with
+          <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-3xl mx-auto leading-relaxed">
+            Real feedback from satisfied clients across the globe 🌍
           </p>
         </div>
         
-        {/* Testimonials Carousel - Single Card */}
-        <div className="mb-16">
-          <Carousel
+        <div className="max-w-6xl mx-auto mb-20">
+          <Carousel 
             setApi={setApi}
-            className="w-full max-w-3xl mx-auto"
+            className="w-full"
             opts={{
-              align: "center",
+              align: "start",
               loop: true,
             }}
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index}>
-                  <Card className="framer-card h-full group">
-                    <CardContent className="p-8 flex flex-col h-full">
-                      {/* Quote Icon with glassmorphism */}
-                      <div className="mb-6">
-                        <div className="inline-flex p-3 rounded-2xl glass">
-                          <Quote className="w-6 h-6 text-primary" />
-                        </div>
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="h-full">
+                    <CardContent className="p-8">
+                      <div className="flex items-start gap-2 mb-6">
+                        {renderStars(testimonial.rating)}
                       </div>
                       
-                      {/* Review Text */}
-                      <p className="text-base text-foreground/90 leading-relaxed mb-8 flex-grow">
+                      <Quote className="h-8 w-8 text-primary/30 mb-4" />
+                      
+                      <p className="text-base text-muted-foreground/90 mb-8 leading-relaxed">
                         "{testimonial.review}"
                       </p>
                       
-                      {/* Rating with glow */}
-                      <div className="flex items-center gap-1.5 mb-6">
-                        {renderStars(testimonial.rating)}
-                        <span className="text-sm font-semibold ml-2 text-primary">
-                          {testimonial.rating}
-                        </span>
-                      </div>
-                      
-                      {/* Author Info with better visual hierarchy */}
-                      <div className="flex items-center gap-4 pt-4 border-t border-white/5">
-                        <div className="w-12 h-12 rounded-2xl glass flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20 group-hover:scale-110 transition-transform duration-300">
-                          <span className="text-base font-bold text-primary">
-                            {testimonial.name.charAt(0).toUpperCase()}
-                          </span>
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-foreground mb-0.5">
-                            {testimonial.name}
-                          </div>
-                          <div className="text-xs text-muted-foreground">
-                            {testimonial.role} • {testimonial.company}
-                          </div>
-                        </div>
+                      <div className="border-t border-border/50 pt-6">
+                        <p className="font-bold text-lg text-foreground mb-1">
+                          {testimonial.name}
+                        </p>
+                        <p className="text-sm text-muted-foreground mb-1">
+                          {testimonial.role}
+                        </p>
+                        <p className="text-xs text-muted-foreground/70">
+                          📍 {testimonial.company}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            
+            <div className="flex items-center justify-center gap-6 mt-12">
+              <CarouselPrevious className="relative static translate-y-0 h-12 w-12 rounded-full glass-card hover:bg-primary/20" />
+              <div className="flex items-center gap-2">
+                {Array.from({ length: count }).map((_, index) => (
+                  <button
+                    key={index}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      index + 1 === current 
+                        ? 'w-8 bg-primary' 
+                        : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                    }`}
+                    onClick={() => api?.scrollTo(index)}
+                  />
+                ))}
+              </div>
+              <CarouselNext className="relative static translate-y-0 h-12 w-12 rounded-full glass-card hover:bg-primary/20" />
+            </div>
           </Carousel>
-
-          {/* Dots Navigation */}
-          <div className="flex justify-center gap-2 mt-8">
-            {Array.from({ length: count }).map((_, index) => (
-              <button
-                key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index + 1 === current
-                    ? "bg-primary w-8"
-                    : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                }`}
-                onClick={() => api?.scrollTo(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
 
-        {/* Stats with glassmorphism */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto animate-scale-in">
           {[
-            { value: "5+", label: "Happy Clients" },
-            { value: "4.9", label: "Average Rating" },
-            { value: "10+", label: "Projects Done" },
-            { value: "100%", label: "Success Rate" }
+            { number: "50+", label: "Projects Completed", icon: "🚀" },
+            { number: "25+", label: "Happy Clients", icon: "😊" },
+            { number: "5★", label: "Average Rating", icon: "⭐" }
           ].map((stat, index) => (
-            <div 
-              key={index} 
-              className="text-center p-8 rounded-3xl glass glass-hover"
-            >
-              <div className="text-4xl md:text-5xl font-bold framer-text-gradient mb-3">
-                {stat.value}
-              </div>
-              <div className="text-muted-foreground text-sm font-medium">
-                {stat.label}
-              </div>
-            </div>
+            <Card key={index} className="text-center group">
+              <CardContent className="p-8">
+                <div className="text-5xl mb-4">{stat.icon}</div>
+                <div className="text-5xl md:text-6xl font-bold gradient-text mb-3 group-hover:scale-110 transition-transform">
+                  {stat.number}
+                </div>
+                <p className="text-lg text-muted-foreground/80">
+                  {stat.label}
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
