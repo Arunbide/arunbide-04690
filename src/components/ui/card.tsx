@@ -9,7 +9,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "glass-card p-6",
+      "simple-card",
       className
     )}
     {...props}
