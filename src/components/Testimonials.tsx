@@ -117,38 +117,38 @@ const Testimonials = () => {
           </p>
         </div>
         
-        <div className="max-w-6xl mx-auto mb-20">
+        <div className="max-w-3xl mx-auto mb-20">
           <Carousel 
             setApi={setApi}
             className="w-full"
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
           >
-            <CarouselContent className="-ml-4">
+            <CarouselContent>
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full">
-                    <CardContent className="p-8">
-                      <div className="flex items-start gap-2 mb-6">
+                <CarouselItem key={index}>
+                  <Card className="border-2">
+                    <CardContent className="p-10 md:p-12">
+                      <div className="flex items-center justify-center gap-1 mb-8">
                         {renderStars(testimonial.rating)}
                       </div>
                       
-                      <Quote className="h-8 w-8 text-primary/30 mb-4" />
+                      <Quote className="h-10 w-10 text-foreground/20 mb-6 mx-auto" />
                       
-                      <p className="text-base text-muted-foreground/90 mb-8 leading-relaxed">
+                      <p className="text-lg md:text-xl text-foreground/90 mb-10 leading-relaxed text-center">
                         "{testimonial.review}"
                       </p>
                       
-                      <div className="border-t border-border/50 pt-6">
-                        <p className="font-bold text-lg text-foreground mb-1">
+                      <div className="border-t border-border pt-8 text-center">
+                        <p className="font-bold text-xl text-foreground mb-2">
                           {testimonial.name}
                         </p>
                         <p className="text-sm text-muted-foreground mb-1">
                           {testimonial.role}
                         </p>
-                        <p className="text-xs text-muted-foreground/70">
+                        <p className="text-sm text-muted-foreground/60">
                           {testimonial.company}
                         </p>
                       </div>
@@ -158,22 +158,22 @@ const Testimonials = () => {
               ))}
             </CarouselContent>
             
-            <div className="flex items-center justify-center gap-6 mt-12">
-              <CarouselPrevious className="relative static translate-y-0 h-12 w-12 rounded-full glass-card hover:bg-primary/20" />
-              <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-8 mt-16">
+              <CarouselPrevious className="relative static translate-y-0 h-12 w-12 rounded-full border-2" />
+              <div className="flex items-center gap-3">
                 {Array.from({ length: count }).map((_, index) => (
                   <button
                     key={index}
-                    className={`h-2 rounded-full transition-all duration-300 ${
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
                       index + 1 === current 
-                        ? 'w-8 bg-primary' 
-                        : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                        ? 'w-10 bg-foreground' 
+                        : 'w-2.5 bg-foreground/20 hover:bg-foreground/40'
                     }`}
                     onClick={() => api?.scrollTo(index)}
                   />
                 ))}
               </div>
-              <CarouselNext className="relative static translate-y-0 h-12 w-12 rounded-full glass-card hover:bg-primary/20" />
+              <CarouselNext className="relative static translate-y-0 h-12 w-12 rounded-full border-2" />
             </div>
           </Carousel>
         </div>
