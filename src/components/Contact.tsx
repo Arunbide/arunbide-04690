@@ -78,39 +78,36 @@ const Contact = () => {
 
         {/* Contact Options */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto animate-scale-in">
-          <Card className="text-center group hover:scale-105 transition-transform">
+          <Card className="text-center">
             <CardContent className="p-8">
-              <div className="p-6 rounded-full bg-primary/20 inline-flex mb-6 group-hover:bg-primary/30 transition-colors">
-                <Mail className="h-10 w-10 text-primary" />
+              <div className="mb-6 mx-auto h-16 w-16 rounded-full flex items-center justify-center bg-foreground/5">
+                <Mail className="h-8 w-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
-                Email Me Directly 📧
-              </h3>
-              <p className="text-muted-foreground/80 mb-6">
-                For detailed inquiries and project discussions
-              </p>
+              <h3 className="text-xl font-bold mb-4">Email Me</h3>
               <a 
-                href="mailto:arunbisht0018@gmail.com"
-                className="text-primary hover:text-primary/80 font-semibold text-lg link-gradient"
+                href="mailto:Agbide7@gmail.com" 
+                className="text-base text-foreground/70 hover:text-foreground underline-offset-4 hover:underline transition-colors inline-block"
               >
-                arunbisht0018@gmail.com
+                Agbide7@gmail.com
               </a>
             </CardContent>
           </Card>
-
-          <Card className="text-center group hover:scale-105 transition-transform">
+          
+          <Card className="text-center">
             <CardContent className="p-8">
-              <div className="p-6 rounded-full bg-primary/20 inline-flex mb-6 group-hover:bg-primary/30 transition-colors">
-                <Phone className="h-10 w-10 text-primary" />
+              <div className="mb-6 mx-auto h-16 w-16 rounded-full flex items-center justify-center bg-foreground/5">
+                <Phone className="h-8 w-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
-                Quick Response 💬
-              </h3>
-              <p className="text-muted-foreground/80 mb-6">
-                Usually respond within 24 hours
-              </p>
-              <p className="text-primary font-semibold text-lg">
-                Available on Email & Cal.com
+              <h3 className="text-xl font-bold mb-4">Call Me</h3>
+              <a 
+                href="tel:+919322832034" 
+                className="text-base text-foreground/70 hover:text-foreground underline-offset-4 hover:underline transition-colors inline-block mb-3"
+              >
+                +91 9322832034
+              </a>
+              <p className="text-sm text-muted-foreground/60">
+                Available for calls during business hours<br />
+                (9 AM - 6 PM IST)
               </p>
             </CardContent>
           </Card>
