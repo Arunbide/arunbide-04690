@@ -8,11 +8,6 @@ const Hero = () => {
       <div className="container mx-auto text-center relative z-10 max-w-5xl">
         <div className="animate-fade-in">
           <div className="mb-12">
-            {/* Tagline */}
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              UX by Sunlight. Framer by Moonlight
-            </p>
-            
             {/* Main Heading with Emoji */}
             <h1 className="text-6xl md:text-8xl lg:text-[110px] font-bold mb-10 leading-[1.05] tracking-tight">
               Heyy, I'm <span className="inline-block">Arun Bide</span> <span className="inline-block text-7xl md:text-9xl">👋</span>
@@ -60,10 +55,6 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-12 right-12">
-            <p className="text-sm text-muted-foreground">Scroll to explore</p>
-          </div>
         </div>
       </div>
     </section>

@@ -106,7 +106,7 @@ const Testimonials = () => {
         <div className="text-center mb-24 animate-fade-in">
           <div className="inline-flex items-center gap-3 gradient-badge mb-8">
             <Quote className="h-5 w-5" />
-            <span className="font-bold">Testimonials 💬</span>
+            <span className="font-bold">Testimonials</span>
           </div>
           <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.05] tracking-tight">
             What Clients Say<br />
@@ -149,7 +149,7 @@ const Testimonials = () => {
                           {testimonial.role}
                         </p>
                         <p className="text-xs text-muted-foreground/70">
-                          📍 {testimonial.company}
+                          {testimonial.company}
                         </p>
                       </div>
                     </CardContent>
@@ -179,24 +179,33 @@ const Testimonials = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto animate-scale-in">
-          {[
-            { number: "50+", label: "Projects Completed", icon: "🚀" },
-            { number: "25+", label: "Happy Clients", icon: "😊" },
-            { number: "5★", label: "Average Rating", icon: "⭐" }
-          ].map((stat, index) => (
-            <Card key={index} className="text-center group">
-              <CardContent className="p-8">
-                <div className="text-5xl mb-4">{stat.icon}</div>
-                <div className="text-5xl md:text-6xl font-bold gradient-text mb-3 group-hover:scale-110 transition-transform">
-                  {stat.number}
-                </div>
-                <p className="text-lg text-muted-foreground/80">
-                  {stat.label}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <Card className="text-center">
+            <CardContent className="p-8">
+              <div className="text-4xl md:text-5xl font-bold mb-2">
+                10+
+              </div>
+              <p className="text-muted-foreground/70 text-sm">Projects Done</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="text-center">
+            <CardContent className="p-8">
+              <div className="text-4xl md:text-5xl font-bold mb-2">
+                5+
+              </div>
+              <p className="text-muted-foreground/70 text-sm">Happy Clients</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="text-center">
+            <CardContent className="p-8">
+              <div className="text-4xl md:text-5xl font-bold mb-2">
+                4.9
+              </div>
+              <p className="text-muted-foreground/70 text-sm">Average Rating</p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
