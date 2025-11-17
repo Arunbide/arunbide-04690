@@ -36,6 +36,48 @@ const Experience = () => {
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
+                      Kotlin Multiplatform Developer
+                    </CardTitle>
+                    <CardDescription className="text-lg font-bold gradient-text">
+                      Stealth Startup
+                    </CardDescription>
+                  </div>
+                  <Badge className="gradient-badge">
+                    Freelance
+                  </Badge>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground/70">
+                  <Calendar className="h-4 w-4" />
+                  <span>Sep 2025 - Present · 3 mos</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground/70 mt-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>Vaughan, Ontario, Canada · Remote</span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 glow-pulse"></div>
+                    <p className="text-muted-foreground/90 leading-relaxed">
+                      Worked on the V2 redesign using Material 3 and implementing Kotlin Multiplatform (KMP) architecture to unify Android, iOS, and Web (WASM) codebases
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground/90 leading-relaxed">
+                      Focused on shared business logic, reusable Compose components, and improving cross-platform scalability
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="group">
+              <CardHeader>
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
                       Freelance Android Developer
                     </CardTitle>
                     <CardDescription className="text-lg font-bold gradient-text">
