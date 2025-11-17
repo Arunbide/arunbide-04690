@@ -99,11 +99,11 @@ const Testimonials = () => {
   }, [api]);
 
   return (
-    <section id="testimonials" className="py-32 px-4 relative">
+    <section id="testimonials" className="py-20 px-4 relative">
       <div className="absolute inset-0 opacity-20" style={{ background: 'var(--gradient-mesh)' }}></div>
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-24 animate-fade-in">
+        <div className="text-center mb-16 animate-fade-in">
           <div className="inline-flex items-center gap-3 gradient-badge mb-8">
             <Quote className="h-5 w-5" />
             <span className="font-bold">Testimonials</span>
@@ -117,7 +117,7 @@ const Testimonials = () => {
           </p>
         </div>
         
-        <div className="max-w-3xl mx-auto mb-20">
+        <div className="max-w-3xl mx-auto mb-16">
           <Carousel 
             setApi={setApi}
             className="w-full"
@@ -130,19 +130,19 @@ const Testimonials = () => {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
                   <Card className="border-2">
-                    <CardContent className="p-10 md:p-12">
-                      <div className="flex items-center justify-center gap-1 mb-8">
+                    <CardContent className="p-8">
+                      <div className="flex items-center justify-center gap-1 mb-5">
                         {renderStars(testimonial.rating)}
                       </div>
                       
-                      <Quote className="h-10 w-10 text-foreground/20 mb-6 mx-auto" />
+                      <Quote className="h-8 w-8 text-foreground/20 mb-4 mx-auto" />
                       
-                      <p className="text-lg md:text-xl text-foreground/90 mb-10 leading-relaxed text-center">
+                      <p className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed text-center">
                         "{testimonial.review}"
                       </p>
                       
-                      <div className="border-t border-border pt-8 text-center">
-                        <p className="font-bold text-xl text-foreground mb-2">
+                      <div className="border-t border-border pt-5 text-center">
+                        <p className="font-bold text-lg text-foreground mb-1">
                           {testimonial.name}
                         </p>
                         <p className="text-sm text-muted-foreground mb-1">
@@ -158,7 +158,7 @@ const Testimonials = () => {
               ))}
             </CarouselContent>
             
-            <div className="flex items-center justify-center gap-8 mt-16">
+            <div className="flex items-center justify-center gap-8 mt-10">
               <CarouselPrevious className="relative static translate-y-0 h-12 w-12 rounded-full border-2" />
               <div className="flex items-center gap-3">
                 {Array.from({ length: count }).map((_, index) => (
