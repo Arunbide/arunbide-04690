@@ -46,29 +46,28 @@ const KMPBenefits = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <Card 
-                  key={index}
-                  className="text-center group hover:scale-105 transition-all duration-300"
-                >
-                  <CardContent className="p-8">
-                    <div className="mb-4 mx-auto h-16 w-16 rounded-full flex items-center justify-center animated-gradient group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="h-8 w-8 text-primary-foreground" />
+          <Card className="animate-fade-in group hover:scale-[1.02] transition-all duration-300" style={{ animationDelay: '0.2s' }}>
+            <CardContent className="p-8 md:p-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {benefits.map((benefit, index) => {
+                  const Icon = benefit.icon;
+                  return (
+                    <div key={index} className="text-center">
+                      <div className="mb-4 mx-auto h-16 w-16 rounded-full flex items-center justify-center animated-gradient group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="h-8 w-8 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">
+                        {benefit.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground/80">
+                        {benefit.description}
+                      </p>
                     </div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground/80">
-                      {benefit.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
+                  );
+                })}
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
