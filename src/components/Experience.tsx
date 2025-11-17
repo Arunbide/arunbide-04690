@@ -102,19 +102,19 @@ const Experience = () => {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-muted-foreground/90 leading-relaxed">
-                      Successfully delivered 50+ Android projects with 5-star ratings
+                      Created and deployed multiple Android applications utilizing Firebase ecosystem and modern development practices
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-muted-foreground/90 leading-relaxed">
-                      Specialized in Kotlin, Jetpack Compose, KMP, and AI integration
+                      Gained practical experience with Kotlin, Android Framework, and third-party library integration
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-muted-foreground/90 leading-relaxed">
-                      Built strong client relationships through quality work and communication
+                      Managed complete project lifecycle from development to publishing and client satisfaction
                     </p>
                   </div>
                 </div>
@@ -134,18 +134,18 @@ const Experience = () => {
             <Card className="group">
               <CardHeader>
                 <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
-                  Bachelor of Computer Applications
+                  Bachelor in Computer Science
                 </CardTitle>
                 <CardDescription className="text-lg font-bold gradient-text mb-2">
-                  Rajiv Gandhi Proudyogiki Vishwavidyalaya, Bhopal
+                  Dr. Babasaheb Ambedkar Marathwada University
                 </CardDescription>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground/70">
                   <Calendar className="h-4 w-4" />
-                  <span>2020 - 2023</span>
+                  <span>2022 - 2025 (Completed)</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground/70 mt-2">
                   <MapPin className="h-4 w-4" />
-                  <span>Madhya Pradesh, India</span>
+                  <span>Maharashtra, India</span>
                 </div>
               </CardHeader>
               <CardContent>
@@ -153,19 +153,7 @@ const Experience = () => {
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-muted-foreground/90 leading-relaxed">
-                      Focused on Software Development, Data Structures, and Mobile App Development
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Built strong foundation in programming concepts and software engineering principles
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Completed multiple projects in Android development and web technologies
+                      Completed comprehensive education in Computer Science with specialization in software development, data structures, algorithms, and modern mobile application development methodologies
                     </p>
                   </div>
                 </div>
