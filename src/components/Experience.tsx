@@ -47,11 +47,11 @@ const Experience = () => {
                   </Badge>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground/70">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-4 w-4 text-white" />
                   <span>Sep 2025 - Present · 3 mos</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground/70 mt-2">
-                  <MapPin className="h-4 w-4" />
+                  <MapPin className="h-4 w-4 text-white" />
                   <span>Vaughan, Ontario, Canada · Remote</span>
                 </div>
               </CardHeader>

@@ -192,9 +192,9 @@ const Testimonials = () => {
           <Card className="text-center">
             <CardContent className="p-8">
               <div className="text-4xl md:text-5xl font-bold mb-2">
-                5+
+                100%
               </div>
-              <p className="text-muted-foreground/70 text-sm">Happy Clients</p>
+              <p className="text-muted-foreground/70 text-sm">Success Rate</p>
             </CardContent>
           </Card>
           
