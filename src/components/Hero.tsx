@@ -14,8 +14,8 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground/90 mb-16 max-w-3xl mx-auto leading-relaxed">
-              Specialized in <span className="text-foreground font-semibold">Kotlin Multiplatform (KMP)</span> and native Android development.
-              I help businesses build scalable, cross-platform mobile solutions that shine ✨
+              Specialized in <span className="text-foreground font-semibold">Kotlin Multiplatform (KMP)</span> and native Android development. 
+              I help businesses build scalable, cross-platform mobile solutions with clean architecture and modern best practices.
             </p>
           </div>
           

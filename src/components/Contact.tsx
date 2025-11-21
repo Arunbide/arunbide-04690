@@ -38,7 +38,7 @@ const Contact = () => {
             
             <CardHeader className="pb-8 pt-12 px-6 relative z-10">
               <div className="mx-auto mb-8 p-8 rounded-full inline-flex animated-gradient">
-                <Calendar className="h-20 w-20 text-primary-foreground" />
+                <Calendar className="h-20 w-20 text-white" />
               </div>
               <CardTitle className="text-4xl md:text-5xl lg:text-6xl mb-6">
                 <span className="gradient-text">Schedule a Free Consultation</span>
@@ -62,10 +62,11 @@ const Contact = () => {
                 {/* CTA Button */}
                 <Button 
                   onClick={handleScheduleCall}
-                  className="glow-button h-16 px-12 text-lg mx-auto"
+                  className="glow-button h-16 px-8 md:px-12 text-base md:text-lg mx-auto"
                 >
-                  <Calendar className="h-6 w-6 mr-3" />
-                  <span className="whitespace-nowrap">Schedule Your Call Now</span>
+                  <Calendar className="h-6 w-6 mr-2 md:mr-3" />
+                  <span className="hidden sm:inline">Schedule Your Call Now</span>
+                  <span className="sm:hidden">Book a Call</span>
                 </Button>
                 
                 <p className="text-sm text-muted-foreground/70">
@@ -84,6 +85,9 @@ const Contact = () => {
                 <Mail className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-4">Email Me</h3>
+              <p className="text-sm text-muted-foreground/70 mb-3">
+                Drop me an email and I'll get back to you within 24 hours.
+              </p>
               <a 
                 href="mailto:Agbide7@gmail.com" 
                 className="text-base text-foreground/70 hover:text-foreground underline-offset-4 hover:underline transition-colors inline-block"
