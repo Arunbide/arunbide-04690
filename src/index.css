@@ -8,45 +8,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Refined Dark Theme - Framer-inspired */
-    --background: 220 13% 9%;
-    --foreground: 0 0% 98%;
+    /* Authentic Framer Dark Theme */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 100%;
 
-    --card: 220 13% 11%;
-    --card-foreground: 0 0% 98%;
+    --card: 240 6% 8%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 13% 11%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 240 6% 8%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 220 13% 9%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 240 10% 4%;
 
-    --secondary: 220 13% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 240 4% 12%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 13% 14%;
-    --muted-foreground: 0 0% 63%;
+    --muted: 240 5% 10%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 220 13% 18%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 240 5% 14%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 18%;
-    --input: 220 13% 18%;
-    --ring: 0 0% 98%;
+    --border: 240 6% 14%;
+    --input: 240 6% 14%;
+    --ring: 0 0% 100%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --sidebar-background: 220 13% 11%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 0 0% 98%;
-    --sidebar-primary-foreground: 220 13% 9%;
-    --sidebar-accent: 220 13% 18%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 220 13% 18%;
-    --sidebar-ring: 0 0% 98%;
+    --sidebar-background: 240 6% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 240 10% 4%;
+    --sidebar-accent: 240 5% 14%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 6% 14%;
+    --sidebar-ring: 0 0% 100%;
   }
 }
 
@@ -61,36 +61,34 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 400;
+    font-size: 15px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: hsl(var(--background));
     position: relative;
-    letter-spacing: -0.01em;
   }
 
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
-    letter-spacing: -0.04em;
-    line-height: 1.1;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
   }
 }
 
 @layer components {
   /* Simple Card */
   .simple-card {
-    @apply rounded-xl bg-card border border-border/50 p-6;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(8px);
+    @apply rounded-lg bg-card border border-border/40 p-6;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .simple-card:hover {
-    transform: translateY(-2px);
     border-color: hsl(var(--border));
-    box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.3);
   }
 }
 
