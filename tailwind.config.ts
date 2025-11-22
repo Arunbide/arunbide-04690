@@ -143,10 +143,10 @@ export default {
 				},
 				'glow-pulse': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(255, 255, 255, 0.1)'
+						boxShadow: '0 0 20px rgba(0, 217, 255, 0.3)'
 					},
 					'50%': {
-						boxShadow: '0 0 40px rgba(255, 255, 255, 0.2)'
+						boxShadow: '0 0 40px rgba(0, 217, 255, 0.6)'
 					}
 				},
 				'spin-slow': {
@@ -167,8 +167,8 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'gradient-shift': 'gradient-shift 15s ease infinite',
 				'blur-in': 'blur-in 0.8s ease-out',
-				'glow-pulse': 'glow-pulse 3s ease-in-out infinite',
-				'spin-slow': 'spin-slow 8s linear infinite'
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'spin-slow': 'spin-slow 20s linear infinite'
 			}
 		}
 	},
