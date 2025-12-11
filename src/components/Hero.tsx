@@ -73,15 +73,7 @@ const Hero = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a 
-              href="https://www.fiverr.com/arubide" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-4 py-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors text-sm font-medium"
-            >
-              Fiverr
-            </a>
-            <a 
-              href="https://www.upwork.com/freelancers/arubide" 
+              href="https://www.upwork.com/freelancers/arunbide"
               target="_blank" 
               rel="noopener noreferrer"
               className="px-4 py-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors text-sm font-medium"
