@@ -55,7 +55,7 @@ const Hero = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex gap-4 justify-center items-center mb-32">
+          <div className="flex gap-4 justify-center items-center mb-12">
             <a 
               href="https://github.com/arunbide" 
               target="_blank" 
