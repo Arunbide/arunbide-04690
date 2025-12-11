@@ -44,7 +44,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-32 px-4 relative">
+    <section id="skills" className="py-16 px-4 relative">
       <div className="absolute inset-0" style={{ background: 'var(--gradient-mesh)' }}></div>
       
       <div className="container mx-auto relative z-10">
