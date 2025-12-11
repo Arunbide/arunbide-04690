@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, ArrowDown } from "lucide-react";
-
+import { Sparkles, Github, Linkedin } from "lucide-react";
 const Hero = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center px-6 py-40 relative">
@@ -37,7 +36,7 @@ const Hero = () => {
           </div>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-32">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-12">
             <Button 
               className="h-14 px-10 text-lg rounded-full"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -53,6 +52,42 @@ const Hero = () => {
             >
               View My Work
             </Button>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex gap-4 justify-center items-center mb-32">
+            <a 
+              href="https://github.com/arunbide" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+            >
+              <Github className="h-5 w-5" />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/arunbide" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a 
+              href="https://www.fiverr.com/arubide" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors text-sm font-medium"
+            >
+              Fiverr
+            </a>
+            <a 
+              href="https://www.upwork.com/freelancers/arubide" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors text-sm font-medium"
+            >
+              Upwork
+            </a>
           </div>
 
         </div>
