@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, Calendar } from "lucide-react";
+import { Mail, Phone, Calendar, Github, Linkedin } from "lucide-react";
 
 const Contact = () => {
   const handleScheduleCall = () => {
@@ -115,6 +115,42 @@ const Contact = () => {
               </p>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Social Links */}
+        <div className="flex gap-4 justify-center items-center mt-12">
+          <a 
+            href="https://github.com/arunbide" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+          >
+            <Github className="h-5 w-5" />
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/arunbide" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
+          >
+            <Linkedin className="h-5 w-5" />
+          </a>
+          <a 
+            href="https://www.fiverr.com/arubide" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors text-sm font-medium"
+          >
+            Fiverr
+          </a>
+          <a 
+            href="https://www.upwork.com/freelancers/arubide" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors text-sm font-medium"
+          >
+            Upwork
+          </a>
         </div>
       </div>
     </section>
