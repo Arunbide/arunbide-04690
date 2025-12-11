@@ -32,44 +32,44 @@ const Contact = () => {
         </div>
         
         {/* Main CTA Card */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-4xl mx-auto mb-16 px-2">
           <Card className="text-center relative overflow-hidden pulse-glow">
             <div className="absolute inset-0 animated-gradient opacity-10"></div>
             
-            <CardHeader className="pb-8 pt-12 px-6 relative z-10">
-              <div className="mx-auto mb-8 p-8 rounded-full inline-flex animated-gradient">
-                <Calendar className="h-20 w-20 text-white" />
+            <CardHeader className="pb-6 md:pb-8 pt-8 md:pt-12 px-4 md:px-6 relative z-10">
+              <div className="mx-auto mb-6 md:mb-8 p-5 md:p-8 rounded-full inline-flex animated-gradient">
+                <Calendar className="h-12 w-12 md:h-20 md:w-20 text-white" />
               </div>
-              <CardTitle className="text-4xl md:text-5xl lg:text-6xl mb-6">
+              <CardTitle className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-4 md:mb-6">
                 <span className="gradient-text">Schedule a Free Consultation</span>
               </CardTitle>
-              <p className="text-lg md:text-xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base md:text-xl text-muted-foreground/90 max-w-2xl mx-auto leading-relaxed">
                 Let's discuss your project requirements, timeline, and how I can help bring your app to life with modern technologies.
               </p>
             </CardHeader>
             
-            <CardContent className="pb-12 px-6 relative z-10">
-              <div className="space-y-8">
-                {/* Tech badges */}
-                <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
+            <CardContent className="pb-8 md:pb-12 px-4 md:px-6 relative z-10">
+              <div className="space-y-6 md:space-y-8">
+                {/* Tech tags - simplified styling */}
+                <div className="flex flex-wrap gap-2 md:gap-3 justify-center max-w-2xl mx-auto">
                   {["KMP Development", "Android Native", "Compose Multiplatform", "Firebase & AI"].map((skill) => (
-                    <Badge key={skill} className="gradient-badge px-5 py-2.5 text-sm">
+                    <span key={skill} className="text-xs md:text-sm text-muted-foreground/70">
                       {skill}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
                 
                 {/* CTA Button */}
                 <Button 
                   onClick={handleScheduleCall}
-                  className="glow-button h-16 px-8 md:px-12 text-base md:text-lg mx-auto"
+                  className="glow-button h-12 md:h-16 px-6 md:px-12 text-sm md:text-lg mx-auto"
                 >
-                  <Calendar className="h-6 w-6 mr-2 md:mr-3" />
+                  <Calendar className="h-5 w-5 md:h-6 md:w-6 mr-2 md:mr-3" />
                   <span className="hidden sm:inline">Schedule Your Call Now</span>
                   <span className="sm:hidden">Book a Call</span>
                 </Button>
                 
-                <p className="text-sm text-muted-foreground/70">
+                <p className="text-xs md:text-sm text-muted-foreground/70">
                   ⚡ Free 15-minute consultation • Available Mon-Fri 9 AM - 6 PM IST
                 </p>
               </div>
