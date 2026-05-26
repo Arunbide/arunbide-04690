@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Star, Github, Linkedin } from "lucide-react";
+import { Star, Linkedin } from "lucide-react";
 import avatar from "@/assets/arun-avatar.png";
 
 const Hero = () => {
