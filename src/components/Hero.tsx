@@ -43,30 +43,7 @@ const Hero = () => {
 
         {/* Info card */}
         <div className="border border-border rounded-lg p-6 md:p-8 mb-8">
-          <div className="grid grid-cols-2 gap-x-6 gap-y-6 mb-6">
-            <div>
-              <p className="text-sm text-muted-foreground mb-1">From</p>
-              <p className="font-bold">India</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground mb-1">Member since</p>
-              <p className="font-bold">Jun 2021</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground mb-1">Avg. response time</p>
-              <p className="font-bold">1 day</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground mb-1">Last delivery</p>
-              <p className="font-bold">7 months</p>
-            </div>
-            <div className="col-span-2">
-              <p className="text-sm text-muted-foreground mb-1">Languages</p>
-              <p className="font-bold">Marathi, English, Hindi</p>
-            </div>
-          </div>
-
-          <div className="border-t border-border pt-6 space-y-4 text-foreground/80 leading-relaxed">
+          <div className="space-y-4 text-foreground/80 leading-relaxed">
             <p>
               I'm Arun Bide, a mobile app developer focused on building scalable, production-ready
               apps for Android and iOS.
@@ -86,12 +63,12 @@ const Hero = () => {
         {/* Social links */}
         <div className="flex flex-wrap items-center gap-3">
           <a
-            href="https://github.com/arunbide"
+            href="https://x.com/bidearun"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-border hover:border-foreground/40 transition-colors text-sm font-medium"
           >
-            <Github className="h-4 w-4" /> GitHub
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X
           </a>
           <a
             href="https://www.linkedin.com/in/arunbide"
