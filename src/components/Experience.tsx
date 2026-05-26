@@ -1,206 +1,80 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Building, GraduationCap, Calendar, MapPin, Award, Users } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 
 const Experience = () => {
+  const jobs = [
+    {
+      title: "Kotlin Multiplatform Developer",
+      company: "Stealth Startup",
+      type: "Freelance",
+      meta: "Sep 2025 — Present · Remote (Vaughan, ON, Canada)",
+      bullets: [
+        "V2 redesign in Material 3, unifying Android, iOS, and Web (WASM) with Kotlin Multiplatform.",
+        "Built shared business logic, reusable Compose components, and improved cross-platform scalability.",
+      ],
+    },
+    {
+      title: "Freelance Android Developer",
+      company: "Bank UP",
+      type: "Freelance",
+      meta: "Contract",
+      bullets: [
+        "Built a bank locator app with bonus offers and a referral system to drive engagement.",
+        "Debugged and optimized performance; managed Google Play Console releases and policy compliance.",
+      ],
+    },
+    {
+      title: "Freelance Developer",
+      company: "Fiverr Platform",
+      type: "Freelance",
+      meta: "Ongoing",
+      bullets: [
+        "Shipped multiple Android apps using Firebase and modern Android practices.",
+        "Owned the full lifecycle from build to publish with high client satisfaction.",
+      ],
+    },
+  ];
+
   return (
-    <section id="experience" className="py-32 px-4 relative">
-      <div className="absolute inset-0 opacity-20" style={{ background: 'var(--gradient-mesh)' }}></div>
-      
-      <div className="container mx-auto relative z-10">
-        <div className="text-center mb-24 animate-fade-in">
-          <div className="inline-flex items-center gap-3 gradient-badge mb-8">
-            <Award className="h-5 w-5" />
-            <span className="font-bold">Background 📚</span>
-          </div>
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.05] tracking-tight">
-            <span className="gradient-text">Experience & Education</span>
-          </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-3xl mx-auto leading-relaxed">
-            My journey in software development and continuous learning 🚀
-          </p>
+    <section id="experience" className="py-16 px-6 border-t border-border">
+      <div className="container mx-auto max-w-5xl">
+        <h2 className="text-2xl md:text-3xl font-bold mb-10">Experience</h2>
+
+        <div className="space-y-4 mb-12">
+          {jobs.map((j) => (
+            <div key={j.title + j.company} className="border border-border rounded-lg p-6">
+              <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                <div>
+                  <h3 className="text-lg font-bold">{j.title}</h3>
+                  <p className="text-sm text-muted-foreground">{j.company}</p>
+                </div>
+                <Badge variant="secondary" className="bg-secondary text-secondary-foreground font-normal rounded-md">
+                  {j.type}
+                </Badge>
+              </div>
+              <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-4">
+                <Calendar className="h-3.5 w-3.5" />
+                <span>{j.meta}</span>
+              </div>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                {j.bullets.map((b, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-muted-foreground">•</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Work Experience */}
-          <div className="space-y-10 animate-slide-up">
-            <h3 className="text-4xl font-bold mb-10 flex items-center gap-4">
-              <div className="p-4 rounded-2xl animated-gradient">
-                <Building className="h-8 w-8 text-primary-foreground" />
-              </div>
-              <span className="gradient-text">Work Experience</span>
-            </h3>
-            
-            <Card className="group">
-              <CardHeader>
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
-                      Kotlin Multiplatform Developer
-                    </CardTitle>
-                    <CardDescription className="text-lg font-bold gradient-text">
-                      Stealth Startup
-                    </CardDescription>
-                  </div>
-                  <Badge className="gradient-badge">
-                    Freelance
-                  </Badge>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground/70">
-                  <Calendar className="h-4 w-4 text-white" />
-                  <span>Sep 2025 - Present · 3 mos</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground/70 mt-2">
-                  <MapPin className="h-4 w-4 text-white" />
-                  <span>Vaughan, Ontario, Canada · Remote</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 glow-pulse"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Worked on the V2 redesign using Material 3 and implementing Kotlin Multiplatform (KMP) architecture to unify Android, iOS, and Web (WASM) codebases
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Focused on shared business logic, reusable Compose components, and improving cross-platform scalability
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
 
-            <Card className="group">
-              <CardHeader>
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
-                      Freelance Android Developer
-                    </CardTitle>
-                    <CardDescription className="text-lg font-bold gradient-text">
-                      Bank UP
-                    </CardDescription>
-                  </div>
-                  <Badge className="gradient-badge">
-                    Freelance
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 glow-pulse"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Developed bank locator app with bonus offers and referral system, 
-                      enhancing user engagement and promoting financial services
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Resolved technical issues and enhanced application performance through 
-                      systematic debugging and optimization
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Managed Google Play Console operations and ensured compliance with 
-                      platform policies and guidelines
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Collaborated with development team on feature planning and 
-                      learned industry best practices
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group">
-              <CardHeader>
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
-                      Freelance Developer
-                    </CardTitle>
-                    <CardDescription className="text-lg font-bold gradient-text">
-                      Fiverr Platform
-                    </CardDescription>
-                  </div>
-                  <Badge className="gradient-badge">
-                    Freelance
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Created and deployed multiple Android applications utilizing Firebase ecosystem and modern development practices
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Gained practical experience with Kotlin, Android Framework, and third-party library integration
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Managed complete project lifecycle from development to publishing and client satisfaction
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Education */}
-          <div className="space-y-10 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <h3 className="text-4xl font-bold mb-10 flex items-center gap-4">
-              <div className="p-4 rounded-2xl animated-gradient">
-                <GraduationCap className="h-8 w-8 text-primary-foreground" />
-              </div>
-              <span className="gradient-text">Education</span>
-            </h3>
-            
-            <Card className="group">
-              <CardHeader>
-                <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
-                  Bachelor in Computer Science
-                </CardTitle>
-                <CardDescription className="text-lg font-bold gradient-text mb-2">
-                  Dr. Babasaheb Ambedkar Marathwada University
-                </CardDescription>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground/70">
-                  <Calendar className="h-4 w-4" />
-                  <span>2022 - 2025 (Completed)</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground/70 mt-2">
-                  <MapPin className="h-4 w-4" />
-                  <span>Maharashtra, India</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground/90 leading-relaxed">
-                      Completed comprehensive education in Computer Science with specialization in software development, data structures, algorithms, and modern mobile application development methodologies
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">Education</h2>
+        <div className="border border-border rounded-lg p-6">
+          <h3 className="text-lg font-bold mb-1">Bachelor in Computer Science</h3>
+          <p className="text-sm text-muted-foreground mb-3">Dr. Babasaheb Ambedkar Marathwada University</p>
+          <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" /> 2022 — 2025</span>
+            <span className="flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> Maharashtra, India</span>
           </div>
         </div>
       </div>

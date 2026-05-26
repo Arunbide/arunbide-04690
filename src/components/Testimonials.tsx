@@ -1,6 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { useState, useEffect } from "react";
 
@@ -10,202 +8,93 @@ const Testimonials = () => {
   const [count, setCount] = useState(0);
 
   const testimonials = [
-    {
-      name: "sireeshaba",
-      role: "Repeat Client",
-      company: "United States",
-      rating: 5,
-      review: "Arun's contribution to our project was nothing short of exceptional. His coding skills were top-notch, delivering clean and well-documented code that significantly contributed to the success of the project."
-    },
-    {
-      name: "atreyarao",
-      role: "Client", 
-      company: "India",
-      rating: 5,
-      review: "Arun has delivered exceptional work in app testing. His attention to detail, expertise, and professionalism truly stand out. I highly recommend him for any app testing projects."
-    },
-    {
-      name: "activealex",
-      role: "Client",
-      company: "United Kingdom",
-      rating: 5,
-      review: "Pleasure to work with. Very professional, helpful and patient!"
-    },
-    {
-      name: "kknlive",
-      role: "Client",
-      company: "India",
-      rating: 5,
-      review: "Arun did an exceptional job updating my app. Their attention to detail is remarkable, ensuring everything was handled with precision. They are incredibly polite and professional."
-    },
-    {
-      name: "sireeshaba",
-      role: "Repeat Client",
-      company: "United States",
-      rating: 4.3,
-      review: "Met expectation and responsive to queries"
-    },
-    {
-      name: "tengohambre",
-      role: "Repeat Client",
-      company: "Canada",
-      rating: 5,
-      review: "Arun went above and beyond to complete the work I gave him. I would defintly hire him again."
-    },
-    {
-      name: "tengohambre",
-      role: "Repeat Client",
-      company: "Canada",
-      rating: 5,
-      review: "I really enjoy working with Arun, will keep order his services"
-    }
+    { name: "sireeshaba", country: "United States", rating: 5, review: "Arun's contribution to our project was nothing short of exceptional. Clean, well-documented code that significantly contributed to the success of the project." },
+    { name: "atreyarao", country: "India", rating: 5, review: "Exceptional work in app testing. Attention to detail, expertise, and professionalism truly stand out." },
+    { name: "activealex", country: "United Kingdom", rating: 5, review: "Pleasure to work with. Very professional, helpful and patient!" },
+    { name: "kknlive", country: "India", rating: 5, review: "Did an exceptional job updating my app. Attention to detail is remarkable — incredibly polite and professional." },
+    { name: "sireeshaba", country: "United States", rating: 4.3, review: "Met expectations and responsive to queries." },
+    { name: "tengohambre", country: "Canada", rating: 5, review: "Arun went above and beyond to complete the work. Would definitely hire him again." },
+    { name: "tengohambre", country: "Canada", rating: 5, review: "Really enjoy working with Arun, will keep ordering his services." },
   ];
 
   const renderStars = (rating: number) => {
-    const fullStars = Math.floor(rating);
-    const hasPartialStar = rating % 1 !== 0;
+    const full = Math.floor(rating);
+    const partial = rating % 1 !== 0;
     const stars = [];
-
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(
-        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-      );
+    for (let i = 0; i < full; i++) {
+      stars.push(<Star key={i} className="w-3.5 h-3.5 fill-foreground text-foreground" />);
     }
-
-    if (hasPartialStar) {
+    if (partial) {
       stars.push(
-        <div key="partial" className="relative">
-          <Star className="w-4 h-4 text-muted-foreground/30" />
-          <Star 
-            className="w-4 h-4 fill-amber-400 text-amber-400 absolute inset-0" 
-            style={{ clipPath: 'inset(0 50% 0 0)' }}
-          />
+        <div key="p" className="relative">
+          <Star className="w-3.5 h-3.5 text-muted-foreground/30" />
+          <Star className="w-3.5 h-3.5 fill-foreground text-foreground absolute inset-0" style={{ clipPath: "inset(0 50% 0 0)" }} />
         </div>
       );
     }
-
     return stars;
   };
 
   useEffect(() => {
     if (!api) return;
-
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
+    api.on("select", () => setCurrent(api.selectedScrollSnap() + 1));
   }, [api]);
 
   return (
-    <section id="testimonials" className="py-20 px-4 relative">
-      <div className="absolute inset-0 opacity-20" style={{ background: 'var(--gradient-mesh)' }}></div>
-      
-      <div className="container mx-auto relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-3 gradient-badge mb-8">
-            <Quote className="h-5 w-5" />
-            <span className="font-bold">Testimonials</span>
+    <section id="testimonials" className="py-16 px-6 border-t border-border">
+      <div className="container mx-auto max-w-5xl">
+        <h2 className="text-2xl md:text-3xl font-bold mb-2">Reviews</h2>
+        <p className="text-muted-foreground mb-10">What clients say about working with me.</p>
+
+        <div className="grid grid-cols-3 gap-4 mb-10">
+          <div className="border border-border rounded-lg p-5 text-center">
+            <p className="text-2xl font-bold">10+</p>
+            <p className="text-xs text-muted-foreground mt-1">Projects done</p>
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.05] tracking-tight">
-            What Clients Say<br />
-            <span className="gradient-text">About Working With Me</span>
-          </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-3xl mx-auto leading-relaxed">
-            Real feedback from satisfied clients across the globe 🌍
-          </p>
+          <div className="border border-border rounded-lg p-5 text-center">
+            <p className="text-2xl font-bold">100%</p>
+            <p className="text-xs text-muted-foreground mt-1">Success rate</p>
+          </div>
+          <div className="border border-border rounded-lg p-5 text-center">
+            <p className="text-2xl font-bold">4.9</p>
+            <p className="text-xs text-muted-foreground mt-1">Average rating</p>
+          </div>
         </div>
-        
-        <div className="max-w-3xl mx-auto mb-16">
-          <Carousel 
-            setApi={setApi}
-            className="w-full"
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-          >
+
+        <div className="max-w-3xl mx-auto">
+          <Carousel setApi={setApi} opts={{ align: "center", loop: true }}>
             <CarouselContent>
-              {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index}>
-                  <Card className="border-2">
-                    <CardContent className="p-8">
-                      <div className="flex items-center justify-center gap-1 mb-5">
-                        {renderStars(testimonial.rating)}
-                      </div>
-                      
-                      <Quote className="h-8 w-8 text-foreground/20 mb-4 mx-auto" />
-                      
-                      <p className="text-base md:text-lg text-foreground/90 mb-6 leading-relaxed text-center">
-                        "{testimonial.review}"
-                      </p>
-                      
-                      <div className="border-t border-border pt-5 text-center">
-                        <p className="font-bold text-lg text-foreground mb-1">
-                          {testimonial.name}
-                        </p>
-                        <p className="text-sm text-muted-foreground mb-1">
-                          {testimonial.role}
-                        </p>
-                        <p className="text-sm text-muted-foreground/60">
-                          {testimonial.company}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
+              {testimonials.map((t, i) => (
+                <CarouselItem key={i}>
+                  <div className="border border-border rounded-lg p-6">
+                    <div className="flex items-center gap-1 mb-3">{renderStars(t.rating)}</div>
+                    <p className="text-foreground/90 leading-relaxed mb-5">"{t.review}"</p>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="font-bold">{t.name}</span>
+                      <span className="text-muted-foreground">{t.country}</span>
+                    </div>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            
-            <div className="flex items-center justify-center gap-8 mt-10">
-              <CarouselPrevious className="relative static translate-y-0 h-12 w-12 rounded-full border-2" />
-              <div className="flex items-center gap-3">
-                {Array.from({ length: count }).map((_, index) => (
+            <div className="flex items-center justify-center gap-6 mt-6">
+              <CarouselPrevious className="relative static translate-y-0 h-9 w-9 rounded-full" />
+              <div className="flex items-center gap-2">
+                {Array.from({ length: count }).map((_, i) => (
                   <button
-                    key={index}
-                    className={`h-2.5 rounded-full transition-all duration-300 ${
-                      index + 1 === current 
-                        ? 'w-10 bg-foreground' 
-                        : 'w-2.5 bg-foreground/20 hover:bg-foreground/40'
+                    key={i}
+                    onClick={() => api?.scrollTo(i)}
+                    className={`h-1.5 rounded-full transition-all ${
+                      i + 1 === current ? "w-6 bg-foreground" : "w-1.5 bg-muted-foreground/30"
                     }`}
-                    onClick={() => api?.scrollTo(index)}
                   />
                 ))}
               </div>
-              <CarouselNext className="relative static translate-y-0 h-12 w-12 rounded-full border-2" />
+              <CarouselNext className="relative static translate-y-0 h-9 w-9 rounded-full" />
             </div>
           </Carousel>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <Card className="text-center">
-            <CardContent className="p-8">
-              <div className="text-4xl md:text-5xl font-bold mb-2">
-                10+
-              </div>
-              <p className="text-muted-foreground/70 text-sm">Projects Done</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="text-center">
-            <CardContent className="p-8">
-              <div className="text-4xl md:text-5xl font-bold mb-2">
-                100%
-              </div>
-              <p className="text-muted-foreground/70 text-sm">Success Rate</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="text-center">
-            <CardContent className="p-8">
-              <div className="text-4xl md:text-5xl font-bold mb-2">
-                4.9
-              </div>
-              <p className="text-muted-foreground/70 text-sm">Average Rating</p>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>
