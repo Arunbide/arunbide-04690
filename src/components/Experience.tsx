@@ -7,25 +7,15 @@ const Experience = () => {
       title: "Kotlin Multiplatform Developer",
       company: "Stealth Startup",
       type: "Freelance",
-      meta: "Sep 2025 — Present · Remote (Vaughan, ON, Canada)",
+      meta: "Sep 2025 — May 2026 · Remote (Vaughan, ON, Canada)",
       bullets: [
         "V2 redesign in Material 3, unifying Android, iOS, and Web (WASM) with Kotlin Multiplatform.",
         "Built shared business logic, reusable Compose components, and improved cross-platform scalability.",
       ],
     },
     {
-      title: "Freelance Android Developer",
-      company: "Bank UP",
-      type: "Freelance",
-      meta: "Contract",
-      bullets: [
-        "Built a bank locator app with bonus offers and a referral system to drive engagement.",
-        "Debugged and optimized performance; managed Google Play Console releases and policy compliance.",
-      ],
-    },
-    {
-      title: "Freelance Developer",
-      company: "Fiverr Platform",
+      title: "Android Developer",
+      company: "Freelance",
       type: "Freelance",
       meta: "Ongoing",
       bullets: [
