@@ -1,4 +1,4 @@
-import { Badge } from "@/components/ui/badge";
+import { Calendar, MapPin } from "lucide-react";
 import { Calendar, MapPin } from "lucide-react";
 
 const Experience = () => {
