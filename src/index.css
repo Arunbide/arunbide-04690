@@ -2,51 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Clean Fiverr-inspired light minimal design system */
 
 @layer base {
   :root {
-    /* Authentic Framer Dark Theme */
-    --background: 240 10% 4%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 220 13% 13%;
 
-    --card: 240 6% 8%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 13%;
 
-    --popover: 240 6% 8%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 13%;
 
-    --primary: 0 0% 100%;
-    --primary-foreground: 240 10% 4%;
+    --primary: 220 13% 13%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4% 12%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 13%;
 
-    --muted: 240 5% 10%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 240 5% 14%;
+    --accent: 142 71% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 6% 14%;
-    --input: 240 6% 14%;
-    --ring: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 13% 13%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 240 6% 8%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 240 10% 4%;
-    --sidebar-accent: 240 5% 14%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 240 6% 14%;
-    --sidebar-ring: 0 0% 100%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 13% 13%;
+    --sidebar-primary: 220 13% 13%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 13% 13%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 220 13% 13%;
   }
 }
 
@@ -63,60 +60,62 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: hsl(var(--background));
-    position: relative;
   }
 
-  
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.2;
+    color: hsl(var(--foreground));
   }
 }
 
 @layer components {
-  /* Simple Card */
   .simple-card {
-    @apply rounded-lg bg-card border border-border/40 p-6;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply rounded-lg bg-card border border-border p-6;
+    transition: border-color 0.2s ease;
   }
-  
+
   .simple-card:hover {
-    border-color: hsl(var(--border));
+    border-color: hsl(var(--muted-foreground) / 0.4);
+  }
+
+  .online-badge {
+    @apply inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full border;
+    color: hsl(var(--accent));
+    border-color: hsl(var(--accent) / 0.4);
+    background: hsl(var(--accent) / 0.05);
+  }
+
+  .online-badge::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: hsl(var(--accent));
   }
 }
 
-/* Embla Carousel Styles */
-.embla {
-  overflow: hidden;
-}
-
+/* Embla Carousel */
+.embla { overflow: hidden; }
 .embla__container {
   backface-visibility: hidden;
   display: flex;
   touch-action: pan-y pinch-zoom;
   margin-left: calc(1.5rem * -1);
 }
-
 .embla__slide {
   flex: 0 0 auto;
   min-width: 0;
   padding-left: 1.5rem;
   position: relative;
 }
-
 @media (max-width: 768px) {
-  .embla__container {
-    margin-left: calc(1rem * -1);
-  }
-  
-  .embla__slide {
-    padding-left: 1rem;
-  }
+  .embla__container { margin-left: calc(1rem * -1); }
+  .embla__slide { padding-left: 1rem; }
 }

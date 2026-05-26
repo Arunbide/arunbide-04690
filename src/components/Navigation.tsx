@@ -7,88 +7,72 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
-  return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? "backdrop-blur-sm bg-background/80" 
-        : "bg-transparent"
-    }`}>
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          <div className="font-bold text-xl">
-            Arun Bide
-          </div>
+  const links = [
+    { id: "projects", label: "Work" },
+    { id: "skills", label: "Skills" },
+    { id: "experience", label: "Resume" },
+    { id: "testimonials", label: "Reviews" },
+  ];
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {[
-              { id: "projects", label: "Work" },
-              { id: "skills", label: "About" },
-              { id: "experience", label: "Resume" }
-            ].map((item) => (
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : "bg-background"
+      }`}
+    >
+      <div className="container mx-auto px-6 max-w-5xl">
+        <div className="flex items-center justify-between h-16">
+          <div className="font-bold text-lg">Arun Bide</div>
+
+          <div className="hidden md:flex items-center gap-7">
+            {links.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground/80 hover:text-foreground transition-colors text-sm"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.label}
               </button>
             ))}
-            <Button
-              size="sm"
-              onClick={() => scrollToSection("contact")}
-            >
-              Book a Call
+            <Button size="sm" onClick={() => scrollToSection("contact")}>
+              Contact me
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-card border-t border-border py-4">
-            <div className="space-y-2">
-              {[
-                { id: "projects", label: "Work" },
-                { id: "skills", label: "About" },
-                { id: "experience", label: "Resume" },
-                { id: "contact", label: "Contact" }
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-4 py-3 text-foreground hover:bg-muted rounded-lg transition-colors"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
+          <div className="md:hidden border-t border-border py-3">
+            {links.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left px-2 py-3 text-sm hover:bg-muted rounded"
+              >
+                {item.label}
+              </button>
+            ))}
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="block w-full text-left px-2 py-3 text-sm font-semibold hover:bg-muted rounded"
+            >
+              Contact me
+            </button>
           </div>
         )}
       </div>
