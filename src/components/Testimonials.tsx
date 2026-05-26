@@ -8,6 +8,7 @@ const Testimonials = () => {
   const [count, setCount] = useState(0);
 
   const testimonials = [
+    { name: "Gilad", country: "Client", rating: 5, review: "Arun did an excellent job developing my Kotlin Multiplatform app. He is highly dedicated, reliable, and consistently delivers high-quality work on time. Communication was smooth throughout the project, and he was always willing to go the extra mile to solve issues and improve the product. I highly recommend working with Arun." },
     { name: "sireeshaba", country: "United States", rating: 5, review: "Arun's contribution to our project was nothing short of exceptional. Clean, well-documented code that significantly contributed to the success of the project." },
     { name: "atreyarao", country: "India", rating: 5, review: "Exceptional work in app testing. Attention to detail, expertise, and professionalism truly stand out." },
     { name: "activealex", country: "United Kingdom", rating: 5, review: "Pleasure to work with. Very professional, helpful and patient!" },
