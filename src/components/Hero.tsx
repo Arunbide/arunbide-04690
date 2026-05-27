@@ -2,17 +2,24 @@ import { Button } from "@/components/ui/button";
 import { Linkedin, ArrowRight } from "lucide-react";
 import avatar from "@/assets/arun-avatar.png";
 
+const socialBase =
+  "group inline-flex items-center gap-2 px-4 py-2 rounded-md border border-border hover:border-foreground/40 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200 text-sm font-medium";
+
 const Hero = () => {
   return (
     <section id="hero" className="pt-28 pb-16 px-6">
       <div className="container mx-auto max-w-5xl">
         {/* Profile header */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-10">
-          <img
-            src={avatar}
-            alt="Arun Bide"
-            className="h-24 w-24 rounded-full object-cover border border-border flex-shrink-0"
-          />
+        <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-10 animate-fade-in">
+          <div className="relative flex-shrink-0 group">
+            <span className="absolute -inset-1 rounded-full bg-foreground/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <img
+              src={avatar}
+              alt="Arun Bide"
+              className="relative h-24 w-24 rounded-full object-cover border border-border transition-transform duration-300 group-hover:scale-[1.03]"
+            />
+            <span className="absolute bottom-1 right-1 h-3 w-3 rounded-full bg-accent ring-2 ring-background animate-pulse" />
+          </div>
           <div className="flex-1">
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Arun Bide</h1>
             <p className="text-muted-foreground">
@@ -23,7 +30,7 @@ const Hero = () => {
 
         {/* About */}
         <div className="grid md:grid-cols-3 gap-6 mb-10">
-          <div className="md:col-span-2 space-y-4 text-foreground/80 leading-relaxed">
+          <div className="md:col-span-2 space-y-4 text-foreground/80 leading-relaxed animate-fade-in" style={{ animationDelay: "60ms", animationFillMode: "backwards" }}>
             <p className="text-lg">
               I build scalable, production-ready mobile apps for Android and iOS — with a focus on
               clean architecture, smooth UX, and modern tooling.
@@ -35,15 +42,20 @@ const Hero = () => {
               iOS, and Web.
             </p>
           </div>
-          <div className="border border-border rounded-lg p-5 space-y-3 text-sm">
+          <div className="border border-border rounded-lg p-5 space-y-3 text-sm hover:border-foreground/40 hover:shadow-sm transition-all duration-300 animate-fade-in" style={{ animationDelay: "120ms", animationFillMode: "backwards" }}>
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Focus</p>
               <p className="font-medium">Android · iOS · KMP · Compose</p>
             </div>
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Available for</p>
-              <p className="font-medium">Freelance</p>
-              <p className="font-medium">Agency contracts</p>
+              <p className="font-medium inline-flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 animate-ping" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                </span>
+                Freelance
+              </p>
             </div>
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Based in</p>
@@ -52,12 +64,13 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 mb-10">
+        <div className="flex flex-wrap items-center gap-3 mb-10 animate-fade-in" style={{ animationDelay: "180ms", animationFillMode: "backwards" }}>
           <Button
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="rounded-md"
+            className="rounded-md group"
           >
-            Get in touch <ArrowRight className="h-4 w-4 ml-2" />
+            Get in touch
+            <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
           </Button>
           <Button
             variant="outline"
@@ -69,37 +82,17 @@ const Hero = () => {
         </div>
 
         {/* Social links */}
-        <div className="flex flex-wrap items-center gap-3">
-          <a
-            href="https://x.com/bidearun"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-border hover:border-foreground/40 transition-colors text-sm font-medium"
-          >
-            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X
+        <div className="flex flex-wrap items-center gap-3 animate-fade-in" style={{ animationDelay: "240ms", animationFillMode: "backwards" }}>
+          <a href="https://x.com/bidearun" target="_blank" rel="noopener noreferrer" className={socialBase}>
+            <svg className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X
           </a>
-          <a
-            href="https://www.linkedin.com/in/arunbide"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-border hover:border-foreground/40 transition-colors text-sm font-medium"
-          >
-            <Linkedin className="h-4 w-4" /> LinkedIn
+          <a href="https://www.linkedin.com/in/arunbide" target="_blank" rel="noopener noreferrer" className={socialBase}>
+            <Linkedin className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" /> LinkedIn
           </a>
-          <a
-            href="https://www.upwork.com/freelancers/arunbide"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 rounded-md border border-border hover:border-foreground/40 transition-colors text-sm font-medium"
-          >
+          <a href="https://www.upwork.com/freelancers/arunbide" target="_blank" rel="noopener noreferrer" className={socialBase}>
             Upwork
           </a>
-          <a
-            href="https://www.fiverr.com/arunbide"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 rounded-md border border-border hover:border-foreground/40 transition-colors text-sm font-medium"
-          >
+          <a href="https://www.fiverr.com/arunbide" target="_blank" rel="noopener noreferrer" className={socialBase}>
             Fiverr
           </a>
         </div>
