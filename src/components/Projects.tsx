@@ -54,9 +54,9 @@ const Projects = () => {
             return (
               <div
                 key={p.title}
-                className="border border-border rounded-lg p-5 hover:border-foreground/40 transition-colors"
+                className="group border border-border rounded-lg p-5 hover:border-foreground/40 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
               >
-                <Icon className="h-5 w-5 mb-4 text-foreground" />
+                <Icon className="h-5 w-5 mb-4 text-foreground transition-transform duration-300 group-hover:scale-110 group-hover:text-accent" />
                 <h3 className="text-lg font-bold mb-2">{p.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{p.description}</p>
                 <div className="flex flex-wrap gap-1.5">
