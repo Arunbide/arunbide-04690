@@ -14,7 +14,6 @@ const Hero = () => {
             className="h-24 w-24 rounded-full object-cover border border-border flex-shrink-0"
           />
           <div className="flex-1">
-            <p className="text-sm text-muted-foreground mb-1">Portfolio</p>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Arun Bide</h1>
             <p className="text-muted-foreground">
               Android & Kotlin Multiplatform Developer · Building production-ready mobile apps.
