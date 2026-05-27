@@ -84,15 +84,15 @@ const Projects = () => {
           </Button>
           <Button
             variant="outline"
-            onClick={() => window.open("https://www.fiverr.com/arunbide", "_blank")}
-          >
-            <ExternalLink className="h-4 w-4 mr-2" /> Hire on Fiverr
-          </Button>
-          <Button
-            variant="outline"
             onClick={() => window.open("https://www.upwork.com/freelancers/arunbide", "_blank")}
           >
             <ExternalLink className="h-4 w-4 mr-2" /> Hire on Upwork
+          </Button>
+          <Button
+            variant="outline"
+            onClick={() => window.open("https://www.fiverr.com/arunbide", "_blank")}
+          >
+            <ExternalLink className="h-4 w-4 mr-2" /> Hire on Fiverr
           </Button>
         </div>
       </div>
