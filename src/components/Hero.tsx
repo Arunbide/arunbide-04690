@@ -38,11 +38,12 @@ const Hero = () => {
           <div className="border border-border rounded-lg p-5 space-y-3 text-sm">
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Focus</p>
-              <p className="font-medium">Android · KMP · Compose</p>
+              <p className="font-medium">Android · iOS · KMP · Compose</p>
             </div>
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Available for</p>
-              <p className="font-medium">Freelance & contract work</p>
+              <p className="font-medium">Freelance projects</p>
+              <p className="font-medium">Agency contracts</p>
             </div>
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Based in</p>
