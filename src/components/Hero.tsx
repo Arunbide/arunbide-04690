@@ -42,7 +42,7 @@ const Hero = () => {
             </div>
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Available for</p>
-              <p className="font-medium">Freelance projects</p>
+              <p className="font-medium">Freelance</p>
               <p className="font-medium">Agency contracts</p>
             </div>
             <div>
