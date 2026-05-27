@@ -14,7 +14,6 @@ const Hero = () => {
             className="h-24 w-24 rounded-full object-cover border border-border flex-shrink-0"
           />
           <div className="flex-1">
-            <p className="text-sm text-muted-foreground mb-1">Portfolio</p>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Arun Bide</h1>
             <p className="text-muted-foreground">
               Android & Kotlin Multiplatform Developer · Building production-ready mobile apps.
@@ -39,11 +38,12 @@ const Hero = () => {
           <div className="border border-border rounded-lg p-5 space-y-3 text-sm">
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Focus</p>
-              <p className="font-medium">Android · KMP · Compose</p>
+              <p className="font-medium">Android · iOS · KMP · Compose</p>
             </div>
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Available for</p>
-              <p className="font-medium">Freelance & contract work</p>
+              <p className="font-medium">Freelance projects</p>
+              <p className="font-medium">Agency contracts</p>
             </div>
             <div>
               <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Based in</p>
