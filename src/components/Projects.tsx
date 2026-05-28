@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, Music, Newspaper, Cloud, Contact as ContactIcon, Heart, Lock } from "lucide-react";
+import { ExternalLink, Music, Newspaper, Cloud, Contact as ContactIcon, Heart, Lock } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -76,12 +76,6 @@ const Projects = () => {
         </div>
 
         <div className="mt-10 flex flex-wrap gap-3">
-          <Button
-            variant="outline"
-            onClick={() => window.open("https://github.com/arunbide", "_blank")}
-          >
-            <Github className="h-4 w-4 mr-2" /> View GitHub
-          </Button>
           <Button
             variant="outline"
             onClick={() => window.open("https://www.upwork.com/freelancers/arunbide", "_blank")}

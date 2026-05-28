@@ -18,7 +18,7 @@ const Hero = () => {
               alt="Arun Bide"
               className="relative h-24 w-24 rounded-full object-cover border border-border transition-transform duration-300 group-hover:scale-[1.03]"
             />
-            <span className="absolute bottom-1 right-1 h-3 w-3 rounded-full bg-accent ring-2 ring-background animate-pulse" />
+            <span className="absolute bottom-[5px] right-[5px] sm:bottom-1 sm:right-1 h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-accent ring-[1.5px] sm:ring-2 ring-background animate-pulse" />
           </div>
           <div className="flex-1">
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Arun Bide</h1>
