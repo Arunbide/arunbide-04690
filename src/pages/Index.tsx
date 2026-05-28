@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
+import FeaturedProject from "@/components/FeaturedProject";
 import Projects from "@/components/Projects";
 import KMPBenefits from "@/components/KMPBenefits";
 import Experience from "@/components/Experience";
@@ -12,6 +13,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <Hero />
+      <FeaturedProject />
       <Skills />
       <KMPBenefits />
       <Projects />
