@@ -78,12 +78,6 @@ const Projects = () => {
         <div className="mt-10 flex flex-wrap gap-3">
           <Button
             variant="outline"
-            onClick={() => window.open("https://github.com/arunbide", "_blank")}
-          >
-            <Github className="h-4 w-4 mr-2" /> View GitHub
-          </Button>
-          <Button
-            variant="outline"
             onClick={() => window.open("https://www.upwork.com/freelancers/arunbide", "_blank")}
           >
             <ExternalLink className="h-4 w-4 mr-2" /> Hire on Upwork
