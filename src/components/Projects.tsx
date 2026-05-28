@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, Music, Newspaper, Cloud, Contact as ContactIcon, Heart, Lock } from "lucide-react";
+import { ExternalLink, Music, Newspaper, Cloud, Contact as ContactIcon, Heart, Lock } from "lucide-react";
 
 const Projects = () => {
   const projects = [
