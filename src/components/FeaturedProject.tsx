@@ -27,9 +27,10 @@ const highlights = [
 const stack = [
   "Kotlin Multiplatform",
   "Compose Multiplatform",
+  "WASM Multiplatform",
   "iOS",
   "Android",
-  "OpenAI (WASM multiplatform)",
+  "OpenAI",
   "Anthropic",
   "Claude Vision",
   "Gemini OCR",
