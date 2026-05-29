@@ -37,7 +37,7 @@ const Hero = () => {
             </p>
             <p className="text-base sm:text-lg">
               My day-to-day stack is <span className="font-semibold text-foreground">Kotlin, Jetpack Compose,
-              Flutter, and Kotlin Multiplatform</span>. I've shipped AI-powered features, integrated
+              Kotlin Multiplatform, and Flutter</span>. I've shipped AI-powered features, integrated
               Firebase and REST APIs, and worked on cross-platform redesigns shared across Android,
               iOS, and Web.
             </p>
