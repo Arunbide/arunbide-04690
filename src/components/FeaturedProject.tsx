@@ -62,25 +62,29 @@ const FeaturedProject = () => {
 
         {/* Main card */}
         <div className="group/card border border-border rounded-2xl overflow-hidden bg-secondary/30 transition-all duration-500 hover:border-foreground/20">
-          {/* Screenshots row */}
-          <div className="relative overflow-hidden bg-gradient-to-br from-secondary/60 via-background to-secondary/40 px-4 sm:px-8 pt-6 sm:pt-10 pb-4 sm:pb-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+          {/* Screenshots row — Apple App Store style horizontal scroll */}
+          <div className="relative bg-gradient-to-br from-secondary/60 via-background to-secondary/40 pt-6 sm:pt-10 pb-5 sm:pb-7">
+            <div
+              className="flex gap-3 sm:gap-5 overflow-x-auto snap-x snap-mandatory scroll-px-5 sm:scroll-px-8 px-5 sm:px-8 pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            >
               {screenshots.map((s, i) => (
                 <div
                   key={i}
-                  className="group relative aspect-[9/19] rounded-xl overflow-hidden border border-border bg-background shadow-sm hover:shadow-xl hover:-translate-y-2 hover:rotate-[-0.5deg] transition-all duration-500 animate-fade-in"
+                  className="group relative shrink-0 snap-start w-[58%] sm:w-[42%] md:w-[28%] aspect-[9/19] rounded-[22px] overflow-hidden border border-border bg-background shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 animate-fade-in"
                   style={{ animationDelay: `${i * 90}ms`, animationFillMode: "backwards" }}
                 >
                   <img
                     src={s.src}
                     alt={s.alt}
                     loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               ))}
             </div>
+            {/* Edge fades for Apple-like feel */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-10 bg-gradient-to-r from-secondary/80 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-10 bg-gradient-to-l from-secondary/80 to-transparent" />
           </div>
 
           {/* Footer / details */}
