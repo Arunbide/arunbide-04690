@@ -5,10 +5,16 @@ const Contact = () => {
   const handleScheduleCall = () => window.open("https://cal.com/bidearun/", "_blank");
 
   return (
-    <section id="contact" className="py-16 px-6 border-t border-border">
+    <section id="contact" className="py-14 sm:py-20 px-5 sm:px-6 border-t border-border">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Let's work together</h2>
-        <p className="text-muted-foreground mb-10 max-w-2xl">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+          <p className="text-[11px] sm:text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            Contact
+          </p>
+        </div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3">Let's work together</h2>
+        <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl">
           Whether it's Kotlin Multiplatform, native Android, or AI integration — I'd love to hear
           what you're building.
         </p>
