@@ -12,16 +12,6 @@ const Experience = () => {
         "Built shared business logic and reusable Compose components for cross-platform scalability.",
       ],
     },
-    {
-      title: "Android & KMP Developer",
-      company: "Freelance (Fiverr · Upwork)",
-      type: "Freelance · Worldwide",
-      period: "Ongoing",
-      bullets: [
-        "Shipped multiple production Android apps using Firebase, REST, and modern Android practices.",
-        "Owned the full lifecycle — design, build, publish — with a 100% job-success rate.",
-      ],
-    },
   ];
 
   return (
