@@ -44,23 +44,33 @@ const Testimonials = () => {
   }, [api]);
 
   return (
-    <section id="testimonials" className="py-16 px-6 border-t border-border">
+    <section id="testimonials" className="py-14 sm:py-20 px-5 sm:px-6 border-t border-border">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Reviews</h2>
-        <p className="text-muted-foreground mb-10">What clients say about working with me.</p>
+        <div className="flex items-center gap-2 mb-3">
+          <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
+          <p className="text-[11px] sm:text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            Reviews
+          </p>
+        </div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3">
+          Trusted by clients worldwide
+        </h2>
+        <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl">
+          A consistent 5-star track record across freelance platforms.
+        </p>
 
-        <div className="grid grid-cols-3 gap-4 mb-10">
-          <div className="border border-border rounded-lg p-5 text-center">
-            <p className="text-2xl font-bold">10+</p>
-            <p className="text-xs text-muted-foreground mt-1">Projects done</p>
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8 sm:mb-10">
+          <div className="border border-border rounded-xl p-4 sm:p-5 text-center bg-secondary/20">
+            <p className="text-xl sm:text-2xl font-bold">10+</p>
+            <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">Projects done</p>
           </div>
-          <div className="border border-border rounded-lg p-5 text-center">
-            <p className="text-2xl font-bold">100%</p>
-            <p className="text-xs text-muted-foreground mt-1">Success rate</p>
+          <div className="border border-border rounded-xl p-4 sm:p-5 text-center bg-secondary/20">
+            <p className="text-xl sm:text-2xl font-bold">100%</p>
+            <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">Success rate</p>
           </div>
-          <div className="border border-border rounded-lg p-5 text-center">
-            <p className="text-2xl font-bold">4.9</p>
-            <p className="text-xs text-muted-foreground mt-1">Average rating</p>
+          <div className="border border-border rounded-xl p-4 sm:p-5 text-center bg-secondary/20">
+            <p className="text-xl sm:text-2xl font-bold">4.9</p>
+            <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">Avg. rating</p>
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Music, Newspaper, Cloud, Contact as ContactIcon, Heart, Lock } from "lucide-react";
+import { ExternalLink, Music, Newspaper, Cloud, Contact as ContactIcon, Heart, Lock, ArrowUpRight } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -43,31 +43,44 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 px-6 border-t border-border">
+    <section id="projects" className="py-14 sm:py-20 px-5 sm:px-6 border-t border-border">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Selected Work</h2>
-        <p className="text-muted-foreground mb-10">A few apps I've built recently.</p>
+        <div className="flex items-center gap-2 mb-3">
+          <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
+          <p className="text-[11px] sm:text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            Selected Work
+          </p>
+        </div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3">
+          A few apps I've built
+        </h2>
+        <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl">
+          From spiritual-music streaming to AI health trackers — shipped end-to-end.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {projects.map((p) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+          {projects.map((p, i) => {
             const Icon = p.icon;
             return (
               <div
                 key={p.title}
-                className="group border border-border rounded-lg p-5 hover:border-foreground/40 hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+                className="group relative border border-border rounded-xl p-5 bg-secondary/20 hover:bg-secondary/40 hover:border-foreground/20 hover:-translate-y-0.5 transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${i * 60}ms`, animationFillMode: "backwards" }}
               >
-                <Icon className="h-5 w-5 mb-4 text-foreground transition-transform duration-300 group-hover:scale-110 group-hover:text-accent" />
-                <h3 className="text-lg font-bold mb-2">{p.title}</h3>
+                <ArrowUpRight className="absolute top-4 right-4 h-4 w-4 text-muted-foreground/40 group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background mb-4 transition-colors group-hover:border-foreground/30">
+                  <Icon className="h-4 w-4" />
+                </span>
+                <h3 className="text-base sm:text-lg font-bold mb-1.5">{p.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{p.description}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {p.tech.map((t) => (
-                    <Badge
+                    <span
                       key={t}
-                      variant="secondary"
-                      className="bg-secondary text-secondary-foreground font-normal text-xs rounded-md px-2 py-0.5"
+                      className="inline-flex items-center text-[11px] text-foreground/75 bg-background border border-border rounded-md px-2 py-0.5"
                     >
                       {t}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
               </div>
@@ -75,16 +88,18 @@ const Projects = () => {
           })}
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-3">
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3">
           <Button
             variant="outline"
             onClick={() => window.open("https://www.upwork.com/freelancers/arunbide", "_blank")}
+            className="rounded-md w-full sm:w-auto"
           >
             <ExternalLink className="h-4 w-4 mr-2" /> Hire on Upwork
           </Button>
           <Button
             variant="outline"
             onClick={() => window.open("https://www.fiverr.com/arunbide", "_blank")}
+            className="rounded-md w-full sm:w-auto"
           >
             <ExternalLink className="h-4 w-4 mr-2" /> Hire on Fiverr
           </Button>
