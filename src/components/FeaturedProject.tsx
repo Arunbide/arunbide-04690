@@ -70,14 +70,14 @@ const FeaturedProject = () => {
               {screenshots.map((s, i) => (
                 <div
                   key={i}
-                  className="group relative shrink-0 snap-start w-[58%] sm:w-[42%] md:w-[28%] aspect-[9/19] rounded-[22px] overflow-hidden border border-border bg-background shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 animate-fade-in"
+                  className="group relative shrink-0 snap-start w-[62%] sm:w-[44%] md:w-[28%] aspect-[1/2] rounded-[22px] overflow-hidden border border-border bg-background shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 animate-fade-in"
                   style={{ animationDelay: `${i * 90}ms`, animationFillMode: "backwards" }}
                 >
                   <img
                     src={s.src}
                     alt={s.alt}
                     loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                 </div>
               ))}
