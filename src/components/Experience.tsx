@@ -14,8 +14,8 @@ const Experience = () => {
     },
     {
       title: "Android & KMP Developer",
-      company: "Freelance (Fiverr · Upwork)",
-      type: "Freelance · Worldwide",
+      company: "Freelance",
+      type: "Worldwide",
       period: "Ongoing",
       bullets: [
         "Shipped multiple production Android apps using Firebase, REST, and modern Android practices.",
