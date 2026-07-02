@@ -1,5 +1,4 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Music, Newspaper, Cloud, Contact as ContactIcon, Heart, Lock, ArrowUpRight } from "lucide-react";
 
 const Projects = () => {
