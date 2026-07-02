@@ -47,7 +47,7 @@ const Navigation = () => {
             ))}
             <ThemeToggle />
             <Button size="sm" onClick={() => scrollToSection("contact")}>
-              Contact me
+              Hire me on Upwork
             </Button>
           </div>
 
@@ -74,7 +74,7 @@ const Navigation = () => {
               onClick={() => scrollToSection("contact")}
               className="block w-full text-left px-2 py-3 text-sm font-semibold hover:bg-muted rounded"
             >
-              Contact me
+              Hire me on Upwork
             </button>
           </div>
         )}
