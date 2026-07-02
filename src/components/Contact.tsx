@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Calendar, Github, Linkedin } from "lucide-react";
 
 const Contact = () => {
-  return (
     <section id="contact" className="py-14 sm:py-20 px-5 sm:px-6 border-t border-border">
       <div className="container mx-auto max-w-5xl">
         <div className="flex items-center gap-2 mb-3">
