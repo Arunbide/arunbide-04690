@@ -47,7 +47,7 @@ const Navigation = () => {
             ))}
             <ThemeToggle />
             <Button size="sm" onClick={() => scrollToSection("contact")}>
-              Contact me
+              Hire me on Upwork
             </Button>
           </div>
 
