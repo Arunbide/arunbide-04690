@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Calendar, Github, Linkedin } from "lucide-react";
+import { Calendar, Github, Linkedin } from "lucide-react";
 
 const Contact = () => {
-  const handleScheduleCall = () => window.open("https://cal.com/bidearun/", "_blank");
-
   return (
     <section id="contact" className="py-14 sm:py-20 px-5 sm:px-6 border-t border-border">
       <div className="container mx-auto max-w-5xl">
@@ -19,14 +17,14 @@ const Contact = () => {
           what you're building.
         </p>
 
-        {/* Schedule card */}
+        {/* Hire on Upwork */}
         <div className="border border-border rounded-lg p-6 md:p-8 mb-6">
           <div className="flex items-start gap-4 mb-5">
             <div className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
               <Calendar className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-1">Schedule a free consultation</h3>
+              <h3 className="text-lg font-bold mb-1">Hire on Upwork</h3>
               <p className="text-sm text-muted-foreground">
                 Discuss your project requirements, timeline, and how I can help bring your app to
                 life.
@@ -44,44 +42,16 @@ const Contact = () => {
             <span>Firebase & AI</span>
           </div>
 
-          <Button onClick={handleScheduleCall} className="rounded-md">
-            <Calendar className="h-4 w-4 mr-2" /> Book a 15-min call
-          </Button>
+          <div className="flex items-center gap-3 mb-3">
+            <Button onClick={() => window.open("https://www.upwork.com/freelancers/arunbide", "_blank")} className="rounded-md">
+              <Calendar className="h-4 w-4 mr-2" /> Hire on Upwork
+            </Button>
+            <span className="text-sm font-semibold text-foreground">$30/hour</span>
+          </div>
 
-          <p className="text-xs text-muted-foreground mt-3">
-            Free 15-minute consultation · Mon–Fri 9 AM – 6 PM IST
+          <p className="text-xs text-muted-foreground">
+            Fixed-price projects also available · Mon–Fri 9 AM – 6 PM IST
           </p>
-        </div>
-
-        {/* Contact options */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          <div className="border border-border rounded-lg p-5">
-            <div className="flex items-center gap-2 mb-2">
-              <Mail className="h-4 w-4" />
-              <span className="font-bold">Email</span>
-            </div>
-            <a
-              href="mailto:Agbide7@gmail.com"
-              className="text-sm text-foreground/80 hover:text-foreground underline underline-offset-2"
-            >
-              Agbide7@gmail.com
-            </a>
-            <p className="text-xs text-muted-foreground mt-2">Replies within 24 hours.</p>
-          </div>
-
-          <div className="border border-border rounded-lg p-5">
-            <div className="flex items-center gap-2 mb-2">
-              <Phone className="h-4 w-4" />
-              <span className="font-bold">Phone</span>
-            </div>
-            <a
-              href="tel:+919322832034"
-              className="text-sm text-foreground/80 hover:text-foreground underline underline-offset-2"
-            >
-              +91 9322832034
-            </a>
-            <p className="text-xs text-muted-foreground mt-2">Mon–Fri, 9 AM – 6 PM IST.</p>
-          </div>
         </div>
 
         {/* Social */}
@@ -97,10 +67,6 @@ const Contact = () => {
           <a href="https://www.upwork.com/freelancers/arunbide" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-2 rounded-md border border-border hover:border-foreground/40 transition-colors text-sm font-medium">
             Upwork
-          </a>
-          <a href="https://www.fiverr.com/arunbide" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 rounded-md border border-border hover:border-foreground/40 transition-colors text-sm font-medium">
-            Fiverr
           </a>
         </div>
 
