@@ -8,10 +8,10 @@ const Contact = () => {
         <div className="flex items-center gap-2 mb-3">
           <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
           <p className="text-[11px] sm:text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            Contact
+            Hire me
           </p>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3">Let's work together</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3">Hire me on Upwork</h2>
         <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl">
           Whether it's Kotlin Multiplatform, native Android, or AI integration — I'd love to hear
           what you're building.
