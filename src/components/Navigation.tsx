@@ -46,9 +46,10 @@ const Navigation = () => {
               </button>
             ))}
             <ThemeToggle />
-            <Button size="sm" onClick={() => scrollToSection("contact")}>
-              Contact me
+            <Button size="sm" onClick={() => window.open("https://www.upwork.com/freelancers/arunbide", "_blank")}>
+              Hire me on Upwork
             </Button>
+
           </div>
 
           <div className="md:hidden flex items-center gap-1">
@@ -71,11 +72,12 @@ const Navigation = () => {
               </button>
             ))}
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => window.open("https://www.upwork.com/freelancers/arunbide", "_blank")}
               className="block w-full text-left px-2 py-3 text-sm font-semibold hover:bg-muted rounded"
             >
-              Contact me
+              Hire me on Upwork
             </button>
+
           </div>
         )}
       </div>
