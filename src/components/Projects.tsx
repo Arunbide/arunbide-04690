@@ -89,7 +89,13 @@ const Projects = () => {
         </div>
 
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3">
-
+          <Button
+            variant="outline"
+            onClick={() => window.open("https://www.upwork.com/freelancers/arunbide", "_blank")}
+            className="rounded-md w-full sm:w-auto"
+          >
+            <ExternalLink className="h-4 w-4 mr-2" /> Hire on Upwork
+          </Button>
           <Button
             variant="outline"
             onClick={() => window.open("https://www.fiverr.com/arunbide", "_blank")}
