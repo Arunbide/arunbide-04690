@@ -126,8 +126,8 @@
 .connect-icon { background: hsl(var(--connect-subtle)); color: hsl(var(--connect-fg)); border: 1px solid hsl(var(--connect-subtle)); }
 .connect-kicker { font-family: "DM Mono", ui-monospace, monospace; font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: hsl(var(--connect-muted)); }
 .connect-muted { color: hsl(var(--connect-muted)); }
-.connect-cta { background: hsl(var(--connect-fg)); color: hsl(var(--connect-bg)); transition: transform .2s ease, box-shadow .2s ease; }
-.connect-cta:hover { background: hsl(var(--connect-fg)); color: hsl(var(--connect-bg)); transform: translateY(-2px); box-shadow: 0 12px 25px hsl(0 0% 0% / .2); }
+.connect-cta { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); transition: transform .2s ease, box-shadow .2s ease; }
+.connect-cta:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); transform: translateY(-2px); box-shadow: 0 12px 25px hsl(var(--foreground) / .15); }
 .connect-ticket { border: 1px solid hsl(var(--connect-subtle)); background: hsl(var(--connect-subtle)); backdrop-filter: blur(10px); }
 
 @layer utilities {
