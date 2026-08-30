@@ -119,9 +119,9 @@
 .review-stat:hover { transform: translateY(-4px); border-color: hsl(var(--foreground) / .25); }
 .testimonial-card { position: relative; overflow: hidden; }
 .testimonial-card::before { content: "“"; position: absolute; right: 1.4rem; top: -.65rem; font-family: Georgia, serif; font-size: 8rem; line-height: 1; color: hsl(var(--accent) / .13); }
-.connect-panel { --connect-bg: 224 25% 12%; --connect-fg: 0 0% 100%; --connect-muted: 220 15% 76%; --connect-subtle: 0 0% 100% / .10; position: relative; overflow: hidden; border: 1px solid hsl(var(--foreground) / .15); background: hsl(var(--connect-bg)); color: hsl(var(--connect-fg)); }
-.dark .connect-panel { --connect-bg: 142 28% 92%; --connect-fg: 220 22% 12%; --connect-muted: 220 12% 35%; --connect-subtle: 220 22% 12% / .10; }
-.connect-panel::after { content: ""; position: absolute; width: 22rem; height: 22rem; right: -8rem; bottom: -12rem; border-radius: 999px; background: hsl(var(--accent)); filter: blur(20px); opacity: .5; }
+.connect-panel { --connect-fg: var(--card-foreground); --connect-muted: var(--muted-foreground); --connect-subtle: var(--foreground) / .07; position: relative; overflow: hidden; border: 1px solid hsl(var(--border)); background: hsl(var(--card)); color: hsl(var(--card-foreground)); }
+.connect-panel::after { content: ""; position: absolute; width: 22rem; height: 22rem; right: -8rem; bottom: -12rem; border-radius: 999px; background: hsl(var(--accent)); filter: blur(20px); opacity: .12; }
+
 .connect-panel > * { position: relative; z-index: 1; }
 .connect-icon { background: hsl(var(--connect-subtle)); color: hsl(var(--connect-fg)); border: 1px solid hsl(var(--connect-subtle)); }
 .connect-kicker { font-family: "DM Mono", ui-monospace, monospace; font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: hsl(var(--connect-muted)); }
