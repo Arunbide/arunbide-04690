@@ -9,18 +9,17 @@ const KMPBenefits = () => {
   ];
 
   return (
-    <section className="py-16 px-6 border-t border-border">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Why Kotlin Multiplatform?</h2>
-        <p className="text-muted-foreground mb-10 max-w-2xl">
-          Share business logic between iOS and Android while keeping native UI — faster delivery,
-          less duplication, lower cost.
-        </p>
+    <section className="section-shell py-16 px-5 sm:px-6">
+      <div className="container mx-auto max-w-6xl">
+        <div className="mb-10 grid gap-4 md:grid-cols-2 md:items-end">
+          <div><p className="eyebrow">The KMP advantage</p><h2 className="section-heading">Less duplicate work.<br /><em>More product velocity.</em></h2></div>
+          <p className="max-w-xl text-muted-foreground">Share business logic between iOS and Android while retaining a platform-native experience—faster delivery, lower maintenance, and room to iterate.</p>
+        </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {benefits.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="border border-border rounded-lg p-5">
-              <Icon className="h-5 w-5 mb-3 text-foreground" />
+            <div key={title} className="group rounded-2xl border border-border bg-card/40 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-foreground/25 hover:shadow-xl hover:shadow-foreground/5">
+              <span className="mb-8 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-foreground text-background transition-transform duration-300 group-hover:rotate-6"><Icon className="h-4 w-4" /></span>
               <p className="font-bold mb-1">{title}</p>
               <p className="text-sm text-muted-foreground">{description}</p>
             </div>

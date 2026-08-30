@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Clean Fiverr-inspired light minimal design system */
+/* Editorial, motion-forward portfolio design system */
 
 @layer base {
   :root {
@@ -92,6 +92,8 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
+    background-image: radial-gradient(hsl(var(--foreground) / .03) 1px, transparent 1px);
+    background-size: 22px 22px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -103,6 +105,74 @@
     line-height: 1.2;
     color: hsl(var(--foreground));
   }
+}
+
+.section-shell { position: relative; border-top: 1px solid hsl(var(--border)); }
+.section-shell::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent, hsl(var(--accent) / .025), transparent); }
+.eyebrow { margin-bottom: .8rem; font-family: "DM Mono", ui-monospace, monospace; font-size: .68rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: hsl(var(--muted-foreground)); }
+.section-heading { font-size: clamp(2.25rem, 5vw, 4.6rem); line-height: .96; letter-spacing: -.055em; }
+.section-heading em { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.07em; }
+.project-card::after { content: ""; position: absolute; inset: auto -30% -45% auto; width: 11rem; height: 11rem; border-radius: 999px; background: hsl(var(--accent) / .13); filter: blur(15px); transition: transform .5s ease; }
+.project-card:hover::after { transform: scale(1.8) translate(-1rem, -1rem); }
+.featured-frame { background-image: linear-gradient(145deg, hsl(var(--card)), hsl(var(--secondary) / .45)); }
+.review-stat { transition: transform .3s ease, border-color .3s ease; }
+.review-stat:hover { transform: translateY(-4px); border-color: hsl(var(--foreground) / .25); }
+.testimonial-card { position: relative; overflow: hidden; }
+.testimonial-card::before { content: "“"; position: absolute; right: 1.4rem; top: -.65rem; font-family: Georgia, serif; font-size: 8rem; line-height: 1; color: hsl(var(--accent) / .13); }
+.connect-panel { --connect-bg: 224 25% 12%; --connect-fg: 0 0% 100%; --connect-muted: 220 15% 76%; --connect-subtle: 0 0% 100% / .10; position: relative; overflow: hidden; border: 1px solid hsl(var(--foreground) / .15); background: hsl(var(--connect-bg)); color: hsl(var(--connect-fg)); }
+.dark .connect-panel { --connect-bg: 142 28% 92%; --connect-fg: 220 22% 12%; --connect-muted: 220 12% 35%; --connect-subtle: 220 22% 12% / .10; }
+.connect-panel::after { content: ""; position: absolute; width: 22rem; height: 22rem; right: -8rem; bottom: -12rem; border-radius: 999px; background: hsl(var(--accent)); filter: blur(20px); opacity: .5; }
+.connect-panel > * { position: relative; z-index: 1; }
+.connect-icon { background: hsl(var(--connect-subtle)); color: hsl(var(--connect-fg)); border: 1px solid hsl(var(--connect-subtle)); }
+.connect-kicker { font-family: "DM Mono", ui-monospace, monospace; font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: hsl(var(--connect-muted)); }
+.connect-muted { color: hsl(var(--connect-muted)); }
+.connect-cta { background: hsl(var(--connect-fg)); color: hsl(var(--connect-bg)); transition: transform .2s ease, box-shadow .2s ease; }
+.connect-cta:hover { background: hsl(var(--connect-fg)); color: hsl(var(--connect-bg)); transform: translateY(-2px); box-shadow: 0 12px 25px hsl(0 0% 0% / .2); }
+.connect-ticket { border: 1px solid hsl(var(--connect-subtle)); background: hsl(var(--connect-subtle)); backdrop-filter: blur(10px); }
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(105deg, hsl(var(--foreground)) 15%, hsl(var(--accent)) 80%, #4f7cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero-surface::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(600px circle at var(--pointer-x) var(--pointer-y), hsl(var(--accent) / .13), transparent 46%);
+    transition: background 90ms linear;
+  }
+
+  .hero-grid {
+    background-image: linear-gradient(hsl(var(--foreground) / .045) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground) / .045) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+  }
+
+  .hero-orb {
+    width: 38rem;
+    height: 38rem;
+    right: -18rem;
+    top: -18rem;
+    border-radius: 999px;
+    background: hsl(var(--accent) / .11);
+    filter: blur(18px);
+    animation: drift 13s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(.9); }
+  to { transform: translate3d(-5rem, 5rem, 0) scale(1.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+  .hero-surface::before { display: none; }
 }
 
 @layer components {

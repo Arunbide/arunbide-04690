@@ -25,8 +25,8 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-14 sm:py-20 px-5 sm:px-6 border-t border-border">
-      <div className="container mx-auto max-w-5xl">
+    <section id="experience" className="section-shell py-16 sm:py-24 px-5 sm:px-6">
+      <div className="container mx-auto max-w-6xl">
         <div className="flex items-center gap-2 mb-3">
           <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
           <p className="text-[11px] sm:text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
@@ -48,7 +48,7 @@ const Experience = () => {
                 style={{ animationDelay: `${i * 80}ms`, animationFillMode: "backwards" }}
               >
                 <span className="absolute left-0 top-6 hidden sm:block h-4 w-4 rounded-full border-2 border-background bg-foreground" />
-                <div className="border border-border rounded-xl p-5 sm:p-6 bg-secondary/20 hover:bg-secondary/40 hover:border-foreground/20 transition-all duration-300">
+                <div className="rounded-2xl border border-border bg-card/50 p-5 sm:p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/25 hover:shadow-xl hover:shadow-foreground/5">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-2">
                     <div>
                       <h3 className="text-base sm:text-lg font-bold">{j.title}</h3>

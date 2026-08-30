@@ -1,88 +1,73 @@
+import { useState, type CSSProperties } from "react";
 import { Button } from "@/components/ui/button";
-import { Linkedin, ArrowRight } from "lucide-react";
+import { Linkedin, ArrowDown, ArrowUpRight, Code2, Sparkles } from "lucide-react";
 import avatar from "@/assets/arun-avatar.png";
 
 const socialBase =
   "group inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-border hover:border-foreground/40 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200 text-sm font-medium min-h-10";
 
 const Hero = () => {
+  const [pointer, setPointer] = useState({ x: 48, y: 38 });
+
   return (
-    <section id="hero" className="pt-24 pb-14 px-5 sm:pt-28 sm:pb-16 sm:px-6">
-      <div className="container mx-auto max-w-5xl">
-        {/* Profile header */}
-        <div className="flex flex-col items-start sm:flex-row sm:items-center gap-5 sm:gap-6 mb-8 sm:mb-10 animate-fade-in">
-          <div className="relative w-fit flex-shrink-0 self-start group">
-            <span className="absolute -inset-1 rounded-full bg-foreground/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <img
-              src={avatar}
-              alt="Arun Bide"
-              className="relative h-24 w-24 sm:h-24 sm:w-24 rounded-full object-cover border border-border transition-transform duration-300 group-hover:scale-[1.03]"
-            />
-            <span className="absolute bottom-1 right-1 h-2.5 w-2.5 rounded-full bg-accent ring-2 ring-background animate-pulse" />
-          </div>
-          <div className="flex-1 max-w-2xl">
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Arun Bide</h1>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-xl">
-              Android & Kotlin Multiplatform Developer · Building production-ready mobile apps.
-            </p>
-          </div>
+    <section
+      id="hero"
+      className="hero-surface relative isolate overflow-hidden pt-28 pb-16 px-5 sm:pt-36 sm:pb-24 sm:px-6"
+      onPointerMove={(event) => {
+        const bounds = event.currentTarget.getBoundingClientRect();
+        setPointer({ x: ((event.clientX - bounds.left) / bounds.width) * 100, y: ((event.clientY - bounds.top) / bounds.height) * 100 });
+      }}
+      style={{ "--pointer-x": `${pointer.x}%`, "--pointer-y": `${pointer.y}%` } as CSSProperties}
+    >
+      <div className="hero-grid pointer-events-none absolute inset-0 -z-10" />
+      <div className="hero-orb pointer-events-none absolute -z-10" />
+      <div className="container mx-auto max-w-6xl">
+        <div className="mb-7 flex items-center gap-3 animate-fade-in">
+          <img src={avatar} alt="Arun Bide" className="h-10 w-10 rounded-full object-cover ring-1 ring-border" />
+          <div className="text-sm leading-tight"><p className="font-semibold">Arun Bide</p><p className="text-muted-foreground">Maharashtra, India</p></div>
+          <span className="ml-1 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-foreground"><span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />Available for select projects</span>
         </div>
 
-        {/* About */}
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
-          <div className="md:col-span-2 space-y-4 text-foreground/80 leading-relaxed animate-fade-in" style={{ animationDelay: "60ms", animationFillMode: "backwards" }}>
-            <p className="text-lg sm:text-xl text-balance">
-              I build scalable, production-ready mobile apps for Android and iOS — with a focus on
-              clean architecture, smooth UX, and modern tooling.
+        <div className="grid items-end gap-10 lg:grid-cols-[1.25fr_.75fr]">
+          <div>
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground animate-fade-in">Android · Kotlin Multiplatform · AI</p>
+            <h1 className="max-w-4xl text-5xl font-bold tracking-[-0.06em] text-balance sm:text-7xl lg:text-[5.4rem] animate-fade-in" style={{ animationDelay: "60ms", animationFillMode: "backwards" }}>
+              Mobile apps that feel <span className="text-gradient">inevitable.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl animate-fade-in" style={{ animationDelay: "120ms", animationFillMode: "backwards" }}>
+              I turn complex product ideas into polished Android and iOS experiences—built on scalable Kotlin Multiplatform foundations.
             </p>
-            <p className="text-base sm:text-lg">
-              My day-to-day stack is <span className="font-semibold text-foreground">Kotlin, Jetpack Compose,
-              Kotlin Multiplatform, and Flutter</span>. I've shipped AI-powered features, integrated
-              Firebase and REST APIs, and worked on cross-platform redesigns shared across Android,
-              iOS, and Web.
-            </p>
-          </div>
-          <div className="border border-border rounded-lg p-5 space-y-3 text-sm hover:border-foreground/40 hover:shadow-sm transition-all duration-300 animate-fade-in" style={{ animationDelay: "120ms", animationFillMode: "backwards" }}>
-            <div>
-              <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Focus</p>
-              <p className="font-medium">Android · iOS · KMP · Compose</p>
-            </div>
-            <div>
-              <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Available for</p>
-              <p className="font-medium inline-flex items-center gap-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 animate-ping" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-                </span>
-                Freelance
-              </p>
-            </div>
-            <div>
-              <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">Based in</p>
-              <p className="font-medium">Maharashtra, India</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 mb-10 animate-fade-in" style={{ animationDelay: "180ms", animationFillMode: "backwards" }}>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 animate-fade-in" style={{ animationDelay: "180ms", animationFillMode: "backwards" }}>
           <Button
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="rounded-md group w-full sm:w-auto"
+            className="rounded-full group w-full sm:w-auto px-5"
           >
-            Get in touch
-            <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" />
+            Start a project <ArrowUpRight className="h-4 w-4 ml-2 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Button>
           <Button
             variant="outline"
             onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            className="rounded-md w-full sm:w-auto"
+            className="rounded-full w-full sm:w-auto px-5"
           >
-            View work
+            Explore my work <ArrowDown className="h-4 w-4 ml-2" />
           </Button>
         </div>
+          </div>
+          <div className="hero-workspace relative mx-auto w-full max-w-sm animate-fade-in" style={{ animationDelay: "160ms", animationFillMode: "backwards" }}>
+            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-accent/20 via-transparent to-blue-500/15 blur-2xl" />
+            <div className="relative rounded-3xl border border-border/80 bg-background/75 p-4 shadow-2xl backdrop-blur-xl transition-transform duration-300 hover:-translate-y-1">
+              <div className="mb-5 flex items-center justify-between"><div className="flex gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-red-400" /><i className="h-2.5 w-2.5 rounded-full bg-yellow-400" /><i className="h-2.5 w-2.5 rounded-full bg-green-400" /></div><Code2 className="h-4 w-4 text-muted-foreground" /></div>
+              <div className="rounded-2xl border border-border bg-secondary/35 p-5">
+                <div className="mb-7 flex items-center justify-between"><span className="text-xs font-medium text-muted-foreground">Building for every screen</span><Sparkles className="h-4 w-4 text-accent" /></div>
+                <div className="grid grid-cols-3 gap-2"><div className="h-28 rounded-xl bg-foreground/90" /><div className="h-28 rounded-xl border border-border bg-background" /><div className="h-28 rounded-xl bg-accent/90" /></div>
+                <div className="mt-4 h-2 w-3/4 rounded-full bg-foreground/15" /><div className="mt-2 h-2 w-1/2 rounded-full bg-foreground/10" />
+              </div>
+              <div className="mt-4 flex items-center justify-between text-xs"><span className="font-medium">One codebase. Native feel.</span><span className="text-muted-foreground">KMP / Compose</span></div>
+            </div>
+          </div>
+        </div>
 
-        {/* Social links */}
-        <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-stretch sm:items-center gap-3 animate-fade-in" style={{ animationDelay: "240ms", animationFillMode: "backwards" }}>
+        <div className="mt-12 grid grid-cols-2 gap-x-5 gap-y-3 border-t border-border/70 pt-6 text-sm text-muted-foreground sm:flex sm:items-center sm:gap-6 animate-fade-in" style={{ animationDelay: "240ms", animationFillMode: "backwards" }}>
           <a href="https://x.com/bidearun" target="_blank" rel="noopener noreferrer" className={socialBase}>
             <svg className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X
           </a>

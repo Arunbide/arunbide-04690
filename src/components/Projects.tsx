@@ -43,41 +43,33 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-14 sm:py-20 px-5 sm:px-6 border-t border-border">
-      <div className="container mx-auto max-w-5xl">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-          <p className="text-[11px] sm:text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            Selected Work
-          </p>
+    <section id="projects" className="section-shell py-20 px-5 sm:px-6">
+      <div className="container mx-auto max-w-6xl">
+        <div className="mb-10 grid gap-4 md:grid-cols-2 md:items-end">
+          <div><p className="eyebrow">Selected work</p><h2 className="section-heading">Built with craft.<br /><em>Shipped with care.</em></h2></div>
+          <p className="max-w-xl text-muted-foreground">A selection of products spanning music, news, health, and everyday utility—each shaped around a real use case.</p>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3">
-          A few apps I've built
-        </h2>
-        <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl">
-          From spiritual-music streaming to AI health trackers — shipped end-to-end.
-        </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((p, i) => {
             const Icon = p.icon;
             return (
               <div
                 key={p.title}
-                className="group relative border border-border rounded-xl p-5 bg-secondary/20 hover:bg-secondary/40 hover:border-foreground/20 hover:-translate-y-0.5 transition-all duration-300 animate-fade-in"
+                className="project-card group relative min-h-[280px] overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-1 animate-fade-in"
                 style={{ animationDelay: `${i * 60}ms`, animationFillMode: "backwards" }}
               >
-                <ArrowUpRight className="absolute top-4 right-4 h-4 w-4 text-muted-foreground/40 group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background mb-4 transition-colors group-hover:border-foreground/30">
+                <ArrowUpRight className="absolute top-6 right-6 h-4 w-4 text-muted-foreground transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-foreground" />
+                <span className="mb-12 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-foreground text-background transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                   <Icon className="h-4 w-4" />
                 </span>
-                <h3 className="text-base sm:text-lg font-bold mb-1.5">{p.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{p.description}</p>
+                <h3 className="text-xl font-bold tracking-tight mb-2">{p.title}</h3>
+                <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{p.description}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {p.tech.map((t) => (
                     <span
                       key={t}
-                      className="inline-flex items-center text-[11px] text-foreground/75 bg-background border border-border rounded-md px-2 py-0.5"
+                      className="inline-flex items-center rounded-full border border-border bg-secondary/50 px-2.5 py-1 text-[10px] font-medium text-foreground/75"
                     >
                       {t}
                     </span>

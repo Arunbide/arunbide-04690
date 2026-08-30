@@ -38,20 +38,13 @@ const stack = [
 
 const FeaturedProject = () => {
   return (
-    <section id="featured" className="py-14 sm:py-20 px-5 sm:px-6 border-t border-border">
-      <div className="container mx-auto max-w-5xl">
+    <section id="featured" className="section-shell py-16 sm:py-24 px-5 sm:px-6">
+      <div className="container mx-auto max-w-6xl">
         {/* Header */}
-        <div className="flex items-center gap-2 mb-3">
-          <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-          <p className="text-[11px] sm:text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            Featured Project
-          </p>
-        </div>
+        <p className="eyebrow">01 / Featured project</p>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8 sm:mb-10">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3">
-              CostingWizard — Quote & Cost
-            </h2>
+            <h2 className="section-heading mb-4">CostingWizard<br /><em>Quote & Cost.</em></h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-2xl leading-relaxed">
               A Kotlin Multiplatform app for contractors to build estimates, manage projects,
               generate PDF reports, and edit data through an AI assistant — shipped natively on
@@ -61,16 +54,16 @@ const FeaturedProject = () => {
         </div>
 
         {/* Main card */}
-        <div className="group/card border border-border rounded-2xl overflow-hidden bg-secondary/30 transition-all duration-500 hover:border-foreground/20">
+        <div className="featured-frame group/card overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-2xl shadow-foreground/[.06] transition-all duration-500 hover:border-foreground/25">
           {/* Screenshots row — Apple App Store style horizontal scroll */}
-          <div className="relative bg-gradient-to-br from-secondary/60 via-background to-secondary/40 pt-6 sm:pt-10 pb-5 sm:pb-7">
+          <div className="relative bg-gradient-to-br from-foreground/[.08] via-background to-accent/[.08] pt-8 sm:pt-12 pb-7 sm:pb-9">
             <div
               className="flex gap-3 sm:gap-5 overflow-x-auto snap-x snap-mandatory scroll-px-5 sm:scroll-px-8 px-5 sm:px-8 pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
             >
               {screenshots.map((s, i) => (
                 <div
                   key={i}
-                  className="group relative shrink-0 snap-start w-[62%] sm:w-[44%] md:w-[28%] rounded-[22px] overflow-hidden border border-border bg-background shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 animate-fade-in"
+                  className="group relative shrink-0 snap-start w-[62%] sm:w-[44%] md:w-[28%] rounded-[22px] overflow-hidden border border-border bg-background shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:rotate-[-1deg] transition-all duration-500 animate-fade-in"
                   style={{
                     aspectRatio: "1 / 2",
                     animationDelay: `${i * 90}ms`,
@@ -95,7 +88,7 @@ const FeaturedProject = () => {
           </div>
 
           {/* Footer / details */}
-          <div className="p-5 sm:p-8 border-t border-border">
+          <div className="p-6 sm:p-9 border-t border-border">
             {/* Stack chips */}
             <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6">
               {stack.map((t) => (

@@ -44,31 +44,25 @@ const Testimonials = () => {
   }, [api]);
 
   return (
-    <section id="testimonials" className="py-14 sm:py-20 px-5 sm:px-6 border-t border-border">
-      <div className="container mx-auto max-w-5xl">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-          <p className="text-[11px] sm:text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            Reviews
+    <section id="testimonials" className="section-shell py-16 sm:py-24 px-5 sm:px-6">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid gap-4 md:grid-cols-2 md:items-end mb-10">
+          <div><p className="eyebrow">Client notes</p><h2 className="section-heading">What clients<br /><em>say.</em></h2></div>
+          <p className="text-sm sm:text-base text-muted-foreground max-w-xl">
+          A consistent 5-star track record across freelance platforms.
           </p>
         </div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3">
-          Trusted by clients worldwide
-        </h2>
-        <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl">
-          A consistent 5-star track record across freelance platforms.
-        </p>
 
         <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8 sm:mb-10">
-          <div className="border border-border rounded-xl p-4 sm:p-5 text-center bg-secondary/20">
+          <div className="review-stat rounded-2xl border border-border p-4 sm:p-5 text-center bg-card/50">
             <p className="text-xl sm:text-2xl font-bold">10+</p>
             <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">Projects done</p>
           </div>
-          <div className="border border-border rounded-xl p-4 sm:p-5 text-center bg-secondary/20">
+          <div className="review-stat rounded-2xl border border-border p-4 sm:p-5 text-center bg-card/50">
             <p className="text-xl sm:text-2xl font-bold">100%</p>
             <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">Success rate</p>
           </div>
-          <div className="border border-border rounded-xl p-4 sm:p-5 text-center bg-secondary/20">
+          <div className="review-stat rounded-2xl border border-border p-4 sm:p-5 text-center bg-card/50">
             <p className="text-xl sm:text-2xl font-bold">4.9</p>
             <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">Avg. rating</p>
           </div>
@@ -79,9 +73,9 @@ const Testimonials = () => {
             <CarouselContent>
               {testimonials.map((t, i) => (
                 <CarouselItem key={i}>
-                  <div className="border border-border rounded-lg p-6">
+                  <div className="testimonial-card rounded-3xl border border-border bg-card/70 p-7 sm:p-9 shadow-xl shadow-foreground/[.03]">
                     <div className="flex items-center gap-1 mb-3">{renderStars(t.rating)}</div>
-                    <p className="text-foreground/90 leading-relaxed mb-5">"{t.review}"</p>
+                    <p className="text-lg sm:text-xl tracking-tight text-foreground/90 leading-relaxed mb-7">“{t.review}”</p>
                     <div className="flex items-center justify-between text-sm">
                       <span className="font-bold">{t.name}</span>
                       <span className="text-muted-foreground">{t.country}</span>
