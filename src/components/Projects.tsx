@@ -1,26 +1,41 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Music, Newspaper, Cloud, Contact as ContactIcon, Heart, Lock, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Music, Newspaper, Cloud, Contact as ContactIcon, Heart, Gamepad2, ArrowUpRight } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Bhakti Point",
-      description: "Flutter app for streaming spiritual music and kathas with dynamic content management via Firebase and AWS S3.",
-      tech: ["Flutter", "Firebase", "AWS S3"],
+      title: "GameHub",
+      description:
+        "Cross-platform game discovery app on the RAWG API — shared domain and data layers, pagination, caching and shimmer loading, built for Android, Desktop and Web.",
+      tech: ["Kotlin Multiplatform", "Compose MP", "Ktor", "Koin", "MVVM", "RAWG API"],
+      icon: Gamepad2,
+    },
+    {
+      title: "BhaktiPoint",
+      description:
+        "Spiritual music and discourse streaming app with dynamic content management, so media updates ship without an app release.",
+      tech: ["Flutter", "Firebase", "Firestore", "AWS S3"],
       icon: Music,
     },
     {
-      title: "KKN Live",
-      description: "Real-time news app with category filtering, search, and push notifications.",
-      tech: ["Java", "FCM", "XML"],
-      icon: Newspaper,
+      title: "HealthSync",
+      description:
+        "Health and medicine tracker with an AI conversational assistant, medication reminders and a Compose-first interface.",
+      tech: ["Kotlin", "Compose", "MVVM", "Dagger Hilt", "OpenAI API"],
+      icon: Heart,
     },
     {
       title: "CloudTrack",
-      description: "Weather app using live location and OpenWeather API with adaptive UI.",
+      description: "Location-based weather app with live REST data and a UI that adapts to current conditions.",
       tech: ["Kotlin", "Retrofit", "OpenWeather API"],
       icon: Cloud,
+    },
+    {
+      title: "KKN Live",
+      description:
+        "News app converting a web experience into Android — categories, search and push notifications, published to Play.",
+      tech: ["Java", "XML", "Firebase Cloud Messaging"],
+      icon: Newspaper,
     },
     {
       title: "Contact App",
@@ -28,19 +43,8 @@ const Projects = () => {
       tech: ["Compose", "Kotlin", "Room", "Hilt", "MVVM"],
       icon: ContactIcon,
     },
-    {
-      title: "HealthSync",
-      description: "Health and medicine tracker with an AI chatbot powered by the OpenAI API.",
-      tech: ["Kotlin", "Compose", "MVVM", "Hilt", "OpenAI API"],
-      icon: Heart,
-    },
-    {
-      title: "SoulScribe",
-      description: "Privacy-first journaling app with app lock for secure, organized notes.",
-      tech: ["Kotlin", "Compose", "MVVM", "Room", "Hilt"],
-      icon: Lock,
-    },
   ];
+
 
   return (
     <section id="projects" className="section-shell py-20 px-5 sm:px-6">
