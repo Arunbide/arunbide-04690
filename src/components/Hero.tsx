@@ -1,10 +1,23 @@
-import { useState, type CSSProperties } from "react";
+import { useState, type CSSProperties, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Linkedin, ArrowDown, ArrowUpRight, Code2, Sparkles } from "lucide-react";
 import avatar from "@/assets/arun-avatar.png";
 
 const socialBase =
-  "group inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-border hover:border-foreground/40 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200 text-sm font-medium min-h-10";
+  "group inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-border bg-card/60 hover:bg-secondary hover:border-foreground/25 hover:-translate-y-0.5 transition-all duration-200 text-sm font-medium min-h-10";
+
+const SocialLink = ({ href, label, hint, children }: { href: string; label: string; hint: string; children: ReactNode }) => (
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={socialBase}>
+        {children}
+      </a>
+    </TooltipTrigger>
+    <TooltipContent>{hint}</TooltipContent>
+  </Tooltip>
+);
+
 
 const Hero = () => {
   const [pointer, setPointer] = useState({ x: 48, y: 38 });
