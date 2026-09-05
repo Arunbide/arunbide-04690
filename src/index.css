@@ -136,7 +136,7 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(105deg, hsl(var(--foreground)) 15%, hsl(var(--accent)) 80%, #4f7cff);
+    background: linear-gradient(100deg, hsl(var(--foreground)) 20%, hsl(var(--accent)) 95%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -163,7 +163,7 @@
     right: -18rem;
     top: -18rem;
     border-radius: 999px;
-    background: hsl(var(--accent) / .11);
+    background: hsl(var(--accent) / .09);
     filter: blur(18px);
     animation: drift 13s ease-in-out infinite alternate;
   }
