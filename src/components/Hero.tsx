@@ -1,10 +1,23 @@
-import { useState, type CSSProperties } from "react";
+import { useState, type CSSProperties, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Linkedin, ArrowDown, ArrowUpRight, Code2, Sparkles } from "lucide-react";
 import avatar from "@/assets/arun-avatar.png";
 
 const socialBase =
-  "group inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md border border-border hover:border-foreground/40 hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200 text-sm font-medium min-h-10";
+  "group inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-border bg-card/60 hover:bg-secondary hover:border-foreground/25 hover:-translate-y-0.5 transition-all duration-200 text-sm font-medium min-h-10";
+
+const SocialLink = ({ href, label, hint, children }: { href: string; label: string; hint: string; children: ReactNode }) => (
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={socialBase}>
+        {children}
+      </a>
+    </TooltipTrigger>
+    <TooltipContent>{hint}</TooltipContent>
+  </Tooltip>
+);
+
 
 const Hero = () => {
   const [pointer, setPointer] = useState({ x: 48, y: 38 });
@@ -68,18 +81,19 @@ const Hero = () => {
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-x-5 gap-y-3 border-t border-border/70 pt-6 text-sm text-muted-foreground sm:flex sm:items-center sm:gap-6 animate-fade-in" style={{ animationDelay: "240ms", animationFillMode: "backwards" }}>
-          <a href="https://x.com/bidearun" target="_blank" rel="noopener noreferrer" className={socialBase}>
+          <SocialLink href="https://x.com/bidearun" label="X profile" hint="Build notes & updates">
             <svg className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X
-          </a>
-          <a href="https://www.linkedin.com/in/arunbide" target="_blank" rel="noopener noreferrer" className={socialBase}>
+          </SocialLink>
+          <SocialLink href="https://www.linkedin.com/in/arunbide" label="LinkedIn profile" hint="Full work history">
             <Linkedin className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" /> LinkedIn
-          </a>
-          <a href="https://www.upwork.com/freelancers/arunbide" target="_blank" rel="noopener noreferrer" className={socialBase}>
+          </SocialLink>
+          <SocialLink href="https://www.upwork.com/freelancers/arunbide" label="Upwork profile" hint="Hire me on Upwork">
             Upwork
-          </a>
-          <a href="https://www.fiverr.com/arunbide" target="_blank" rel="noopener noreferrer" className={socialBase}>
+          </SocialLink>
+          <SocialLink href="https://www.fiverr.com/arunbide" label="Fiverr profile" hint="Hire me on Fiverr">
             Fiverr
-          </a>
+          </SocialLink>
+
         </div>
       </div>
     </section>
