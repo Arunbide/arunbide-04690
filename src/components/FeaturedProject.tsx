@@ -1,6 +1,8 @@
 import { Apple, Play, ArrowUpRight, Sparkles, FileText, Calculator, Bot, Star, Quote } from "lucide-react";
+import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import shot1 from "@/assets/costingwizard-1.png";
 import shot2 from "@/assets/costingwizard-2.png";
 import shot3 from "@/assets/costingwizard-3.png";
@@ -11,29 +13,27 @@ const PLAY_URL =
 const APP_STORE_URL = "https://apps.apple.com/us/app/costingwizard-quote-cost/id6742328319";
 
 const screenshots = [
-  { src: shot1, alt: "CostingWizard — create cost estimates in minutes" },
-  { src: shot2, alt: "CostingWizard — automatic item and resource calculations" },
-  { src: shot3, alt: "CostingWizard — generate professional reports instantly" },
-  { src: shot4, alt: "CostingWizard — tell the AI what to change" },
+  { src: shot1, alt: "CostingWizard: create cost estimates in minutes" },
+  { src: shot2, alt: "CostingWizard: automatic item and resource calculations" },
+  { src: shot3, alt: "CostingWizard: generate professional reports instantly" },
+  { src: shot4, alt: "CostingWizard: tell the AI what to change" },
 ];
 
 const highlights = [
   { icon: Calculator, label: "Cost estimates in minutes" },
   { icon: Sparkles, label: "Automatic item & resource calc" },
   { icon: FileText, label: "Professional PDF reports" },
-  { icon: Bot, label: "AI assistant — edit by chat" },
+  { icon: Bot, label: "AI assistant, edit by chat" },
 ];
 
 const stack = [
   "Kotlin Multiplatform",
   "Compose Multiplatform",
-  "WASM Multiplatform",
   "iOS",
   "Android",
-  "OpenAI",
-  "Anthropic",
+  "OpenAI API",
   "Claude Vision",
-  "Gemini OCR",
+  "Gemini",
 ];
 
 const FeaturedProject = () => {
@@ -47,8 +47,8 @@ const FeaturedProject = () => {
             <h2 className="section-heading mb-4">CostingWizard<br /><em>Quote & Cost.</em></h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-2xl leading-relaxed">
               A Kotlin Multiplatform app for contractors to build estimates, manage projects,
-              generate PDF reports, and edit data through an AI assistant — shipped natively on
-              iOS and Android from a single codebase.
+              generate PDF reports, and edit data through an AI assistant with OpenAI, Claude Vision,
+              and Gemini integrated into one shared product.
             </p>
           </div>
         </div>
@@ -56,13 +56,19 @@ const FeaturedProject = () => {
         {/* Main card */}
         <div className="featured-frame group/card overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-2xl shadow-foreground/[.06] transition-all duration-500 hover:border-foreground/25">
           {/* Screenshots row — Apple App Store style horizontal scroll */}
-          <div className="relative bg-gradient-to-br from-foreground/[.08] via-background to-accent/[.08] pt-8 sm:pt-12 pb-7 sm:pb-9">
+          <div className="relative overflow-hidden bg-gradient-to-br from-foreground/[.06] via-background to-accent/[.08] pt-8 sm:pt-12 pb-7 sm:pb-9">
+            <div className="section-grid pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
             <div
-              className="flex gap-3 sm:gap-5 overflow-x-auto snap-x snap-mandatory scroll-px-5 sm:scroll-px-8 px-5 sm:px-8 pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+              className="relative flex gap-3 overflow-x-auto px-5 pb-2 scroll-px-5 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:gap-5 sm:px-8 sm:scroll-px-8"
             >
               {screenshots.map((s, i) => (
-                <div
+                <motion.div
                   key={i}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ type: "spring", stiffness: 150, damping: 18, delay: i * 0.06 }}
+                  whileHover={{ y: -10, rotate: -1 }}
                   className="group relative shrink-0 snap-start w-[62%] sm:w-[44%] md:w-[28%] rounded-[22px] overflow-hidden border border-border bg-background shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:rotate-[-1deg] transition-all duration-500 animate-fade-in"
                   style={{
                     aspectRatio: "1 / 2",
@@ -79,7 +85,7 @@ const FeaturedProject = () => {
                     height={1654}
                     className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.03]"
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
             {/* Edge fades for Apple-like feel */}
@@ -142,6 +148,12 @@ const FeaturedProject = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
+              <Button asChild variant="outline" className="rounded-md group w-full sm:w-auto">
+                <Link to="/case-studies/construction-cost-estimation">
+                  Read case study
+                  <ArrowUpRight className="h-4 w-4 ml-1 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+              </Button>
               <Button
                 onClick={() => window.open(APP_STORE_URL, "_blank")}
                 className="rounded-md group w-full sm:w-auto"

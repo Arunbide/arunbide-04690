@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
 import FeaturedProject from "@/components/FeaturedProject";
-import Projects from "@/components/Projects";
+import CaseStudies from "@/components/CaseStudies";
 import KMPBenefits from "@/components/KMPBenefits";
 import Experience from "@/components/Experience";
 import Testimonials from "@/components/Testimonials";
@@ -16,7 +16,7 @@ const Index = () => {
       <FeaturedProject />
       <Skills />
       <KMPBenefits />
-      <Projects />
+      <CaseStudies />
       <Experience />
       <Testimonials />
       <Contact />

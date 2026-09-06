@@ -1,23 +1,9 @@
-import { useState, type CSSProperties, type ReactNode } from "react";
+import { useState, type CSSProperties } from "react";
 import { Button } from "@/components/ui/button";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { Linkedin, ArrowDown, ArrowUpRight, Code2, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Code2, Globe2, Sparkles } from "lucide-react";
 import avatar from "@/assets/arun-avatar.png";
-
-const socialBase =
-  "group inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-border bg-card/60 hover:bg-secondary hover:border-foreground/25 hover:-translate-y-0.5 transition-all duration-200 text-sm font-medium min-h-10";
-
-const SocialLink = ({ href, label, hint, children }: { href: string; label: string; hint: string; children: ReactNode }) => (
-  <Tooltip>
-    <TooltipTrigger asChild>
-      <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className={socialBase}>
-        {children}
-      </a>
-    </TooltipTrigger>
-    <TooltipContent>{hint}</TooltipContent>
-  </Tooltip>
-);
-
+import appleLogo from "@/assets/apple-logo.png";
+import androidLogo from "@/assets/android-logo.png";
 
 const Hero = () => {
   const [pointer, setPointer] = useState({ x: 48, y: 38 });
@@ -32,7 +18,7 @@ const Hero = () => {
       }}
       style={{ "--pointer-x": `${pointer.x}%`, "--pointer-y": `${pointer.y}%` } as CSSProperties}
     >
-      <div className="hero-grid pointer-events-none absolute inset-0 -z-10" />
+      <div className="section-grid pointer-events-none absolute inset-0 -z-10 opacity-75" aria-hidden="true" />
       <div className="hero-orb pointer-events-none absolute -z-10" />
       <div className="container mx-auto max-w-6xl">
         <div className="mb-7 flex items-center gap-3 animate-fade-in">
@@ -59,10 +45,10 @@ const Hero = () => {
           </Button>
           <Button
             variant="outline"
-            onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.getElementById("case-studies")?.scrollIntoView({ behavior: "smooth" })}
             className="rounded-full w-full sm:w-auto px-5"
           >
-            Explore my work <ArrowDown className="h-4 w-4 ml-2" />
+            Explore case studies <ArrowDown className="h-4 w-4 ml-2" />
           </Button>
         </div>
           </div>
@@ -72,7 +58,17 @@ const Hero = () => {
               <div className="mb-5 flex items-center justify-between"><div className="flex gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-red-400" /><i className="h-2.5 w-2.5 rounded-full bg-yellow-400" /><i className="h-2.5 w-2.5 rounded-full bg-green-400" /></div><Code2 className="h-4 w-4 text-muted-foreground" /></div>
               <div className="rounded-2xl border border-border bg-secondary/35 p-5">
                 <div className="mb-7 flex items-center justify-between"><span className="text-xs font-medium text-muted-foreground">Building for every screen</span><Sparkles className="h-4 w-4 text-accent" /></div>
-                <div className="grid grid-cols-3 gap-2"><div className="h-28 rounded-xl bg-foreground/90" /><div className="h-28 rounded-xl border border-border bg-background" /><div className="h-28 rounded-xl bg-accent/90" /></div>
+                <div className="grid grid-cols-3 gap-2">
+                  <div aria-label="Android" className="flex h-28 items-center justify-center rounded-xl bg-black text-white transition-transform duration-300 hover:-translate-y-1">
+                    <img src={androidLogo} alt="" aria-hidden="true" className="h-9 w-9 object-contain" />
+                  </div>
+                  <div aria-label="iOS" className="flex h-28 items-center justify-center rounded-xl border border-black/10 bg-white transition-transform duration-300 hover:-translate-y-1">
+                    <img src={appleLogo} alt="" aria-hidden="true" className="h-9 w-9 object-contain mix-blend-multiply" />
+                  </div>
+                  <div aria-label="Web" className="flex h-28 items-center justify-center rounded-xl bg-accent text-accent-foreground transition-transform duration-300 hover:-translate-y-1">
+                    <Globe2 className="h-7 w-7" aria-hidden="true" />
+                  </div>
+                </div>
                 <div className="mt-4 h-2 w-3/4 rounded-full bg-foreground/15" /><div className="mt-2 h-2 w-1/2 rounded-full bg-foreground/10" />
               </div>
               <div className="mt-4 flex items-center justify-between text-xs"><span className="font-medium">One codebase. Native feel.</span><span className="text-muted-foreground">KMP / Compose</span></div>
@@ -80,21 +76,6 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-x-5 gap-y-3 border-t border-border/70 pt-6 text-sm text-muted-foreground sm:flex sm:items-center sm:gap-6 animate-fade-in" style={{ animationDelay: "240ms", animationFillMode: "backwards" }}>
-          <SocialLink href="https://x.com/bidearun" label="X profile" hint="Build notes & updates">
-            <svg className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X
-          </SocialLink>
-          <SocialLink href="https://www.linkedin.com/in/arunbide" label="LinkedIn profile" hint="Full work history">
-            <Linkedin className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" /> LinkedIn
-          </SocialLink>
-          <SocialLink href="https://www.upwork.com/freelancers/arunbide" label="Upwork profile" hint="Hire me on Upwork">
-            Upwork
-          </SocialLink>
-          <SocialLink href="https://www.fiverr.com/arunbide" label="Fiverr profile" hint="Hire me on Fiverr">
-            Fiverr
-          </SocialLink>
-
-        </div>
       </div>
     </section>
   );

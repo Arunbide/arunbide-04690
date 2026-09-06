@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { useState, useEffect } from "react";
 
@@ -49,22 +49,22 @@ const Testimonials = () => {
         <div className="grid gap-4 md:grid-cols-2 md:items-end mb-10">
           <div><p className="eyebrow">Client notes</p><h2 className="section-heading">What clients<br /><em>say.</em></h2></div>
           <p className="text-sm sm:text-base text-muted-foreground max-w-xl">
-          A consistent 5-star track record across freelance platforms.
+            Client feedback from shipped work across mobile, AI, and product delivery.
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8 sm:mb-10">
-          <div className="review-stat rounded-2xl border border-border p-4 sm:p-5 text-center bg-card/50">
-            <p className="text-xl sm:text-2xl font-bold">10+</p>
-            <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">Projects done</p>
+        <div className="mb-8 grid overflow-hidden rounded-xl border border-border bg-card shadow-sm sm:mb-10 sm:grid-cols-3">
+          <div className="border-b border-border p-4 sm:border-b-0 sm:border-r sm:p-5">
+            <p className="text-2xl font-semibold tracking-tight">10+</p>
+            <p className="mt-1 text-xs text-muted-foreground">Projects delivered</p>
           </div>
-          <div className="review-stat rounded-2xl border border-border p-4 sm:p-5 text-center bg-card/50">
-            <p className="text-xl sm:text-2xl font-bold">100%</p>
-            <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">Success rate</p>
+          <div className="border-b border-border p-4 sm:border-b-0 sm:border-r sm:p-5">
+            <p className="text-2xl font-semibold tracking-tight">100%</p>
+            <p className="mt-1 text-xs text-muted-foreground">Success rate</p>
           </div>
-          <div className="review-stat rounded-2xl border border-border p-4 sm:p-5 text-center bg-card/50">
-            <p className="text-xl sm:text-2xl font-bold">4.9</p>
-            <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">Avg. rating</p>
+          <div className="p-4 sm:p-5">
+            <p className="text-2xl font-semibold tracking-tight">4.9 / 5</p>
+            <p className="mt-1 text-xs text-muted-foreground">Average rating</p>
           </div>
         </div>
 
@@ -73,19 +73,20 @@ const Testimonials = () => {
             <CarouselContent>
               {testimonials.map((t, i) => (
                 <CarouselItem key={i}>
-                  <div className="testimonial-card rounded-3xl border border-border bg-card/70 p-7 sm:p-9 shadow-xl shadow-foreground/[.03]">
-                    <div className="flex items-center gap-1 mb-3">{renderStars(t.rating)}</div>
-                    <p className="text-lg sm:text-xl tracking-tight text-foreground/90 leading-relaxed mb-7">“{t.review}”</p>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="font-bold">{t.name}</span>
+                  <div className="relative overflow-hidden rounded-xl border border-border bg-card p-7 shadow-sm sm:p-9">
+                    <Quote className="absolute right-6 top-6 h-8 w-8 text-muted-foreground/15 sm:right-8 sm:top-8" />
+                    <div className="mb-5 flex items-center gap-1">{renderStars(t.rating)}</div>
+                    <p className="max-w-2xl text-lg leading-relaxed tracking-tight text-foreground/90 sm:text-xl">“{t.review}”</p>
+                    <div className="mt-8 flex items-center justify-between border-t border-border pt-5 text-sm">
+                      <span className="font-semibold">{t.name}</span>
                       <span className="text-muted-foreground">{t.country}</span>
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex items-center justify-center gap-6 mt-6">
-              <CarouselPrevious className="relative static translate-y-0 h-9 w-9 rounded-full" />
+            <div className="mt-6 flex items-center justify-center gap-6">
+              <CarouselPrevious className="relative static h-9 w-9 translate-y-0 rounded-md border-border bg-card shadow-sm" />
               <div className="flex items-center gap-2">
                 {Array.from({ length: count }).map((_, i) => (
                   <button
@@ -97,7 +98,7 @@ const Testimonials = () => {
                   />
                 ))}
               </div>
-              <CarouselNext className="relative static translate-y-0 h-9 w-9 rounded-full" />
+              <CarouselNext className="relative static h-9 w-9 translate-y-0 rounded-md border-border bg-card shadow-sm" />
             </div>
           </Carousel>
         </div>

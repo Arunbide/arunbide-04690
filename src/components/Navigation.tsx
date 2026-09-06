@@ -3,8 +3,8 @@ import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
-  { id: "work", label: "Work" },
-  { id: "about", label: "About" },
+  { id: "featured", label: "Case study" },
+  { id: "case-studies", label: "Case studies" },
   { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ];

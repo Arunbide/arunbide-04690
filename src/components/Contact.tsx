@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Calendar, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, Calendar, Github, Linkedin, ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   const handleScheduleCall = () => window.open("https://cal.com/bidearun/", "_blank");
@@ -58,34 +58,25 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Contact options */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          <div className="border border-border rounded-lg p-5">
-            <div className="flex items-center gap-2 mb-2">
-              <Mail className="h-4 w-4" />
-              <span className="font-bold">Email</span>
-            </div>
-            <a
-              href="mailto:Agbide7@gmail.com"
-              className="text-sm text-foreground/80 hover:text-foreground underline underline-offset-2"
-            >
-              Agbide7@gmail.com
+        {/* Contact channels */}
+        <div className="mb-8 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+          <div className="grid md:grid-cols-2">
+            <a href="mailto:Agbide7@gmail.com" className="group flex items-start gap-4 p-5 transition-colors hover:bg-muted/50 sm:p-6 md:border-r md:border-border">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-background"><Mail className="h-4 w-4" /></span>
+              <span className="min-w-0 flex-1">
+                <span className="flex items-center justify-between gap-3"><span className="text-sm font-semibold">Email</span><ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></span>
+                <span className="mt-1 block truncate text-sm text-foreground/85">Agbide7@gmail.com</span>
+                <span className="mt-2 block text-xs text-muted-foreground">Replies within 24 hours.</span>
+              </span>
             </a>
-            <p className="text-xs text-muted-foreground mt-2">Replies within 24 hours.</p>
-          </div>
-
-          <div className="border border-border rounded-lg p-5">
-            <div className="flex items-center gap-2 mb-2">
-              <Phone className="h-4 w-4" />
-              <span className="font-bold">Phone</span>
-            </div>
-            <a
-              href="tel:+919322832034"
-              className="text-sm text-foreground/80 hover:text-foreground underline underline-offset-2"
-            >
-              +91 9322832034
+            <a href="tel:+919322832034" className="group flex items-start gap-4 border-t border-border p-5 transition-colors hover:bg-muted/50 sm:p-6 md:border-l-0 md:border-t-0">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-background"><Phone className="h-4 w-4" /></span>
+              <span className="min-w-0 flex-1">
+                <span className="flex items-center justify-between gap-3"><span className="text-sm font-semibold">Phone</span><ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></span>
+                <span className="mt-1 block text-sm text-foreground/85">+91 9322832034</span>
+                <span className="mt-2 block text-xs text-muted-foreground">Mon–Fri, 9 AM – 6 PM IST.</span>
+              </span>
             </a>
-            <p className="text-xs text-muted-foreground mt-2">Mon–Fri, 9 AM – 6 PM IST.</p>
           </div>
         </div>
 

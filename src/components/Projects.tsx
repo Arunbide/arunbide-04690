@@ -6,7 +6,7 @@ const Projects = () => {
     {
       title: "GameHub",
       description:
-        "Cross-platform game discovery app on the RAWG API — shared domain and data layers, pagination, caching and shimmer loading, built for Android, Desktop and Web.",
+        "Cross-platform game discovery app on the RAWG API with shared domain and data layers, pagination, caching and shimmer loading, built for Android, Desktop and Web.",
       tech: ["Kotlin Multiplatform", "Compose MP", "Ktor", "Koin", "MVVM", "RAWG API"],
       icon: Gamepad2,
     },
@@ -33,7 +33,7 @@ const Projects = () => {
     {
       title: "KKN Live",
       description:
-        "News app converting a web experience into Android — categories, search and push notifications, published to Play.",
+        "News app converting a web experience into Android with categories, search and push notifications, published to Play.",
       tech: ["Java", "XML", "Firebase Cloud Messaging"],
       icon: Newspaper,
     },
@@ -51,7 +51,7 @@ const Projects = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="mb-10 grid gap-4 md:grid-cols-2 md:items-end">
           <div><p className="eyebrow">Selected work</p><h2 className="section-heading">Built with craft.<br /><em>Shipped with care.</em></h2></div>
-          <p className="max-w-xl text-muted-foreground">A selection of products spanning music, news, health, and everyday utility—each shaped around a real use case.</p>
+          <p className="max-w-xl text-muted-foreground">A selection of products spanning music, news, health, and everyday utility, each shaped around a real use case.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
