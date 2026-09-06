@@ -33,11 +33,12 @@ const Navigation = () => {
   };
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/70 backdrop-blur-xl border-b border-border/60" : "bg-transparent"
-      }`}
-    >
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+          scrolled ? "bg-background/70 backdrop-blur-xl border-b border-border/60" : "bg-transparent"
+        }`}
+      >
       <nav className="shell flex h-16 items-center justify-between sm:h-20">
         <button onClick={() => go("hero")} className="mono !text-[.72rem] !tracking-[.22em] text-foreground font-medium">
           Arun Bide
@@ -75,8 +76,10 @@ const Navigation = () => {
         </div>
       </nav>
 
+      </header>
+
       {open && (
-        <div className="fixed inset-0 top-16 z-40 bg-background/98 backdrop-blur-xl md:hidden">
+        <div className="fixed inset-x-0 bottom-0 top-16 z-[60] border-t border-border bg-background md:hidden">
           <div className="shell flex flex-col pt-10">
             {links.map((link, i) => (
               <button
@@ -94,7 +97,7 @@ const Navigation = () => {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 };
 

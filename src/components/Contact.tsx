@@ -10,7 +10,7 @@ const Contact = () => {
         <p className="eyebrow">Have a project in mind?</p>
         <h2 className="section-heading mb-4">Let's make it<br /><em>feel remarkable.</em></h2>
         <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-10 max-w-2xl">
-          Whether it's Kotlin Multiplatform, native Android, or AI integration — I'd love to hear
+          Whether it's Kotlin Multiplatform, native Android, or AI integration, I'd love to hear
           what you're building.
         </p>
 
@@ -61,21 +61,21 @@ const Contact = () => {
         {/* Contact channels */}
         <div className="mb-8 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
           <div className="grid md:grid-cols-2">
-            <a href="mailto:Agbide7@gmail.com" className="group flex items-start gap-4 p-5 transition-colors hover:bg-muted/50 sm:p-6 md:border-r md:border-border">
+            <a href="mailto:Agbide7@gmail.com" className="group flex min-h-[132px] items-start gap-4 p-5 text-left transition-colors hover:bg-muted/50 sm:p-6 md:border-r md:border-border">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-background"><Mail className="h-4 w-4" /></span>
-              <span className="min-w-0 flex-1">
-                <span className="flex items-center justify-between gap-3"><span className="text-sm font-semibold">Email</span><ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></span>
-                <span className="mt-1 block truncate text-sm text-foreground/85">Agbide7@gmail.com</span>
-                <span className="mt-2 block text-xs text-muted-foreground">Replies within 24 hours.</span>
-              </span>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between gap-3"><span className="text-sm font-semibold leading-none">Email</span><ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></div>
+                <p className="mt-2 truncate text-sm leading-none text-foreground/85">Agbide7@gmail.com</p>
+                <p className="mt-3 text-xs leading-none text-muted-foreground">Replies within 24 hours.</p>
+              </div>
             </a>
-            <a href="tel:+919322832034" className="group flex items-start gap-4 border-t border-border p-5 transition-colors hover:bg-muted/50 sm:p-6 md:border-l-0 md:border-t-0">
+            <a href="tel:+919322832034" className="group flex min-h-[132px] items-start gap-4 border-t border-border p-5 text-left transition-colors hover:bg-muted/50 sm:p-6 md:border-l-0 md:border-t-0">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border bg-background"><Phone className="h-4 w-4" /></span>
-              <span className="min-w-0 flex-1">
-                <span className="flex items-center justify-between gap-3"><span className="text-sm font-semibold">Phone</span><ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></span>
-                <span className="mt-1 block text-sm text-foreground/85">+91 9322832034</span>
-                <span className="mt-2 block text-xs text-muted-foreground">Mon–Fri, 9 AM – 6 PM IST.</span>
-              </span>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between gap-3"><span className="text-sm font-semibold leading-none">Phone</span><ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></div>
+                <p className="mt-2 text-sm leading-none text-foreground/85">+91 9322832034</p>
+                <p className="mt-3 text-xs leading-none text-muted-foreground">Mon–Fri, 9 AM – 6 PM IST.</p>
+              </div>
             </a>
           </div>
         </div>
