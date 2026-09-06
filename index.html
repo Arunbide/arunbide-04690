@@ -25,6 +25,20 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      // GitHub Pages uses public/404.html for unknown paths. It sends the
+      // originally requested SPA route here as `redirect`; restore it before
+      // React Router initializes so refreshes and pasted case-study links work.
+      (() => {
+        const url = new URL(window.location.href);
+        const redirect = url.searchParams.get("redirect");
+
+        if (redirect && redirect.startsWith("/")) {
+          const base = "%BASE_URL%".replace(/\/$/, "");
+          window.history.replaceState(null, "", `${base}${redirect}`);
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
