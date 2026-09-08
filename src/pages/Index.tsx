@@ -1,25 +1,27 @@
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
-import FeaturedProject from "@/components/FeaturedProject";
-import CaseStudies from "@/components/CaseStudies";
-import KMPBenefits from "@/components/KMPBenefits";
-import Experience from "@/components/Experience";
-import Testimonials from "@/components/Testimonials";
-import Contact from "@/components/Contact";
+import Nav from "@/components/site/Nav";
+import Intro from "@/components/site/Intro";
+import Marquee from "@/components/site/Marquee";
+import Work from "@/components/site/Work";
+import About from "@/components/site/About";
+import Expertise from "@/components/site/Expertise";
+import Process from "@/components/site/Process";
+import Timeline from "@/components/site/Timeline";
+import Closing from "@/components/site/Closing";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
-      <Hero />
-      <FeaturedProject />
-      <Skills />
-      <KMPBenefits />
-      <CaseStudies />
-      <Experience />
-      <Testimonials />
-      <Contact />
+      <Nav />
+      <main>
+        <Intro />
+        <Marquee />
+        <Work />
+        <About />
+        <Expertise />
+        <Process />
+        <Timeline />
+      </main>
+      <Closing />
     </div>
   );
 };
