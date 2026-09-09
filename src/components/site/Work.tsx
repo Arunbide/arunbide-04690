@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import shot1 from "@/assets/costingwizard-1.png";
 import shot2 from "@/assets/costingwizard-2.png";
@@ -23,7 +24,7 @@ const reveal = {
 
 const secondary = [
   {
-    n: "02",
+    n: "03",
     title: "GameHub",
     stack: ["KOTLIN MULTIPLATFORM", "COMPOSE MP", "KTOR", "KOIN", "RAWG API"],
     copy: "A cross-platform game discovery app — shared domain and data layers, pagination, caching and shimmer states, built once for Android, Desktop and Web.",
@@ -31,7 +32,7 @@ const secondary = [
     glyph: "▲",
   },
   {
-    n: "03",
+    n: "04",
     title: "BhaktiPoint",
     stack: ["FLUTTER", "FIREBASE", "FIRESTORE", "AWS S3"],
     copy: "Spiritual music and discourse streaming with a dynamic content pipeline, so new media ships without an app update.",
@@ -39,7 +40,7 @@ const secondary = [
     glyph: "◗",
   },
   {
-    n: "04",
+    n: "05",
     title: "HealthSync",
     stack: ["KOTLIN", "COMPOSE", "MVVM", "HILT", "OPENAI"],
     copy: "Medicine and health tracker with a conversational AI assistant and reminders that actually land on time.",
@@ -47,7 +48,7 @@ const secondary = [
     glyph: "＋",
   },
   {
-    n: "05",
+    n: "06",
     title: "KKN Live",
     stack: ["ANDROID", "JAVA", "FCM"],
     copy: "A news product converted from web to Android — categories, search, push notifications, released on Play.",
@@ -136,6 +137,9 @@ const Work = () => {
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 bg-foreground px-5 py-3 mono-sm text-background">
               APP STORE <span className="transition-transform group-hover:translate-x-1">↗</span>
             </a>
+            <Link to="/case-studies/construction-cost-estimation" className="group inline-flex items-center gap-2 border border-border px-5 py-3 mono-sm hover:border-foreground">
+              CASE STUDY <span className="transition-transform group-hover:translate-x-1">→</span>
+            </Link>
             <a href={PLAY_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 border border-border px-5 py-3 mono-sm hover:border-foreground">
               GOOGLE PLAY <span className="transition-transform group-hover:translate-x-1">↗</span>
             </a>
@@ -143,7 +147,34 @@ const Work = () => {
         </div>
       </motion.div>
 
-      {/* 02–05 — editorial rows with cursor-following preview */}
+      {/* 02 — NoTask case study */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: .3 }}
+        transition={{ duration: .7, ease: [0.22, 1, 0.36, 1] }}
+        className="shell mt-16 sm:mt-24"
+      >
+        <Link
+          to="/case-studies/notask"
+          className="group grid items-start gap-6 border border-border p-6 transition-colors hover:border-foreground sm:p-10 md:grid-cols-[auto_1fr_auto]"
+        >
+          <span className="mono text-accent pt-2">02</span>
+          <div>
+            <h3 className="display-md transition-transform duration-500 group-hover:translate-x-2">NoTask</h3>
+            <p className="mono mt-3">WORKSPACE / TASKS / AI-ASSISTED DEVELOPMENT</p>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              A Notion-inspired workspace and task manager — an exploration of product judgment,
+              system design and code review when building alongside AI.
+            </p>
+          </div>
+          <span className="mono-sm inline-flex items-center gap-2 md:pt-3">
+            CASE STUDY <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
+          </span>
+        </Link>
+      </motion.div>
+
+      {/* 03–06 — editorial rows with cursor-following preview */}
       <div
         className="shell mt-20 sm:mt-28"
         onPointerMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}

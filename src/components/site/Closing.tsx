@@ -43,16 +43,39 @@ const Closing = () => {
           agency contracts.
         </p>
 
-        <div className="mt-10" onMouseMove={magnet} onMouseLeave={reset}>
+        <div className="mt-10 flex flex-wrap items-center gap-4" onMouseMove={magnet} onMouseLeave={reset}>
           <a
             ref={btn}
-            href="mailto:agbide7@gmail.com"
+            href="https://cal.com/bidearun/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 bg-foreground px-7 py-4 mono-sm text-background transition-transform duration-300 ease-out"
+          >
+            BOOK A 15-MIN CALL
+            <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
+          </a>
+          <a
+            href="mailto:agbide7@gmail.com"
+            className="group inline-flex items-center gap-3 border border-border px-7 py-4 mono-sm transition-colors hover:border-foreground"
           >
             START A CONVERSATION
             <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
           </a>
         </div>
+
+        <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-2">
+          <a href="mailto:agbide7@gmail.com" className="group flex flex-col gap-2 bg-background p-6 transition-colors hover:bg-secondary/50">
+            <span className="mono">Email</span>
+            <span className="text-lg font-medium sm:text-xl">agbide7@gmail.com</span>
+            <span className="mono text-muted-foreground">Replies within 24 hours</span>
+          </a>
+          <a href="tel:+919322832034" className="group flex flex-col gap-2 bg-background p-6 transition-colors hover:bg-secondary/50">
+            <span className="mono">Phone</span>
+            <span className="text-lg font-medium sm:text-xl">+91 93228 32034</span>
+            <span className="mono text-muted-foreground">Mon–Fri, 9 AM – 6 PM IST</span>
+          </a>
+        </div>
+
 
         <div className="mt-16 flex flex-col gap-6 border-t border-border py-8 sm:mt-24 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-1">

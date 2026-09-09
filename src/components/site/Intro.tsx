@@ -76,17 +76,18 @@ const Intro = () => {
         </h1>
 
         <div className="mt-8 grid gap-8 border-t border-border pt-7 md:grid-cols-[1.1fr_.9fr]">
-          <p className="intro-line display-md max-w-[16ch]">
-            I build digital <span className="text-accent">products.</span>
+          <p className="intro-line display-md max-w-[18ch]">
+            One codebase. <span className="text-accent">Every platform.</span>
           </p>
           <div className="flex flex-col gap-5">
             <p className="intro-line mono text-foreground/70">
               Android · Kotlin · KMP · Compose · Flutter
             </p>
             <p className="intro-line max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Software developer shaping thoughtful mobile experiences — from the first sketch to the
-              store release. Two and a half years, real clients, shipped apps.
+              Kotlin Multiplatform developer shaping thoughtful mobile experiences — from the first
+              sketch to the store release. Two and a half years, real clients, shipped apps.
             </p>
+
             <div className="intro-line flex flex-wrap gap-3">
               <a
                 href="#work"

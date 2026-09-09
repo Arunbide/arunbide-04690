@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import avatar from "@/assets/arun-avatar.png";
+
 
 const stats = [
   { value: 3, suffix: "+", label: "Years building" },
@@ -53,9 +55,24 @@ const About = () => (
       </div>
 
       <div className="flex flex-col gap-10">
+        <div className="flex items-center gap-5">
+          <img
+            src={avatar}
+            alt="Arun Bide"
+            width={160}
+            height={160}
+            className="h-24 w-24 rounded-full border border-border object-cover sm:h-28 sm:w-28"
+          />
+          <div className="flex flex-col gap-1">
+            <span className="mono-sm font-semibold tracking-[0.24em]">ARUN BIDE</span>
+            <span className="mono">Kotlin Multiplatform Developer · India</span>
+          </div>
+        </div>
+
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
           <p>
-            I'm Arun — a software developer focused on mobile products built with Kotlin, Android
+            I'm Arun — a Kotlin Multiplatform developer focused on mobile products built with Kotlin, Android
+
             and Kotlin Multiplatform. I care about the parts users feel: motion, responsiveness,
             and the small details that make an app trustworthy.
           </p>
