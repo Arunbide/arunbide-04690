@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import avatar from "@/assets/arun-avatar.png";
+
 
 const stats = [
   { value: 3, suffix: "+", label: "Years building" },
@@ -67,8 +69,10 @@ const About = () => (
           </div>
         </div>
 
+        <div className="space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
           <p>
-            I'm Arun — a software developer focused on mobile products built with Kotlin, Android
+            I'm Arun — a Kotlin Multiplatform developer focused on mobile products built with Kotlin, Android
+
             and Kotlin Multiplatform. I care about the parts users feel: motion, responsiveness,
             and the small details that make an app trustworthy.
           </p>
