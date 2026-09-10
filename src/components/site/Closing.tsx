@@ -2,10 +2,10 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 
 const socials = [
-  { label: "X", href: "https://x.com/bidearun" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/arunbide" },
-  { label: "Upwork", href: "https://www.upwork.com/freelancers/arunbide" },
-  { label: "Fiverr", href: "https://www.fiverr.com/arunbide" },
+  { label: "X", href: "https://x.com/bidearun", handle: "@bidearun", note: "Build notes & updates" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/arunbide", handle: "in/arunbide", note: "Experience & network" },
+  { label: "Upwork", href: "https://www.upwork.com/freelancers/arunbide", handle: "freelancers/arunbide", note: "Hire me on Upwork" },
+  { label: "Fiverr", href: "https://www.fiverr.com/arunbide", handle: "/arunbide", note: "Hire me on Fiverr" },
 ];
 
 const Closing = () => {
