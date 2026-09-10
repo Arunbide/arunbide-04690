@@ -4,6 +4,13 @@ import { gsap } from "gsap";
 
 const NAME = "ARUN BIDE";
 
+const SOCIALS = [
+  { label: "X", href: "https://x.com/bidearun" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/arunbide" },
+  { label: "Upwork", href: "https://www.upwork.com/freelancers/arunbide" },
+  { label: "Fiverr", href: "https://www.fiverr.com/arunbide" },
+];
+
 const Intro = () => {
   const root = useRef<HTMLDivElement>(null);
   const glow = useRef<HTMLDivElement>(null);
