@@ -4,6 +4,13 @@ import { gsap } from "gsap";
 
 const NAME = "ARUN BIDE";
 
+const SOCIALS = [
+  { label: "X", href: "https://x.com/bidearun" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/arunbide" },
+  { label: "Upwork", href: "https://www.upwork.com/freelancers/arunbide" },
+  { label: "Fiverr", href: "https://www.fiverr.com/arunbide" },
+];
+
 const Intro = () => {
   const root = useRef<HTMLDivElement>(null);
   const glow = useRef<HTMLDivElement>(null);
@@ -104,6 +111,22 @@ const Intro = () => {
               >
                 LET'S TALK <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
               </a>
+            </div>
+
+            <div className="intro-line flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
+              <span className="mono text-muted-foreground">Find me</span>
+              {SOCIALS.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1.5 mono-sm text-foreground/80 transition-colors hover:text-accent"
+                >
+                  <span className="link-underline">{s.label.toUpperCase()}</span>
+                  <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>
