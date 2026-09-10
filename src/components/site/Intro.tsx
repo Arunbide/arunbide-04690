@@ -105,6 +105,22 @@ const Intro = () => {
                 LET'S TALK <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
               </a>
             </div>
+
+            <div className="intro-line flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
+              <span className="mono text-muted-foreground">Find me</span>
+              {SOCIALS.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1.5 mono-sm text-foreground/80 transition-colors hover:text-accent"
+                >
+                  <span className="link-underline">{s.label.toUpperCase()}</span>
+                  <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </motion.div>
