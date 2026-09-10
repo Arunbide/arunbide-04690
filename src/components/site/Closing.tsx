@@ -76,27 +76,35 @@ const Closing = () => {
           </a>
         </div>
 
+        <div className="mt-4 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+          {socials.map((s, i) => (
+            <motion.a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+              className="group flex flex-col gap-2 bg-background p-6 transition-colors hover:bg-secondary/50"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-lg font-medium sm:text-xl">{s.label}</span>
+                <span className="text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent">
+                  ↗
+                </span>
+              </div>
+              <span className="mono text-foreground/75">{s.handle}</span>
+              <span className="mono text-muted-foreground">{s.note}</span>
+            </motion.a>
+          ))}
+        </div>
 
         <div className="mt-16 flex flex-col gap-6 border-t border-border py-8 sm:mt-24 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-col gap-1">
             <span className="mono-sm font-semibold tracking-[0.24em]">ARUN BIDE</span>
             <span className="mono">Android · Kotlin · KMP · Compose · Flutter</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mono link-underline hover:text-foreground transition-colors"
-              >
-                {s.label}
-              </a>
-            ))}
-            <a href="mailto:agbide7@gmail.com" className="mono link-underline hover:text-foreground transition-colors">
-              Email
-            </a>
           </div>
           <span className="mono">© 2026 Arun Bide</span>
         </div>
