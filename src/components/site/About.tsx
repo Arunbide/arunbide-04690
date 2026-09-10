@@ -65,23 +65,23 @@ const About = () => (
           />
           <div className="flex flex-col gap-1">
             <span className="mono-sm font-semibold tracking-[0.24em]">ARUN BIDE</span>
-            <span className="mono">Kotlin Multiplatform Developer · India</span>
+            <span className="mono">App developer for startups & businesses · India</span>
           </div>
         </div>
 
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
           <p>
-            I'm Arun — a Kotlin Multiplatform developer focused on mobile products built with Kotlin, Android
-
-            and Kotlin Multiplatform. I care about the parts users feel: motion, responsiveness,
-            and the small details that make an app trustworthy.
+            I build mobile apps for founders and teams who need something real in the market — not a
+            demo. Kotlin, Jetpack Compose, Kotlin Multiplatform and Flutter, so Android and iOS come
+            out of one codebase and stay easy to grow.
           </p>
           <p>
-            I work end to end — shaping the idea, choosing the architecture, building the interface,
-            wiring the services, and shipping to the stores. Mostly with clients who need a real
-            product, not a prototype.
+            I take the whole thing: pinning down the idea, picking the architecture, building the
+            interface, wiring APIs and AI features, and pushing it to the stores. You talk to the
+            person writing the code, and you get straight answers about scope, time and trade-offs.
           </p>
         </div>
+
 
         <div className="grid grid-cols-2 gap-x-6 gap-y-8 border-t border-border pt-8 sm:grid-cols-3">
           {stats.map((s) => (

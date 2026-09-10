@@ -63,7 +63,7 @@ const Intro = () => {
         <div className="mb-6 flex flex-wrap items-center gap-x-6 gap-y-2">
           <span className="mono">Based in India · Working worldwide</span>
           <span className="mono inline-flex items-center gap-2 text-foreground">
-            <i className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" /> Available for selected projects
+            <i className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" /> Taking on new projects
           </span>
         </div>
 
@@ -76,17 +76,18 @@ const Intro = () => {
         </h1>
 
         <div className="mt-8 grid gap-8 border-t border-border pt-7 md:grid-cols-[1.1fr_.9fr]">
-          <p className="intro-line display-md max-w-[18ch]">
-            One codebase. <span className="text-accent">Every platform.</span>
+          <p className="intro-line display-md max-w-[20ch]">
+            I build the apps <span className="text-accent">startups ship.</span>
           </p>
           <div className="flex flex-col gap-5">
             <p className="intro-line mono text-foreground/70">
-              Android · Kotlin · KMP · Compose · Flutter
+              Android · iOS · Kotlin Multiplatform · Compose · Flutter
             </p>
             <p className="intro-line max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Kotlin Multiplatform developer shaping thoughtful mobile experiences — from the first
-              sketch to the store release. Two and a half years, real clients, shipped apps.
+              App development for startups and businesses — one codebase, Android and iOS, from
+              first call to store release. You get a developer who owns the product, not a ticket queue.
             </p>
+
 
             <div className="intro-line flex flex-wrap gap-3">
               <a
