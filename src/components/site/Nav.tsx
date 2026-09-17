@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ThemeToggle from "@/components/ThemeToggle";
+import { scrollToSection } from "@/lib/smooth-scroll";
 
 const links = [
   { label: "Work", href: "#work" },
