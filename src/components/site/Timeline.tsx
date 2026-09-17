@@ -33,25 +33,33 @@ const Timeline = () => (
         Real clients. <em>Shipped products.</em>
       </h2>
 
-      <div className="mt-12 flex flex-col">
+      <div className="mt-14 flex flex-col">
         {roles.map((r, i) => (
           <motion.article
             key={r.title}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="grid gap-6 border-t border-border py-8 md:grid-cols-[.5fr_1.5fr] md:gap-14 md:py-12"
+            className="group relative grid gap-6 border-t border-border py-10 transition-colors md:grid-cols-[.42fr_1.58fr] md:gap-16 md:py-14"
           >
-            <div className="flex flex-col gap-2">
-              <span className="mono">{r.period}</span>
-              <span className="mono text-foreground/70">{r.place}</span>
+            <span className="pointer-events-none absolute left-0 top-0 h-px w-0 bg-accent transition-all duration-700 ease-out group-hover:w-full" />
+
+            <div className="flex flex-col gap-3">
+              <span className="mono text-foreground">{r.period}</span>
+              <span className="mono text-muted-foreground">{r.place}</span>
             </div>
+
             <div>
-              <h3 className="display text-[clamp(1.5rem,3.6vw,2.6rem)]">{r.title}</h3>
-              <ul className="mt-5 space-y-3">
+              <h3 className="text-[clamp(1.6rem,3.4vw,2.6rem)] font-semibold tracking-[-.045em] leading-[1.02]">
+                {r.title}
+              </h3>
+              <ul className="mt-6 grid gap-x-12 gap-y-4 sm:grid-cols-2">
                 {r.points.map((p) => (
-                  <li key={p} className="flex gap-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  <li
+                    key={p}
+                    className="flex gap-3 border-t border-border/60 pt-4 text-sm leading-relaxed text-muted-foreground"
+                  >
                     <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
                     {p}
                   </li>
