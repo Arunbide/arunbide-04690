@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import ThemeToggle from "@/components/ThemeToggle";
+import { scrollToSection } from "@/lib/smooth-scroll";
 
 const links = [
   { label: "Work", href: "#work" },
@@ -35,7 +36,7 @@ const Nav = () => {
 
   const go = (href: string) => {
     setOpen(false);
-    setTimeout(() => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" }), 420);
+    setTimeout(() => scrollToSection(href), 420);
   };
 
   return (

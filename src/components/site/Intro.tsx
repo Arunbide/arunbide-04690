@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
+import { scrollToSection } from "@/lib/smooth-scroll";
 
 const NAME = "ARUN BIDE";
 
@@ -99,14 +100,14 @@ const Intro = () => {
             <div className="intro-line flex flex-wrap gap-3">
               <a
                 href="#work"
-                onClick={(e) => { e.preventDefault(); document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" }); }}
+                onClick={(e) => { e.preventDefault(); scrollToSection("#work"); }}
                 className="group inline-flex items-center gap-3 bg-foreground px-6 py-3.5 mono-sm text-background transition-transform duration-300 hover:-translate-y-0.5"
               >
                 VIEW MY WORK <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </a>
               <a
                 href="#contact"
-                onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}
+                onClick={(e) => { e.preventDefault(); scrollToSection("#contact"); }}
                 className="group inline-flex items-center gap-3 border border-border px-6 py-3.5 mono-sm transition-colors hover:border-foreground"
               >
                 LET'S TALK <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
