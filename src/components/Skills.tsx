@@ -61,7 +61,7 @@ const Skills = () => {
             </h2>
           </div>
           <p className="max-w-xl text-muted-foreground">
-            2+ years building mobile and cross-platform products — from shared Kotlin logic to polished Compose
+            2+ years building mobile and cross-platform products - from shared Kotlin logic to polished Compose
             interfaces and AI-powered features.
           </p>
         </div>

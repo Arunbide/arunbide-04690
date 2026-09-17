@@ -72,7 +72,7 @@ const Closing = () => {
           <a href="tel:+919322832034" className="group flex flex-col gap-2 bg-background p-6 transition-colors hover:bg-secondary/50">
             <span className="mono">Phone</span>
             <span className="text-lg font-medium sm:text-xl">+91 93228 32034</span>
-            <span className="mono text-muted-foreground">Mon–Fri, 9 AM – 6 PM IST</span>
+            <span className="mono text-muted-foreground">Mon-Fri, 9 AM - 6 PM IST</span>
           </a>
         </div>
 

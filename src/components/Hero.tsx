@@ -34,7 +34,7 @@ const Hero = () => {
               Mobile apps that feel <span className="text-gradient">inevitable.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl animate-fade-in" style={{ animationDelay: "120ms", animationFillMode: "backwards" }}>
-              I turn complex product ideas into polished Android and iOS experiences—built on scalable Kotlin Multiplatform foundations.
+              I turn complex product ideas into polished Android and iOS experiences-built on scalable Kotlin Multiplatform foundations.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 animate-fade-in" style={{ animationDelay: "180ms", animationFillMode: "backwards" }}>
           <Button

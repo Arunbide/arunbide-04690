@@ -91,7 +91,7 @@ const Intro = () => {
               Android · iOS · Kotlin Multiplatform · Compose · Flutter
             </p>
             <p className="intro-line max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-              App development for startups and businesses — one codebase, Android and iOS, from
+              App development for startups and businesses - one codebase, Android and iOS, from
               first call to store release. You get a developer who owns the product, not a ticket queue.
             </p>
 

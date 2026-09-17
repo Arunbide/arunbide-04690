@@ -11,10 +11,10 @@ const PLAY_URL =
 const APP_STORE_URL = "https://apps.apple.com/us/app/costingwizard-quote-cost/id6742328319";
 
 const shots = [
-  { src: shot1, alt: "CostingWizard — build estimates in minutes" },
-  { src: shot2, alt: "CostingWizard — automatic item and resource calculations" },
-  { src: shot3, alt: "CostingWizard — professional PDF reports" },
-  { src: shot4, alt: "CostingWizard — AI assistant edits by chat" },
+  { src: shot1, alt: "CostingWizard - build estimates in minutes" },
+  { src: shot2, alt: "CostingWizard - automatic item and resource calculations" },
+  { src: shot3, alt: "CostingWizard - professional PDF reports" },
+  { src: shot4, alt: "CostingWizard - AI assistant edits by chat" },
 ];
 
 const reveal = {
@@ -27,7 +27,7 @@ const secondary = [
     n: "03",
     title: "GameHub",
     stack: ["KOTLIN MULTIPLATFORM", "COMPOSE MP", "KTOR", "KOIN", "RAWG API"],
-    copy: "A cross-platform game discovery app — shared domain and data layers, pagination, caching and shimmer states, built once for Android, Desktop and Web.",
+    copy: "A cross-platform game discovery app - shared domain and data layers, pagination, caching and shimmer states, built once for Android, Desktop and Web.",
     tint: "from-emerald-500/20 to-transparent",
     glyph: "▲",
   },
@@ -51,7 +51,7 @@ const secondary = [
     n: "06",
     title: "KKN Live",
     stack: ["ANDROID", "JAVA", "FCM"],
-    copy: "A news product converted from web to Android — categories, search, push notifications, released on Play.",
+    copy: "A news product converted from web to Android - categories, search, push notifications, released on Play.",
     tint: "from-rose-500/20 to-transparent",
     glyph: "◼",
   },
@@ -70,12 +70,12 @@ const Work = () => {
         <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6">
           <h2 className="display-lg">Selected<br />work</h2>
           <p className="mono max-w-xs text-right ml-auto">
-            Products and experiments — shipped, used, maintained.
+            Products and experiments - shipped, used, maintained.
           </p>
         </div>
       </div>
 
-      {/* 01 — full-bleed device showcase */}
+      {/* 01 - full-bleed device showcase */}
       <motion.div
         ref={featured}
         initial="hidden"
@@ -131,7 +131,7 @@ const Work = () => {
           <blockquote className="max-w-2xl text-sm leading-relaxed text-foreground/85">
             “Arun did an excellent job developing my Kotlin Multiplatform app. Highly dedicated, reliable,
             and consistently delivers high-quality work on time. He always went the extra mile.”
-            <span className="mono ml-2">— GILAD, CLIENT</span>
+            <span className="mono ml-2">- GILAD, CLIENT</span>
           </blockquote>
           <div className="flex gap-3">
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 bg-foreground px-5 py-3 mono-sm text-background">
@@ -147,7 +147,7 @@ const Work = () => {
         </div>
       </motion.div>
 
-      {/* 02 — NoTask case study */}
+      {/* 02 - NoTask case study */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ const Work = () => {
             <h3 className="display-md transition-transform duration-500 group-hover:translate-x-2">NoTask</h3>
             <p className="mono mt-3">WORKSPACE / TASKS / AI-ASSISTED DEVELOPMENT</p>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              A Notion-inspired workspace and task manager — an exploration of product judgment,
+              A Notion-inspired workspace and task manager - an exploration of product judgment,
               system design and code review when building alongside AI.
             </p>
           </div>
@@ -174,7 +174,7 @@ const Work = () => {
         </Link>
       </motion.div>
 
-      {/* 03–06 — editorial rows with cursor-following preview */}
+      {/* 03-06 - editorial rows with cursor-following preview */}
       <div
         className="shell mt-20 sm:mt-28"
         onPointerMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}

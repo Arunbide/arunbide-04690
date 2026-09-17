@@ -71,7 +71,7 @@ const About = () => (
 
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
           <p>
-            I build mobile apps for founders and teams who need something real in the market — not a
+            I build mobile apps for founders and teams who need something real in the market - not a
             demo. Kotlin, Jetpack Compose, Kotlin Multiplatform and Flutter, so Android and iOS come
             out of one codebase and stay easy to grow.
           </p>
