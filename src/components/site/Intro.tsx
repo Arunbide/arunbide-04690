@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
+import { scrollToSection } from "@/lib/smooth-scroll";
 
 const NAME = "ARUN BIDE";
 
