@@ -6,7 +6,7 @@ const Experience = () => {
       title: "Kotlin Multiplatform Developer",
       company: "Stealth Startup",
       type: "Contract · Remote",
-      period: "Sep 2025 — May 2026",
+      period: "Sep 2025 to May 2026",
       bullets: [
         "Contributed to a V2 redesign using Kotlin Multiplatform and Compose Multiplatform for Android, iOS and Web.",
         "Built reusable Compose and Material 3 components with shared business logic across platforms.",
@@ -19,7 +19,7 @@ const Experience = () => {
       title: "Freelance Android & Mobile Developer",
       company: "Freelance",
       type: "Remote · Worldwide",
-      period: "Jun 2023 — Present",
+      period: "Jun 2023 to Present",
       bullets: [
         "Built Android and cross-platform apps with Kotlin, Java, Flutter and Kotlin Multiplatform.",
         "Shipped with Jetpack Compose, MVVM, Coroutines, Room, Retrofit and dependency injection.",
@@ -42,7 +42,7 @@ const Experience = () => {
             </h2>
           </div>
           <p className="max-w-xl text-muted-foreground">
-            Two and a half years of shipping production mobile apps — for a product team and directly for clients.
+            Two and a half years of shipping production mobile apps - for a product team and directly for clients.
           </p>
         </div>
 

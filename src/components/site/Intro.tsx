@@ -91,7 +91,7 @@ const Intro = () => {
               Android · iOS · Kotlin Multiplatform · Compose · Flutter
             </p>
             <p className="intro-line max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-              App development for startups and businesses — one codebase, Android and iOS, from
+              App development for startups and businesses - one codebase, Android and iOS, from
               first call to store release. You get a developer who owns the product, not a ticket queue.
             </p>
 
@@ -132,15 +132,7 @@ const Intro = () => {
         </div>
       </motion.div>
 
-      <div className="shell flex items-end justify-between">
-        <span className="mono">Scroll</span>
-        <motion.span
-          className="mono"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-        >
-          ↓
-        </motion.span>
+      <div className="shell flex items-end justify-end">
         <span className="mono">© 2026</span>
       </div>
     </section>

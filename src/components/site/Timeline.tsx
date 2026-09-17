@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const roles = [
   {
-    period: "Sep 2025 — May 2026",
+    period: "Sep 2025 to May 2026",
     title: "Kotlin Multiplatform Developer",
     place: "Stealth Startup · Remote · Contract",
     points: [
@@ -13,7 +13,7 @@ const roles = [
     ],
   },
   {
-    period: "Jun 2023 — Present",
+    period: "Jun 2023 to Present",
     title: "Android Developer",
     place: "Freelance · Worldwide",
     points: [

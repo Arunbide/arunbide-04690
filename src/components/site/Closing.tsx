@@ -2,10 +2,10 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 
 const socials = [
-  { label: "X", href: "https://x.com/bidearun", handle: "@bidearun", note: "Build notes & updates" },
+  { label: "X", href: "https://x.com/bidearun", handle: "bidearun", note: "Build notes & updates" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/arunbide", handle: "in/arunbide", note: "Experience & network" },
   { label: "Upwork", href: "https://www.upwork.com/freelancers/arunbide", handle: "freelancers/arunbide", note: "Hire me on Upwork" },
-  { label: "Fiverr", href: "https://www.fiverr.com/arunbide", handle: "/arunbide", note: "Hire me on Fiverr" },
+  { label: "Fiverr", href: "https://www.fiverr.com/arunbide", handle: "arunbide", note: "Hire me on Fiverr" },
 ];
 
 const Closing = () => {
@@ -72,7 +72,7 @@ const Closing = () => {
           <a href="tel:+919322832034" className="group flex flex-col gap-2 bg-background p-6 transition-colors hover:bg-secondary/50">
             <span className="mono">Phone</span>
             <span className="text-lg font-medium sm:text-xl">+91 93228 32034</span>
-            <span className="mono text-muted-foreground">Mon–Fri, 9 AM – 6 PM IST</span>
+            <span className="mono text-muted-foreground">Mon-Fri, 9 AM - 6 PM IST</span>
           </a>
         </div>
 

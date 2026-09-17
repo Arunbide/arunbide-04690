@@ -13,7 +13,7 @@ const KMPBenefits = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="mb-10 grid gap-4 md:grid-cols-2 md:items-end">
           <div><p className="eyebrow">The KMP advantage</p><h2 className="section-heading">Less duplicate work.<br /><em>More product velocity.</em></h2></div>
-          <p className="max-w-xl text-muted-foreground">Share business logic between iOS and Android while retaining a platform-native experience—faster delivery, lower maintenance, and room to iterate.</p>
+          <p className="max-w-xl text-muted-foreground">Share business logic between iOS and Android while retaining a platform-native experience-faster delivery, lower maintenance, and room to iterate.</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

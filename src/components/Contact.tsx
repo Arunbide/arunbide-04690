@@ -47,7 +47,7 @@ const Contact = () => {
           </Button>
 
           <p className="text-xs connect-muted mt-3">
-            Free 15-minute consultation · Mon–Fri 9 AM – 6 PM IST
+            Free 15-minute consultation · Mon-Fri 9 AM - 6 PM IST
           </p>
           </div>
           <div className="connect-ticket grid grid-cols-2 gap-3 rounded-2xl p-4 text-sm md:w-56">
@@ -74,7 +74,7 @@ const Contact = () => {
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between gap-3"><span className="text-sm font-semibold leading-none">Phone</span><ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></div>
                 <p className="mt-2 text-sm leading-none text-foreground/85">+91 9322832034</p>
-                <p className="mt-3 text-xs leading-none text-muted-foreground">Mon–Fri, 9 AM – 6 PM IST.</p>
+                <p className="mt-3 text-xs leading-none text-muted-foreground">Mon-Fri, 9 AM - 6 PM IST.</p>
               </div>
             </a>
           </div>

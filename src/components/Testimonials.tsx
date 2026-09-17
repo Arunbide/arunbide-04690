@@ -12,7 +12,7 @@ const Testimonials = () => {
     { name: "sireeshaba", country: "United States", rating: 5, review: "Arun's contribution to our project was nothing short of exceptional. Clean, well-documented code that significantly contributed to the success of the project." },
     { name: "atreyarao", country: "India", rating: 5, review: "Exceptional work in app testing. Attention to detail, expertise, and professionalism truly stand out." },
     { name: "activealex", country: "United Kingdom", rating: 5, review: "Pleasure to work with. Very professional, helpful and patient!" },
-    { name: "kknlive", country: "India", rating: 5, review: "Did an exceptional job updating my app. Attention to detail is remarkable — incredibly polite and professional." },
+    { name: "kknlive", country: "India", rating: 5, review: "Did an exceptional job updating my app. Attention to detail is remarkable - incredibly polite and professional." },
     { name: "sireeshaba", country: "United States", rating: 4.3, review: "Met expectations and responsive to queries." },
     { name: "tengohambre", country: "Canada", rating: 5, review: "Arun went above and beyond to complete the work. Would definitely hire him again." },
     { name: "tengohambre", country: "Canada", rating: 5, review: "Really enjoy working with Arun, will keep ordering his services." },

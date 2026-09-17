@@ -55,7 +55,7 @@ const FeaturedProject = () => {
 
         {/* Main card */}
         <div className="featured-frame group/card overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-2xl shadow-foreground/[.06] transition-all duration-500 hover:border-foreground/25">
-          {/* Screenshots row — Apple App Store style horizontal scroll */}
+          {/* Screenshots row - Apple App Store style horizontal scroll */}
           <div className="relative overflow-hidden bg-gradient-to-br from-foreground/[.06] via-background to-accent/[.08] pt-8 sm:pt-12 pb-7 sm:pb-9">
             <div className="section-grid pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
             <div
