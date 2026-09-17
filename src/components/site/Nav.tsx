@@ -35,7 +35,7 @@ const Nav = () => {
 
   const go = (href: string) => {
     setOpen(false);
-    setTimeout(() => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" }), 420);
+    setTimeout(() => scrollToSection(href), 420);
   };
 
   return (
