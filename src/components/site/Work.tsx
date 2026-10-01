@@ -5,6 +5,7 @@ import shot1 from "@/assets/costingwizard-1.png";
 import shot2 from "@/assets/costingwizard-2.png";
 import shot3 from "@/assets/costingwizard-3.png";
 import shot4 from "@/assets/costingwizard-4.png";
+import notaskPreview from "@/assets/notask-preview.png";
 
 const PLAY_URL =
   "https://play.google.com/store/apps/details?id=com.tovsoftware.costingapp&referrer=utm_source%3Dwebsite%26utm_medium%3Dpricing_section%26utm_campaign%3Dcosting_wizard%26utm_content%3Dpricing_cta";
@@ -65,14 +66,14 @@ const Work = () => {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
 
   return (
-    <section id="work" className="relative py-20 sm:py-28">
-      <div className="shell">
-        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6">
-          <h2 className="display-lg">Selected<br />work</h2>
-          <p className="mono max-w-xs text-right ml-auto">
-            Products and experiments - shipped, used, maintained.
-          </p>
+    <section id="work" className="relative py-16 sm:py-24">
+      <div className="shell max-w-6xl">
+        <div className="flex items-center gap-4 border-b border-border pb-5">
+          <h2 className="mono-sm text-foreground">SELECTED CASE STUDIES</h2>
+          <span className="h-px flex-1 bg-border" />
+          <span className="mono-sm text-muted-foreground">01 / 02</span>
         </div>
+        <p className="mt-5 text-2xl font-semibold sm:text-3xl">Proof of shipped things.</p>
       </div>
 
       {/* 01 - full-bleed device showcase */}
@@ -82,13 +83,13 @@ const Work = () => {
         whileInView="show"
         viewport={{ once: true, amount: .2 }}
         variants={reveal}
-        className="shell mt-14 sm:mt-20"
+        className="shell max-w-6xl mt-10 sm:mt-14"
       >
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div className="flex items-start gap-5">
             <span className="mono text-accent pt-2">01</span>
             <div>
-              <h3 className="display-md">CostingWizard</h3>
+              <h3 className="text-3xl font-semibold sm:text-4xl">CostingWizard</h3>
               <p className="mono mt-3">KOTLIN MULTIPLATFORM / COMPOSE MP / WASM / IOS / ANDROID / AI</p>
             </div>
           </div>
@@ -98,7 +99,7 @@ const Work = () => {
           </p>
         </div>
 
-        <div className="relative mt-10 overflow-hidden border border-border bg-gradient-to-b from-secondary/60 to-background">
+        <div className="relative mt-8 overflow-hidden border border-border bg-secondary/40">
           <motion.div style={{ y: imgY }} className="flex gap-4 overflow-x-auto hide-scrollbar snap-x snap-mandatory px-5 py-10 sm:gap-8 sm:px-10 sm:py-16">
             {shots.map((s, i) => (
               <motion.div
@@ -153,30 +154,25 @@ const Work = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: .3 }}
         transition={{ duration: .7, ease: [0.22, 1, 0.36, 1] }}
-        className="shell mt-16 sm:mt-24"
+        className="shell max-w-6xl mt-12 sm:mt-16"
       >
-        <Link
-          to="/case-studies/notask"
-          className="group grid items-start gap-6 border border-border p-6 transition-colors hover:border-foreground sm:p-10 md:grid-cols-[auto_1fr_auto]"
-        >
-          <span className="mono text-accent pt-2">02</span>
-          <div>
-            <h3 className="display-md transition-transform duration-500 group-hover:translate-x-2">NoTask</h3>
-            <p className="mono mt-3">WORKSPACE / TASKS / AI-ASSISTED DEVELOPMENT</p>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              A Notion-inspired workspace and task manager - an exploration of product judgment,
-              system design and code review when building alongside AI.
-            </p>
+        <Link to="/case-studies/notask" className="group grid gap-7 border-t border-border pt-8 md:grid-cols-[1fr_1fr] md:items-center md:gap-12">
+          <div className="aspect-[16/10] overflow-hidden border border-border bg-secondary">
+            <img src={notaskPreview} alt="NoTask workspace and task board" loading="lazy" width={1280} height={720} className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
           </div>
-          <span className="mono-sm inline-flex items-center gap-2 md:pt-3">
-            CASE STUDY <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
-          </span>
+          <div>
+            <span className="mono text-accent">02 / CASE STUDY</span>
+            <h3 className="mt-4 text-3xl font-semibold sm:text-4xl">NoTask</h3>
+            <p className="mono mt-3">WORKSPACE / TASKS / AI-ASSISTED DEVELOPMENT</p>
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">A Notion-inspired workspace and task manager, built to keep pages, tasks and project context together. An exploration of product judgment and system design alongside AI.</p>
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent">Read case study <span className="transition-transform group-hover:translate-x-1">↗</span></span>
+          </div>
         </Link>
       </motion.div>
 
       {/* 03-06 - editorial rows with cursor-following preview */}
       <div
-        className="shell mt-20 sm:mt-28"
+        className="shell max-w-6xl mt-16 sm:mt-20"
         onPointerMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
         onPointerLeave={() => setHover(null)}
       >
