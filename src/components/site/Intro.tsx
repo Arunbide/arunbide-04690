@@ -1,9 +1,8 @@
-import { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { gsap } from "gsap";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/smooth-scroll";
-
-const NAME = "ARUN BIDE";
+import avatar from "@/assets/arun-avatar.png";
 
 const SOCIALS = [
   { label: "X", href: "https://x.com/bidearun" },
@@ -13,128 +12,36 @@ const SOCIALS = [
 ];
 
 const Intro = () => {
-  const root = useRef<HTMLDivElement>(null);
-  const glow = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: root, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 140]);
-  const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(".intro-letter", {
-        yPercent: 120,
-        opacity: 0,
-        duration: 1.1,
-        ease: "expo.out",
-        stagger: 0.035,
-        delay: 0.1,
-      });
-      gsap.from(".intro-line", {
-        y: 24,
-        opacity: 0,
-        duration: .9,
-        ease: "expo.out",
-        stagger: 0.09,
-        delay: 0.55,
-      });
-    }, root);
-    return () => ctx.revert();
-  }, []);
-
-  useEffect(() => {
-    const el = root.current;
-    if (!el || window.matchMedia("(pointer: coarse)").matches) return;
-    const onMove = (e: PointerEvent) => {
-      const r = el.getBoundingClientRect();
-      const nx = (e.clientX - r.left) / r.width - 0.5;
-      const ny = (e.clientY - r.top) / r.height - 0.5;
-      gsap.to(".intro-letter", { x: (i) => nx * (8 + i * 2.2), y: ny * 10, duration: .9, ease: "power3.out" });
-      gsap.to(glow.current, { x: nx * 120, y: ny * 90, duration: 1.2, ease: "power3.out" });
-    };
-    el.addEventListener("pointermove", onMove);
-    return () => el.removeEventListener("pointermove", onMove);
-  }, []);
-
+  const reduceMotion = useReducedMotion();
   return (
-    <section
-      id="intro"
-      ref={root}
-      className="relative isolate min-h-[100svh] overflow-hidden pt-24 pb-10 flex flex-col justify-between"
-    >
-      <div className="pointer-events-none absolute inset-0 -z-10 grid-motif opacity-60" />
-      <div
-        ref={glow}
-        className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[46vw] w-[46vw] -translate-x-1/2 rounded-full bg-accent/20 blur-[130px]"
-      />
-
-      <motion.div style={{ y, opacity: fade }} className="shell flex flex-1 flex-col justify-center">
-        <div className="mb-6 flex flex-wrap items-center gap-x-6 gap-y-2">
-          <span className="mono">Based in India · Working worldwide</span>
-          <span className="mono inline-flex items-center gap-2 text-foreground">
-            <i className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" /> Taking on new projects
-          </span>
-        </div>
-
-        <h1 className="display-xl flex flex-wrap overflow-hidden leading-[.82]" aria-label="Arun Bide">
-          {NAME.split("").map((c, i) => (
-            <span key={i} className="intro-letter inline-block will-change-transform">
-              {c === " " ? "\u00A0" : c}
-            </span>
-          ))}
-        </h1>
-
-        <div className="mt-8 grid gap-8 border-t border-border pt-7 md:grid-cols-[1.1fr_.9fr]">
-          <p className="intro-line display-md max-w-[20ch]">
-            I build the apps <span className="text-accent">startups ship.</span>
-          </p>
-          <div className="flex flex-col gap-5">
-            <p className="intro-line mono text-foreground/70">
-              Android · iOS · Kotlin Multiplatform · Compose · Flutter
-            </p>
-            <p className="intro-line max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-              App development for startups and businesses - one codebase, Android and iOS, from
-              first call to store release. You get a developer who owns the product, not a ticket queue.
-            </p>
-
-
-            <div className="intro-line flex flex-wrap gap-3">
-              <a
-                href="#work"
-                onClick={(e) => { e.preventDefault(); scrollToSection("#work"); }}
-                className="group inline-flex items-center gap-3 bg-foreground px-6 py-3.5 mono-sm text-background transition-transform duration-300 hover:-translate-y-0.5"
-              >
-                VIEW MY WORK <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </a>
-              <a
-                href="#contact"
-                onClick={(e) => { e.preventDefault(); scrollToSection("#contact"); }}
-                className="group inline-flex items-center gap-3 border border-border px-6 py-3.5 mono-sm transition-colors hover:border-foreground"
-              >
-                LET'S TALK <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
-              </a>
+    <section id="intro" className="relative border-b border-border pt-28 pb-12 sm:pt-36 sm:pb-16">
+      <div className="shell max-w-6xl">
+        <motion.div initial={reduceMotion ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, ease: [0.22, 1, .36, 1] }}>
+          <div className="mb-7 inline-flex items-center gap-2.5 mono-sm text-muted-foreground">
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" /> AVAILABLE FOR FREELANCE
+          </div>
+          <div className="grid gap-9 md:grid-cols-[minmax(0,1fr)_minmax(200px,280px)] md:items-end md:gap-12">
+            <div>
+              <h1 className="font-semibold uppercase leading-[.86] text-[clamp(4.25rem,12vw,9.5rem)]">ARUN<br />BIDE<span className="text-accent">.</span></h1>
+              <p className="mt-8 max-w-[34rem] text-xl font-medium leading-snug sm:text-2xl">I build the apps <span className="text-accent">startups ship.</span></p>
+              <p className="mt-3 max-w-[34rem] text-base leading-relaxed text-muted-foreground">Android and iOS app development for startups and businesses, from first conversation to store release. Kotlin Multiplatform, Compose and Flutter.</p>
             </div>
-
-            <div className="intro-line flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
-              <span className="mono text-muted-foreground">Find me</span>
-              {SOCIALS.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 mono-sm text-foreground/80 transition-colors hover:text-accent"
-                >
-                  <span className="link-underline">{s.label.toUpperCase()}</span>
-                  <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
-                </a>
-              ))}
+            <div className="flex flex-col items-start gap-5 border-t border-border pt-6 md:border-t-0 md:pt-0">
+              <img src={avatar} alt="Arun Bide" width={160} height={160} className="h-20 w-20 rounded-full border border-border object-cover sm:h-24 sm:w-24" />
+              <div><span className="mono block">Based in</span><span className="text-sm">India · Working worldwide</span></div>
+              <div><span className="mono block">Specialization</span><span className="text-sm">Android · iOS · KMP</span></div>
             </div>
           </div>
-        </div>
-      </motion.div>
-
-      <div className="shell flex items-end justify-end">
-        <span className="mono">© 2026</span>
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <Button asChild className="rounded-sm"><a href="https://cal.com/bidearun/" target="_blank" rel="noopener noreferrer">Book a call <ArrowUpRight /></a></Button>
+            <Button asChild variant="outline" className="rounded-sm border"><a href="#work" onClick={(e) => { e.preventDefault(); scrollToSection("#work"); }}>Selected work <ArrowRight /></a></Button>
+            <a href="mailto:agbide7@gmail.com" className="text-sm text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground sm:ml-3">agbide7@gmail.com</a>
+          </div>
+          <div className="mt-12 grid gap-5 border-t border-border pt-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+            <div><span className="mono block mb-2">Find me</span><div className="flex flex-wrap gap-x-6 gap-y-2">{SOCIALS.map((s) => <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-accent">{s.label} ↗</a>)}</div></div>
+            <span className="mono">Kotlin · Compose · KMP · Flutter · Firebase</span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
