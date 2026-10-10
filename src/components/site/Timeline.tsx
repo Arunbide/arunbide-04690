@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const roles = [
   {
@@ -27,35 +25,52 @@ const roles = [
   },
 ];
 
-const Timeline = () => {
-  const [view, setView] = useState<"list" | "timeline">("list");
-  const [expanded, setExpanded] = useState(0);
-  return (
-    <section id="experience" className="section-shell py-16 sm:py-24">
-      <div className="shell max-w-6xl">
-        <div className="flex flex-wrap items-end justify-between gap-5">
-          <div><p className="eyebrow">Experience</p><h2 className="text-3xl font-semibold sm:text-5xl">Where I've worked.</h2></div>
-          <div className="inline-flex border border-border p-1" aria-label="Experience view">
-            <Button size="sm" variant={view === "list" ? "default" : "ghost"} className="h-8 rounded-sm px-4 text-xs" onClick={() => setView("list")} aria-pressed={view === "list"}>List</Button>
-            <Button size="sm" variant={view === "timeline" ? "default" : "ghost"} className="h-8 rounded-sm px-4 text-xs" onClick={() => setView("timeline")} aria-pressed={view === "timeline"}>Timeline</Button>
-          </div>
-        </div>
-        <div className={`mt-10 border-t border-border ${view === "timeline" ? "ml-2 border-l border-l-border pl-6 sm:ml-4 sm:pl-10" : ""}`}>
-          {roles.map((r, i) => (
-            <motion.article key={r.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .5, delay: i * .08 }} className="relative border-b border-border">
-              {view === "timeline" && <span className="absolute -left-[31px] top-7 h-2 w-2 rounded-full bg-accent sm:-left-[45px]" />}
-              <Button variant="ghost" className="h-auto w-full justify-between rounded-none px-0 py-6 text-left hover:bg-transparent sm:py-8" onClick={() => setExpanded(expanded === i ? -1 : i)} aria-expanded={expanded === i}>
-                <span className="flex min-w-0 flex-col gap-1"><span className="text-lg font-semibold leading-tight sm:text-xl">{r.place.split(" · ")[0]}</span><span className="text-sm font-normal text-muted-foreground">{r.title}</span></span>
-                <span className="ml-4 flex shrink-0 items-center gap-4 text-xs font-normal text-muted-foreground sm:gap-8"><span className="hidden sm:block">{r.period}</span><span className="text-lg text-accent">{expanded === i ? "−" : "+"}</span></span>
-              </Button>
-              <span className="mono -mt-4 mb-4 block sm:hidden">{r.period}</span>
-              <AnimatePresence initial={false}>{expanded === i && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: .35 }} className="overflow-hidden"><div className="pb-8 sm:pl-1"><p className="mb-4 text-sm text-muted-foreground">{r.place}</p><ul className="grid gap-x-10 gap-y-3 sm:grid-cols-2">{r.points.map((point) => <li key={point} className="flex gap-3 text-sm leading-relaxed text-muted-foreground"><span className="text-accent">✳</span>{point}</li>)}</ul></div></motion.div>}</AnimatePresence>
-            </motion.article>
-          ))}
-        </div>
+const Timeline = () => (
+  <section id="experience" className="section-shell py-20 sm:py-28">
+    <div className="shell">
+      <p className="eyebrow">Experience</p>
+      <h2 className="section-heading max-w-[18ch]">
+        Real clients. <em>Shipped products.</em>
+      </h2>
+
+      <div className="mt-14 flex flex-col">
+        {roles.map((r, i) => (
+          <motion.article
+            key={r.title}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+            className="group relative grid gap-6 border-t border-border py-10 transition-colors md:grid-cols-[.42fr_1.58fr] md:gap-16 md:py-14"
+          >
+            <span className="pointer-events-none absolute left-0 top-0 h-px w-0 bg-accent transition-all duration-700 ease-out group-hover:w-full" />
+
+            <div className="flex flex-col gap-3">
+              <span className="mono text-foreground">{r.period}</span>
+              <span className="mono text-muted-foreground">{r.place}</span>
+            </div>
+
+            <div>
+              <h3 className="text-[clamp(1.6rem,3.4vw,2.6rem)] font-semibold tracking-[-.045em] leading-[1.02]">
+                {r.title}
+              </h3>
+              <ul className="mt-6 grid gap-x-12 gap-y-4 sm:grid-cols-2">
+                {r.points.map((p) => (
+                  <li
+                    key={p}
+                    className="flex gap-3 border-t border-border/60 pt-4 text-sm leading-relaxed text-muted-foreground"
+                  >
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.article>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Timeline;
