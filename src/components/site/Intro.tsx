@@ -85,19 +85,27 @@ const Intro = () => {
 
         <div className="mt-8 grid gap-8 border-t border-border pt-7 md:grid-cols-[1.1fr_.9fr]">
           <p className="intro-line display-md max-w-[20ch]">
-            I build the apps <span className="text-accent">startups ship.</span>
+            I build <span className="text-accent">AI-powered apps</span> startups ship.
           </p>
           <div className="flex flex-col gap-5">
             <p className="intro-line mono text-foreground/70">
               Android · iOS · Kotlin Multiplatform · Compose · Flutter
             </p>
             <p className="intro-line max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-              App development for startups and businesses - one codebase, Android and iOS, from
-              first call to store release. You get a developer who owns the product, not a ticket queue.
+              Android and iOS apps from one Kotlin codebase, with AI features built in. I take products
+              from the first conversation to store release, owning the architecture, experience, and delivery.
             </p>
 
 
             <div className="intro-line flex flex-wrap gap-3">
+              <a
+                href="https://www.upwork.com/freelancers/arunbide"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 bg-foreground px-6 py-3.5 mono-sm text-background transition-transform duration-300 hover:-translate-y-0.5"
+              >
+                HIRE ME <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
+              </a>
               <a
                 href="#work"
                 onClick={(e) => { e.preventDefault(); scrollToSection("#work"); }}
