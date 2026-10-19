@@ -2,9 +2,8 @@ import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
 import { scrollToSection } from "@/lib/smooth-scroll";
-import shot1 from "@/assets/costingwizard-1.png";
-import shot2 from "@/assets/costingwizard-2.png";
-import shot4 from "@/assets/costingwizard-4.png";
+
+const NAME = "ARUN BIDE";
 
 const SOCIALS = [
   { label: "X", href: "https://x.com/bidearun" },
@@ -13,141 +12,137 @@ const SOCIALS = [
   { label: "Fiverr", href: "https://www.fiverr.com/arunbide" },
 ];
 
-const screens = [
-  { src: shot1, alt: "CostingWizard project overview", className: "hero-device hero-device-left" },
-  { src: shot2, alt: "CostingWizard estimate details", className: "hero-device hero-device-center" },
-  { src: shot4, alt: "CostingWizard AI assistant", className: "hero-device hero-device-right" },
-];
-
 const Intro = () => {
-  const root = useRef<HTMLElement>(null);
+  const root = useRef<HTMLDivElement>(null);
+  const glow = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: root, offset: ["start start", "end start"] });
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, 44]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 140]);
+  const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".intro-reveal", {
-        y: 28,
+      gsap.from(".intro-letter", {
+        yPercent: 120,
         opacity: 0,
-        duration: 0.85,
-        ease: "power3.out",
-        stagger: 0.1,
-        delay: 0.12,
+        duration: 1.1,
+        ease: "expo.out",
+        stagger: 0.035,
+        delay: 0.1,
+      });
+      gsap.from(".intro-line", {
+        y: 24,
+        opacity: 0,
+        duration: .9,
+        ease: "expo.out",
+        stagger: 0.09,
+        delay: 0.55,
       });
     }, root);
     return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    const el = root.current;
+    if (!el || window.matchMedia("(pointer: coarse)").matches) return;
+    const onMove = (e: PointerEvent) => {
+      const r = el.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width - 0.5;
+      const ny = (e.clientY - r.top) / r.height - 0.5;
+      gsap.to(".intro-letter", { x: (i) => nx * (8 + i * 2.2), y: ny * 10, duration: .9, ease: "power3.out" });
+      gsap.to(glow.current, { x: nx * 120, y: ny * 90, duration: 1.2, ease: "power3.out" });
+    };
+    el.addEventListener("pointermove", onMove);
+    return () => el.removeEventListener("pointermove", onMove);
   }, []);
 
   return (
     <section
       id="intro"
       ref={root}
-      className="relative overflow-hidden pb-12 pt-28 sm:pb-16 sm:pt-36"
+      className="relative isolate min-h-[100svh] overflow-hidden pt-24 pb-10 flex flex-col justify-between"
     >
-      <div className="shell">
-        <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4">
-          <span className="mono-sm font-semibold tracking-[0.24em] text-foreground">ARUN BIDE</span>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <span className="mono">Based in India · Working worldwide</span>
-            <span className="mono inline-flex items-center gap-2 text-foreground">
-              <i className="h-1.5 w-1.5 rounded-full bg-accent" /> Taking on new projects
-            </span>
-          </div>
+      <div className="pointer-events-none absolute inset-0 -z-10 grid-motif opacity-60" />
+      <div
+        ref={glow}
+        className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[46vw] w-[46vw] -translate-x-1/2 rounded-full bg-accent/20 blur-[130px]"
+      />
+
+      <motion.div style={{ y, opacity: fade }} className="shell flex flex-1 flex-col justify-center">
+        <div className="mb-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+          <span className="mono">Based in India · Working worldwide</span>
+          <span className="mono inline-flex items-center gap-2 text-foreground">
+            <i className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" /> Taking on new projects
+          </span>
         </div>
 
-        <div className="grid items-center gap-10 lg:grid-cols-[.92fr_1.08fr] lg:gap-8">
-          <div className="relative z-10">
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="display max-w-[10ch] text-[clamp(3rem,7.2vw,6.8rem)] leading-[.88]"
-            >
-              I build <span className="text-accent">AI-powered apps</span> startups ship.
-            </motion.h1>
-            <p className="intro-reveal mono mt-7 max-w-xl text-foreground/75">
+        <h1 className="display-xl flex flex-wrap overflow-hidden leading-[.82]" aria-label="Arun Bide">
+          {NAME.split("").map((c, i) => (
+            <span key={i} className="intro-letter inline-block will-change-transform">
+              {c === " " ? "\u00A0" : c}
+            </span>
+          ))}
+        </h1>
+
+        <div className="mt-8 grid gap-8 border-t border-border pt-7 md:grid-cols-[1.1fr_.9fr]">
+          <p className="intro-line display-md max-w-[20ch]">
+            I build <span className="text-accent">AI-powered apps</span> startups ship.
+          </p>
+          <div className="flex flex-col gap-5">
+            <p className="intro-line mono text-foreground/70">
               Android · iOS · Kotlin Multiplatform · Compose · Flutter
             </p>
-            <p className="intro-reveal mt-4 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="intro-line max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
               Android and iOS apps from one Kotlin codebase, with AI features built in. I take products
               from the first conversation to store release, owning the architecture, experience, and delivery.
             </p>
 
-            <div className="intro-reveal mt-7 flex flex-wrap gap-3">
+
+            <div className="intro-line flex flex-wrap gap-3">
               <a
                 href="https://www.upwork.com/freelancers/arunbide"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex min-h-12 items-center gap-3 bg-foreground px-5 py-3 mono-sm text-background transition-transform duration-300 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-3 bg-foreground px-6 py-3.5 mono-sm text-background transition-transform duration-300 hover:-translate-y-0.5"
               >
                 HIRE ME <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
               </a>
               <a
                 href="#work"
                 onClick={(e) => { e.preventDefault(); scrollToSection("#work"); }}
-                className="group inline-flex min-h-12 items-center gap-3 border border-border bg-card/60 px-5 py-3 mono-sm transition-colors hover:border-accent"
+                className="group inline-flex items-center gap-3 bg-foreground px-6 py-3.5 mono-sm text-background transition-transform duration-300 hover:-translate-y-0.5"
               >
                 VIEW MY WORK <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </a>
               <a
                 href="#contact"
                 onClick={(e) => { e.preventDefault(); scrollToSection("#contact"); }}
-                className="group inline-flex min-h-12 items-center gap-3 px-3 py-3 mono-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="group inline-flex items-center gap-3 border border-border px-6 py-3.5 mono-sm transition-colors hover:border-foreground"
               >
                 LET'S TALK <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
               </a>
             </div>
 
-            <div className="intro-reveal mt-7 flex flex-wrap items-center gap-x-5 gap-y-2">
+            <div className="intro-line flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
               <span className="mono text-muted-foreground">Find me</span>
-              {SOCIALS.map((social) => (
+              {SOCIALS.map((s) => (
                 <a
-                  key={social.label}
-                  href={social.href}
+                  key={s.label}
+                  href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-1.5 mono-sm text-foreground/80 transition-colors hover:text-accent"
                 >
-                  <span className="link-underline">{social.label.toUpperCase()}</span>
+                  <span className="link-underline">{s.label.toUpperCase()}</span>
                   <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
                 </a>
               ))}
             </div>
           </div>
-
-          <motion.div
-            style={{ y: imageY }}
-            className="product-surface relative mx-auto flex w-full max-w-[650px] items-center justify-center overflow-hidden px-3 py-8 sm:px-8 sm:py-12"
-          >
-            <div className="pointer-events-none absolute inset-0 grid-motif opacity-30" />
-            <div className="relative z-10 flex w-full max-w-[540px] items-center justify-center gap-[-1rem] sm:gap-[-1.5rem]">
-              {screens.map((screen, index) => (
-                <motion.div
-                  key={screen.alt}
-                  initial={{ opacity: 0, y: 30, rotate: index === 0 ? -7 : index === 2 ? 7 : 0 }}
-                  animate={{ opacity: 1, y: 0, rotate: index === 0 ? -7 : index === 2 ? 7 : 0 }}
-                  transition={{ duration: 0.9, delay: 0.2 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
-                  whileHover={{ y: -10, rotate: 0, transition: { duration: 0.3 } }}
-                  className={`${screen.className} relative aspect-[.51] w-[29%] shrink-0 overflow-hidden rounded-[1.2rem] border border-foreground/15 bg-background p-1.5 shadow-xl sm:rounded-[1.5rem] sm:p-2`}
-                >
-                  <img
-                    src={screen.src}
-                    alt={screen.alt}
-                    width={827}
-                    height={1654}
-                    decoding="async"
-                    className="h-full w-full rounded-[.9rem] object-cover sm:rounded-[1.15rem]"
-                  />
-                </motion.div>
-              ))}
-            </div>
-            <span className="mono absolute bottom-3 right-4 z-10 sm:bottom-5 sm:right-6">01 / 04</span>
-          </motion.div>
         </div>
+      </motion.div>
 
-        <div className="mt-10 flex justify-end border-t border-border pt-4">
-          <span className="mono">© 2026</span>
-        </div>
+      <div className="shell flex items-end justify-end">
+        <span className="mono">© 2026</span>
       </div>
     </section>
   );
