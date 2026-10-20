@@ -5,7 +5,6 @@ import shot1 from "@/assets/costingwizard-1.png";
 import shot2 from "@/assets/costingwizard-2.png";
 import shot3 from "@/assets/costingwizard-3.png";
 import shot4 from "@/assets/costingwizard-4.png";
-import noTaskPreview from "@/assets/notask-preview.jpg";
 
 const PLAY_URL =
   "https://play.google.com/store/apps/details?id=com.tovsoftware.costingapp&referrer=utm_source%3Dwebsite%26utm_medium%3Dpricing_section%26utm_campaign%3Dcosting_wizard%26utm_content%3Dpricing_cta";
@@ -90,12 +89,12 @@ const Work = () => {
             <span className="mono text-accent pt-2">01</span>
             <div>
               <h3 className="display-md">CostingWizard</h3>
-              <p className="mono mt-3">KOTLIN MULTIPLATFORM / COMPOSE MP / OPENAI / CLAUDE VISION / GEMINI OCR</p>
+              <p className="mono mt-3">KOTLIN MULTIPLATFORM / COMPOSE MP / WASM / IOS / ANDROID / AI</p>
             </div>
           </div>
           <p className="max-w-md text-muted-foreground leading-relaxed">
-            Manual quotes meant scattered line items, hand calculations, and separate reports. I built a
-            Kotlin Multiplatform app with live estimates, AI-assisted edits, and client-ready PDFs for Android and iOS.
+            A costing platform for contractors: build estimates, manage projects, generate PDF reports,
+            and edit everything by chatting with an AI assistant. One shared codebase, native on both stores.
           </p>
         </div>
 
@@ -134,7 +133,7 @@ const Work = () => {
             and consistently delivers high-quality work on time. He always went the extra mile.”
             <span className="mono ml-2">- GILAD, CLIENT</span>
           </blockquote>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex gap-3">
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 bg-foreground px-5 py-3 mono-sm text-background">
               APP STORE <span className="transition-transform group-hover:translate-x-1">↗</span>
             </a>
@@ -158,32 +157,20 @@ const Work = () => {
       >
         <Link
           to="/case-studies/notask"
-          className="group block border border-border transition-colors hover:border-foreground"
+          className="group grid items-start gap-6 border border-border p-6 transition-colors hover:border-foreground sm:p-10 md:grid-cols-[auto_1fr_auto]"
         >
-          <div className="relative overflow-hidden border-b border-border bg-secondary">
-            <img
-              src={noTaskPreview}
-              alt="NoTask workspace showing project tasks arranged across plan, build, and ship boards"
-              width={1160}
-              height={730}
-              loading="lazy"
-              decoding="async"
-              className="aspect-[16/9] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
-            />
+          <span className="mono text-accent pt-2">02</span>
+          <div>
+            <h3 className="display-md transition-transform duration-500 group-hover:translate-x-2">NoTask</h3>
+            <p className="mono mt-3">WORKSPACE / TASKS / AI-ASSISTED DEVELOPMENT</p>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              A Notion-inspired workspace and task manager - an exploration of product judgment,
+              system design and code review when building alongside AI.
+            </p>
           </div>
-          <div className="grid items-start gap-5 p-6 sm:p-9 md:grid-cols-[auto_1fr_auto] md:gap-7">
-            <span className="mono pt-2 text-accent">02</span>
-            <div>
-              <h3 className="display-md transition-transform duration-500 group-hover:translate-x-2">NoTask</h3>
-              <p className="mono mt-3">NEXT.JS / REACT / TYPESCRIPT / PRISMA / TURSO / RADIX</p>
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                <span className="text-foreground">Problem:</span> project plans, decisions, and tasks were scattered across tools. <span className="text-foreground">Built:</span> a persistent workspace that brings notes, board and list views, and task context together.
-              </p>
-            </div>
-            <span className="mono-sm inline-flex items-center gap-2 md:pt-3">
-              CASE STUDY <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
-            </span>
-          </div>
+          <span className="mono-sm inline-flex items-center gap-2 md:pt-3">
+            CASE STUDY <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
+          </span>
         </Link>
       </motion.div>
 
