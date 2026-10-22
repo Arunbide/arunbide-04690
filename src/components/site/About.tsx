@@ -71,9 +71,9 @@ const About = () => (
 
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
           <p>
-            Android and iOS apps from one Kotlin codebase, with AI features built in. I take products
-            from the first conversation to store release, owning the architecture, experience, and
-            delivery.
+            I work with founders and product teams to plan, build, and ship Android and cross-platform
+            apps. Kotlin Multiplatform lets us share the right parts while keeping each platform at
+            home.
           </p>
           <p>
             I take the whole thing: pinning down the idea, picking the architecture, building the
