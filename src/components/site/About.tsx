@@ -71,9 +71,9 @@ const About = () => (
 
         <div className="space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
           <p>
-            I work with founders and product teams to plan, build, and ship Android and cross-platform
-            apps. Kotlin Multiplatform lets us share the right parts while keeping each platform at
-            home.
+            I build mobile apps for founders and teams who need something real in the market - not a
+            demo. Kotlin, Jetpack Compose, Kotlin Multiplatform and Flutter, so Android and iOS come
+            out of one codebase and stay easy to grow.
           </p>
           <p>
             I take the whole thing: pinning down the idea, picking the architecture, building the
