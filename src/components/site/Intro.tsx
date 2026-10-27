@@ -84,8 +84,8 @@ const Intro = () => {
         </h1>
 
         <div className="mt-8 grid gap-8 border-t border-border pt-7 md:grid-cols-[1.1fr_.9fr]">
-          <p className="intro-line display-md max-w-[20ch]">
-            I build <span className="text-accent">AI-powered apps</span> startups ship.
+          <p className="intro-line display-md">
+            I build and ship <span className="text-accent">AI-powered mobile products</span> for startups using Kotlin Multiplatform.
           </p>
           <div className="flex flex-col gap-5">
             <p className="intro-line mono text-foreground/70">
