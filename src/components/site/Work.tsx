@@ -68,11 +68,8 @@ const Work = () => {
   return (
     <section id="work" className="relative py-20 sm:py-28">
       <div className="shell">
-        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6">
-          <h2 className="display-lg">Selected<br />work</h2>
-          <p className="mono max-w-xs text-right ml-auto">
-            Products and experiments - shipped, used, maintained.
-          </p>
+        <div className="border-b border-border pb-6">
+          <p className="mono">Products and experiments, shipped, used, maintained.</p>
         </div>
       </div>
 
