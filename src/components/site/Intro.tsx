@@ -84,7 +84,7 @@ const Intro = () => {
         </h1>
 
         <div className="mt-8 grid gap-8 border-t border-border pt-7 md:grid-cols-[1.1fr_.9fr]">
-          <p className="intro-line display-md">
+          <p className="intro-line max-w-[24ch] font-semibold tracking-[-0.02em]" style={{ fontSize: "clamp(1.35rem, 2.4vw, 2rem)", lineHeight: 1.15 }}>
             I build and ship <span className="text-accent">AI-powered mobile products</span> for startups using Kotlin Multiplatform.
           </p>
           <div className="flex flex-col gap-5">
