@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
 import { scrollToSection } from "@/lib/smooth-scroll";
 
-const NAME = "ARUN BIDE";
+const HEADLINE = "Hey, I'm Arun.";
 
 const SOCIALS = [
   { label: "X", href: "https://x.com/bidearun" },
@@ -21,12 +21,11 @@ const Intro = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".intro-letter", {
-        yPercent: 120,
+      gsap.from(".intro-headline", {
+        yPercent: 110,
         opacity: 0,
         duration: 1.1,
         ease: "expo.out",
-        stagger: 0.035,
         delay: 0.1,
       });
       gsap.from(".intro-line", {
@@ -48,7 +47,6 @@ const Intro = () => {
       const r = el.getBoundingClientRect();
       const nx = (e.clientX - r.left) / r.width - 0.5;
       const ny = (e.clientY - r.top) / r.height - 0.5;
-      gsap.to(".intro-letter", { x: (i) => nx * (8 + i * 2.2), y: ny * 10, duration: .9, ease: "power3.out" });
       gsap.to(glow.current, { x: nx * 120, y: ny * 90, duration: 1.2, ease: "power3.out" });
     };
     el.addEventListener("pointermove", onMove);
@@ -75,12 +73,8 @@ const Intro = () => {
           </span>
         </div>
 
-        <h1 className="display-xl flex flex-wrap overflow-hidden leading-[.82]" aria-label="Arun Bide">
-          {NAME.split("").map((c, i) => (
-            <span key={i} className="intro-letter inline-block will-change-transform">
-              {c === " " ? "\u00A0" : c}
-            </span>
-          ))}
+        <h1 className="intro-headline display-xl leading-[.9]" aria-label={HEADLINE}>
+          {HEADLINE}
         </h1>
 
         <div className="mt-8 grid gap-8 border-t border-border pt-7 md:grid-cols-[1.1fr_.9fr]">
