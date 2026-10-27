@@ -67,7 +67,7 @@ const Intro = () => {
 
       <motion.div style={{ y, opacity: fade }} className="shell flex flex-1 flex-col justify-center">
         <div className="mb-6 flex flex-wrap items-center gap-x-6 gap-y-2">
-          <span className="mono">Based in India · Working worldwide</span>
+          <span className="mono">Arun Bide · Based in India · Working worldwide</span>
           <span className="mono inline-flex items-center gap-2 text-foreground">
             <i className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" /> Taking on new projects
           </span>
