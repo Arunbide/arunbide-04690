@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const socials = [
   { label: "X", href: "https://x.com/bidearun", handle: "bidearun" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/arunbide", handle: "in/arunbide" },
-  { label: "Upwork", href: "https://www.upwork.com/freelancers/arunbide", handle: "arunbide" },
+  { label: "Upwork", href: "https://www.upwork.com/freelancers/~011177b48244dd6896?mp_source=share", handle: "arunbide" },
   { label: "Fiverr", href: "https://www.fiverr.com/arunbide", handle: "arunbide" },
 ];
 

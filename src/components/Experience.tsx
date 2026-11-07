@@ -12,7 +12,7 @@ const Experience = () => {
         "Built reusable Compose and Material 3 components with shared business logic across platforms.",
         "Worked with Kotlin WASM, JavaScript interoperability, localization and RTL support.",
         "Made implementation decisions around shared vs. platform-specific code based on product needs.",
-        "Debugged Gradle, KMP, WASM, Firebase and cross-platform build issues.",
+        "Unblocked cross-platform delivery by resolving Gradle, Kotlin Multiplatform, Kotlin/WASM, and Firebase integration issues across Android, iOS, and Web.",
       ],
     },
     {

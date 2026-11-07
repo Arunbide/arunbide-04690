@@ -9,7 +9,7 @@ const roles = [
       "Contributed to a V2 redesign in Kotlin Multiplatform and Compose Multiplatform for Android, iOS and Web.",
       "Built reusable Compose / Material 3 components and shared business logic across platforms.",
       "Worked with Kotlin WASM, JavaScript interop, localization and RTL support.",
-      "Debugged Gradle, KMP, WASM, Firebase and cross-platform build issues.",
+      "Unblocked cross-platform delivery by resolving Gradle, Kotlin Multiplatform, Kotlin/WASM, and Firebase integration issues across Android, iOS, and Web.",
     ],
   },
   {
