@@ -131,7 +131,7 @@ const Nav = () => {
                     {s.label}
                   </a>
                 ))}
-                <a href="mailto:agbide7@gmail.com" className="mono hover:text-foreground transition-colors">agbide7@gmail.com</a>
+                <a href="mailto:arunbide21@gmail.com" className="mono hover:text-foreground transition-colors">arunbide21@gmail.com</a>
               </motion.div>
             </div>
           </motion.div>

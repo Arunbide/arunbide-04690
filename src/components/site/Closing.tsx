@@ -55,7 +55,7 @@ const Closing = () => {
             <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
           </a>
           <a
-            href="mailto:agbide7@gmail.com"
+            href="mailto:arunbide21@gmail.com"
             className="group inline-flex items-center gap-3 border border-border px-7 py-4 mono-sm transition-colors hover:border-foreground"
           >
             START A CONVERSATION
@@ -65,8 +65,7 @@ const Closing = () => {
 
         <div className="mt-14 border-t border-border">
           {[
-            { label: "Email", value: "agbide7@gmail.com", href: "mailto:agbide7@gmail.com" },
-            { label: "Phone", value: "+91 93228 32034", href: "tel:+919322832034" },
+            { label: "Email", value: "arunbide21@gmail.com", href: "mailto:arunbide21@gmail.com" },
           ].map((c, i) => (
             <motion.a
               key={c.label}
