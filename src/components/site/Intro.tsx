@@ -8,7 +8,7 @@ const HEADLINE = "Hey, I'm Arun.";
 const SOCIALS = [
   { label: "X", href: "https://x.com/bidearun" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/arunbide" },
-  { label: "Upwork", href: "https://www.upwork.com/freelancers/arunbide" },
+  { label: "Upwork", href: "https://www.upwork.com/freelancers/~011177b48244dd6896?mp_source=share" },
   { label: "Fiverr", href: "https://www.fiverr.com/arunbide" },
 ];
 
@@ -93,14 +93,6 @@ const Intro = () => {
 
 
             <div className="intro-line flex flex-wrap gap-3">
-              <a
-                href="https://www.upwork.com/freelancers/arunbide"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-foreground px-6 py-3.5 mono-sm text-background transition-transform duration-300 hover:-translate-y-0.5"
-              >
-                HIRE ME <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
-              </a>
               <a
                 href="#work"
                 onClick={(e) => { e.preventDefault(); scrollToSection("#work"); }}

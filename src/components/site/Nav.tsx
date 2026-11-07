@@ -14,7 +14,7 @@ const links = [
 const socials = [
   { label: "X", href: "https://x.com/bidearun" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/arunbide" },
-  { label: "Upwork", href: "https://www.upwork.com/freelancers/arunbide" },
+  { label: "Upwork", href: "https://www.upwork.com/freelancers/~011177b48244dd6896?mp_source=share" },
   { label: "Fiverr", href: "https://www.fiverr.com/arunbide" },
 ];
 

@@ -90,7 +90,7 @@ const Contact = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-border hover:border-foreground/40 transition-colors text-sm font-medium">
             <Linkedin className="h-4 w-4" /> LinkedIn
           </a>
-          <a href="https://www.upwork.com/freelancers/arunbide" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.upwork.com/freelancers/~011177b48244dd6896?mp_source=share" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-2 rounded-md border border-border hover:border-foreground/40 transition-colors text-sm font-medium">
             Upwork
           </a>
