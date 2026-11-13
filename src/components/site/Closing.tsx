@@ -1,5 +1,7 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowUpRight, Check, Copy, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const socials = [
   { label: "X", href: "https://x.com/bidearun", handle: "bidearun" },
@@ -10,6 +12,17 @@ const socials = [
 
 const Closing = () => {
   const btn = useRef<HTMLAnchorElement>(null);
+  const [copyState, setCopyState] = useState<"copied" | "unavailable" | null>(null);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("arunbide21@gmail.com");
+      setCopyState("copied");
+    } catch {
+      setCopyState("unavailable");
+    }
+    window.setTimeout(() => setCopyState(null), 2200);
+  };
 
   const magnet = (e: React.MouseEvent) => {
     const el = btn.current;
@@ -54,35 +67,55 @@ const Closing = () => {
             BOOK A 15-MIN CALL
             <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
           </a>
-          <a
-            href="mailto:arunbide21@gmail.com"
-            className="group inline-flex items-center gap-3 border border-border px-7 py-4 mono-sm transition-colors hover:border-foreground"
-          >
-            START A CONVERSATION
-            <span className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span>
-          </a>
         </div>
 
-        <div className="mt-14 border-t border-border">
-          {[
-            { label: "Email", value: "arunbide21@gmail.com", href: "mailto:arunbide21@gmail.com" },
-          ].map((c, i) => (
-            <motion.a
-              key={c.label}
-              href={c.href}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              className="group flex flex-col gap-1 border-b border-border py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
-            >
-              <span className="mono">{c.label}</span>
-              <span className="text-2xl font-medium tracking-tight transition-colors group-hover:text-accent sm:text-3xl">
-                {c.value}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-14 border-y border-border py-6 sm:py-7"
+        >
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex min-w-0 items-center gap-4">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center border border-border text-accent">
+                <Mail className="h-5 w-5" aria-hidden="true" />
               </span>
-            </motion.a>
-          ))}
-        </div>
+              <div className="min-w-0">
+                <p className="mono mb-2">Email me directly</p>
+                <a
+                  href="mailto:arunbide21@gmail.com"
+                  className="break-all text-xl font-semibold text-foreground transition-colors hover:text-accent sm:text-2xl"
+                >
+                  arunbide21@gmail.com
+                </a>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 self-start sm:self-auto">
+              <Button asChild variant="outline" className="rounded-none px-4 mono-sm">
+                <a href="mailto:arunbide21@gmail.com">
+                  Write an email <ArrowUpRight aria-hidden="true" />
+                </a>
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                onClick={copyEmail}
+                aria-label={copyState === "copied" ? "Email copied" : "Copy email address"}
+                title={copyState === "copied" ? "Copied" : "Copy email"}
+                className="rounded-none"
+              >
+                {copyState === "copied" ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
+              </Button>
+            </div>
+          </div>
+          {copyState && (
+            <p className="mono mt-4 text-accent" role="status" aria-live="polite">
+              {copyState === "copied" ? "Email copied to clipboard" : "Clipboard unavailable. Select the address to copy."}
+            </p>
+          )}
+        </motion.div>
 
         <div className="mt-12">
           <p className="mono mb-5">Profiles</p>
